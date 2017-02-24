@@ -1,0 +1,8 @@
+<% @shouts.each do |shout| %>
+  <div class="shout">
+    <p><%= Restaurant.find(shout.restaurant_id).name %></p>
+    <p><%= shout.twitter_text %></p>
+    <p><%= image_tag(shout.twitter_image) %></p>
+    <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
+  </div>
+<% end %>

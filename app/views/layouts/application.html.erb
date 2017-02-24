@@ -11,6 +11,7 @@
   <body>
     <%= link_to 'Home', root_path %>
     <% if current_user %>
+      <%= link_to ' My data ', user_path(current_user.id) %>
       <%= "Signed in as " + current_user.first_name %>
       <%= link_to ' Log Out ', :logout, method: :post %>
     <% else %>
