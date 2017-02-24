@@ -1,0 +1,7 @@
+class FixUserAttributes < ActiveRecord::Migration[5.0]
+  def change
+    remove_column :users, :twitter_id, :integer
+    add_column :restaurants, :owner_id, :integer
+    
+  end
+end
