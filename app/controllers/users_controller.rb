@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: %i(index new create)
+  skip_before_action :require_login, only: %i(index new create show)
 
   def index
     @users = User.all
@@ -19,7 +19,10 @@ class UsersController < ApplicationController
     end
   end
   def show
-    @user = User.find(user_session[:user_id])
+    @user = current_user
+    @shouts = Shout.all.where(user_id: @user.id)
+    @shout = Shout.new
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
   end
 
   private
