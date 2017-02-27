@@ -1,2 +1,7 @@
-<h1><%= @restaurant.name %></h1> 
-<%= render "rewards" %>
+<h1><%= @restaurant.name %></h1>
+<% @restaurant.rewards.each do |reward| %>
+  <div><%= reward.name %></div>
+  <div><%= reward.description %></div>
+  <div><%= reward.point_value %></div>
+  <%= link_to "Show Reward", edit_restaurant_reward_path(@restaurant, reward.id) %>
+<% end %>
