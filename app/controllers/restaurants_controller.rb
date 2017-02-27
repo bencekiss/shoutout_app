@@ -11,6 +11,7 @@ class RestaurantsController < ApplicationController
   def create
     # raise params.inspect
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.owner_id = current_user.id
     if @restaurant.save
       redirect_to root_path
     else
