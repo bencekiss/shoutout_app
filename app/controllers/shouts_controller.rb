@@ -18,6 +18,32 @@ class ShoutsController < ApplicationController
       render user_path(current_user.id)
     end
   end
+  def show
+    @shout = Shout.find(params[:id])
+  end
+  def edit
+    @shout = Shout.find(params[:id])
+    @user = current_user
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+  end
+  def update
+    @shout = Shout.find(params[:id])
+    @user = current_user
+    if @shout.update_attributes(shout_params)
+      flash[:notice] = "Successfully updated shoutout!"
+      redirect_back_or_to user_shout_path(current_user, @shout)
+    else
+      flash.now[:alert] = "Couldnt update shoutout, try again"
+      render :edit
+    end
+  end
+
+  def destroy
+    @shout = Shout.find(params[:id])
+    @shout.destroy
+    flash[:notice] = "Deleted shoutout"
+    redirect_back_or_to user_path(current_user)
+  end
 
   private
   def shout_params

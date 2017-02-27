@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    # raise params.inspect
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       redirect_to root_path

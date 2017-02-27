@@ -3,6 +3,7 @@
 <%= form_for [@user, @shout] do |f| %>
   <%= f.hidden_field :twitter_id, value: 7 %>
   <%= f.hidden_field :user_id, value: @user.id %>
+
   <div class="field">
     <%= f.label :twitter_text, value: "Text to be tweeted" %><br>
     <%= f.text_area :twitter_text, placeholder: "Share the good news" %>
