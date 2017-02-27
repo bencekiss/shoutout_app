@@ -1,0 +1,19 @@
+<h2>Rewards</h2>
+<%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |rewards_fields| %>
+  <div class="field rewards">
+    <%= rewards_fields.label :name %>
+    <%= rewards_fields.text_field :name %>
+  </div>
+
+  <div class="field rewards">
+    <%= rewards_fields.label :description %>
+    <%= rewards_fields.text_area :description %>
+  </div>
+
+  <div class="field rewards">
+    <%= rewards_fields.label :point_value %>
+    <%= rewards_fields.number_field :point_value %>
+  </div>
+
+
+<% end %>
