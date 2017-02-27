@@ -4,10 +4,12 @@ class ShoutsController < ApplicationController
   def new
     @shout = Shout.new
 
-    
+
   end
   def create
     @shout = Shout.new(shout_params)
+    @shout.retweets = 0
+    @shout.favourites = 0
     if @shout.save
       flash[:notice] = "Successfully created SHOUT"
       redirect_to user_url(current_user.id)

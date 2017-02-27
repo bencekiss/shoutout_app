@@ -21,6 +21,12 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @shouts = Shout.all.where(user_id: @user.id)
+    @shouted_resto = []
+    @shouts.each do |shout|
+      if !(@shouted_resto.include?(Restaurant.find(shout.restaurant_id)))
+        @shouted_resto << Restaurant.find(shout.restaurant_id)
+      end
+    end
     @shout = Shout.new
     @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
   end
