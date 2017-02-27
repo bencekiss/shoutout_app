@@ -22,9 +22,17 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @reward = Reward.find(params[:reward_id])
+    if @reward.destroy
+      redirect_to restaurant_path(@restaurant)
+    end
+  end
+
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :owner_id, :address, :phone_number, :rest_image, rewards_attributes: [:restaurant_id, :name, :description, :point_value])
+    params.require(:restaurant).permit(:name, :owner_id, :address, :phone_number, :rest_image, rewards_attributes: [:id, :restaurant_id, :name, :description, :point_value, :_destroy])
   end
 
 end

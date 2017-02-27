@@ -1,17 +1,16 @@
+<%= form_for [@restaurant, @reward] do |f| %>
 <div class="field rewards">
   <%= f.label :name %>
   <%= f.text_field :name %>
 </div>
-
 <div class="field rewards">
   <%= f.label :description %>
   <%= f.text_area :description %>
 </div>
-
 <div class="field rewards">
   <%= f.label :point_value %>
   <%= f.number_field :point_value %>
 </div>
-
-
-<%= link_to_remove_association "remove reward", f %>
+<%= f.submit %>
+<% end %>
+<%= link_to "Delete Reward", delete_reward_path(@restaurant, @reward), method: :delete, data: {confirm: "are you sure?"} %>
