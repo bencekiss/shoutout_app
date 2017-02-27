@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   post 'logout' => "user_sessions#destroy", :as => :logout
   delete '/restaurants/:restaurant_id/rewards/:id' => 'rewards#destroy', as: :delete_reward
 
+  post '/users/:id' => "users#show"
+
 end
