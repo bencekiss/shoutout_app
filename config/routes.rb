@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   get 'login' => "user_sessions#new", :as => :login
   post 'logout' => "user_sessions#destroy", :as => :logout
+  delete '/restaurants/:restaurant_id/rewards/:id' => 'rewards#destroy', as: :delete_reward
 
 end
