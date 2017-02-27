@@ -22,7 +22,7 @@
     <%= f.text_field :rest_image %>
   </div>
   <h2>Rewards</h2>
-  <%= fields_for :rewards do |r| %>
+  <%= f.fields_for :rewards do |r| %>
     <%= render 'reward_fields', :f => r %>
   <% end %>
 
