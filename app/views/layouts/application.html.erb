@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shoutout</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Home', root_path %> |
+    <% if current_user %>
+      <%= "Signed in as " + current_user.first_name %> |
+      <%= link_to ' Log Out ', :logout, method: :post %> <br>
+      <%= link_to ' My data ', user_path(current_user.id) %> |
+      <%= link_to "Add a restaurant", new_restaurant_path %>
+    <% else %>
+      <%= link_to ' Sign Up ', new_user_path %> |
+      <%= link_to ' Log In ', new_user_session_path %>
+    <% end %>
+
+
+    <% if flash.any? %>
+      <div class="flash">
+        <% flash.each do |k, v| %>
+          <%= v %><br>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

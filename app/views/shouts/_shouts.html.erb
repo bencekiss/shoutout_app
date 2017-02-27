@@ -1,0 +1,28 @@
+<h1>Shoutouts for <%= @user.first_name %></h1>
+<% @shouted_resto.each do |resto| %>
+  <h3><%= resto.name %></h3>
+  <p>Total points at <%= resto.name %>: <strong><%= resto.points(current_user) %></strong></p>
+  <% @shouts.each do |shout|%>
+    <% if shout.restaurant_id == resto.id %>
+
+    <div class="shout">
+      <p><%= shout.twitter_text %></p>
+      <p><%= link_to image_tag(shout.twitter_image), user_shout_path(current_user, shout) %></p>
+      <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
+    </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+
+<% @shouts.each do |shout| %>
+  <div class="shout">
+    <h3><%= Restaurant.find(shout.restaurant_id).name %></h3>
+    <p>Total points at <%= Restaurant.find(shout.restaurant_id).name %>: <strong><%= Shout.points(shout) %></strong></p>
+    <p><%= shout.twitter_text %></p>
+    <p><%= image_tag(shout.twitter_image) %></p>
+    <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
+  </div>
+<% end %>
