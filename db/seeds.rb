@@ -16,7 +16,7 @@ Shout.destroy_all
     address: Faker::Address.street_address,
     phone_number: Faker::PhoneNumber,
     rest_image: Faker::Avatar.image,
-    owner_id: rand(5)
+    owner_id: rand(5).ceil
   )
 
   5.times do
@@ -37,13 +37,13 @@ end
     )
   5.times do
     Shout.create!(
-    twitter_id: rand(10),
+    twitter_id: rand(10).ceil,
     twitter_text: Faker::Lorem.sentence,
     twitter_image: 'http://lorempixel.com/300/300/food/',
     retweets: rand(100),
     favourites: rand(100),
-    user_id: rand(10),
-    restaurant_id: rand(25),
+    user_id: rand(10).ceil,
+    restaurant_id: rand(25).ceil,
     )
   end
 end
