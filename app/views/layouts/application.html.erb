@@ -9,13 +9,14 @@
   </head>
 
   <body>
-    <%= link_to 'Home', root_path %>
+    <%= link_to 'Home', root_path %> |
     <% if current_user %>
-      <%= link_to ' My data ', user_path(current_user.id) %>
-      <%= "Signed in as " + current_user.first_name %>
-      <%= link_to ' Log Out ', :logout, method: :post %>
+      <%= "Signed in as " + current_user.first_name %> |
+      <%= link_to ' Log Out ', :logout, method: :post %> <br>
+      <%= link_to ' My data ', user_path(current_user.id) %> |
+      <%= link_to "Add a restaurant", new_restaurant_path %>
     <% else %>
-      <%= link_to ' Sign Up ', new_user_path %>
+      <%= link_to ' Sign Up ', new_user_path %> |
       <%= link_to ' Log In ', new_user_session_path %>
     <% end %>
 
