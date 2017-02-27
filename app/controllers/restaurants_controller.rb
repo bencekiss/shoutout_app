@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       redirect_to root_path
@@ -23,7 +24,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :owner_id, :address, :phone_number, :rest_image, rewards_attributes: [[:restaurant_id, :name, :description, :point_value]])
+    params.require(:restaurant).permit(:name, :owner_id, :address, :phone_number, :rest_image, rewards_attributes: [:restaurant_id, :name, :description, :point_value])
   end
 
 end
