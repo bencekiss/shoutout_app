@@ -1,6 +1,6 @@
 <h1>Restaurant Form</h1>
 
-<%= form_for @restaurant do |f| %>
+<%= form_for(@restaurant, html: {multipart: true}) do |f| %>
 
   <div class="field">
     <%= f.label :name %>
@@ -21,7 +21,13 @@
     <%= f.label :rest_image %>
     <%= f.text_field :rest_image %>
   </div>
+  <h2>Rewards</h2>
+  <%= fields_for :rewards do |r| %>
+    <%= render 'reward_fields', :f => r %>
+  <% end %>
 
-  <%= render 'rewards' %>
+  <div>
+    <%= link_to_add_association 'Add Reward', f, :rewards %>
+  </div>
   <%= f.submit %>
 <% end %>

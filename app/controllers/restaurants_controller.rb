@@ -5,9 +5,11 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    @restaurant.rewards.build(params[:rewards]) #This allows multiple nested attributes to be saved...somehow.
   end
 
   def create
+    raise params.inspect
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       redirect_to root_path
