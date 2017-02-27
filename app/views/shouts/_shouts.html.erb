@@ -13,16 +13,3 @@
     <% end %>
   <% end %>
 <% end %>
-
-
-
-
-<% @shouts.each do |shout| %>
-  <div class="shout">
-    <h3><%= Restaurant.find(shout.restaurant_id).name %></h3>
-    <p>Total points at <%= Restaurant.find(shout.restaurant_id).name %>: <strong><%= Shout.points(shout) %></strong></p>
-    <p><%= shout.twitter_text %></p>
-    <p><%= image_tag(shout.twitter_image) %></p>
-    <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
-  </div>
-<% end %>
