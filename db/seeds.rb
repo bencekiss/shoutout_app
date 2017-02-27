@@ -14,7 +14,7 @@ Shout.destroy_all
   p = Restaurant.create!(
     name: Faker::App.name,
     address: Faker::Address.street_address,
-    phone_number: Faker::PhoneNumber,
+    phone_number: Faker::PhoneNumber.cell_phone,
     rest_image: Faker::Avatar.image,
     owner_id: rand(5).ceil
   )
