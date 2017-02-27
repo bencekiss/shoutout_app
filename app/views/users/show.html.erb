@@ -1,5 +1,8 @@
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 <p><%= @user.email %></p>
-
+<p>You redeemed the next rewards:</p>
+<% @user.redeemed_rewards.each do |reward| %>
+  <p><%= reward.name %> at <%= Restaurant.find(reward.restaurant_id).name %> for <%= reward.point_value %> points!!!!!</p>
+<% end %>
 <%= render '/shouts/form' %>
 <%= render '/shouts/shouts' %>

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :shouts
   has_many :rewards, through: :shouts
   has_many :owned_restaurants, class_name: "Restaurant"
-  has_many :redeemed_rewards, class_name: "Reward"
+  has_and_belongs_to_many :redeemed_rewards, class_name: "Reward"
 
 
   # validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

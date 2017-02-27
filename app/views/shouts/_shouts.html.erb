@@ -1,11 +1,14 @@
 <h1>Shoutouts for <%= @user.first_name %></h1>
 <% @shouted_resto.each do |resto| %>
   <h3><%= resto.name %></h3>
-  <p>Total points at <%= resto.name %>: <strong><%= resto.points(current_user) %></strong></p>
+  <p>Total points at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
+
+  <p>Total redeemed points at this restaurant <%= resto.redeemed_points(@user) %></p>
   <% @shouts.each do |shout|%>
     <% if shout.restaurant_id == resto.id %>
 
     <div class="shout">
+      <p>All the points you got from this SO <%= Shout.points(shout) %></p>
       <p><%= shout.twitter_text %></p>
       <p><%= link_to image_tag(shout.twitter_image), user_shout_path(current_user, shout) %></p>
       <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>

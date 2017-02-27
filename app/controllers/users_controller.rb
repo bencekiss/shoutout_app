@@ -26,6 +26,9 @@ class UsersController < ApplicationController
       @reward = Reward.find(params[:reward_id])
       current_user.redeemed_rewards << @reward
     end
+
+    
+
     @user = current_user
     @shouts = Shout.all.where(user_id: @user.id)
     @shouted_resto = []
