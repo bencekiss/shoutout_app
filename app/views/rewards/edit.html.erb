@@ -13,4 +13,6 @@
 </div>
 <%= f.submit %>
 <% end %>
-<%= link_to "Delete Reward", delete_reward_path(@restaurant, @reward), method: :delete, data: {confirm: "are you sure?"} %>
+<% if @restaurant.owner_id == current_user.id %>
+  <%= link_to "Delete Reward", delete_reward_path(@restaurant, @reward), method: :delete, data: {confirm: "are you sure?"} %>
+<% end %>
