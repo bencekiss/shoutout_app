@@ -21,6 +21,9 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @points = @restaurant.points(current_user)
+    @available_rewards = Reward.all.where("restaurant_id = ? AND point_value <= ?", @restaurant.id, @points)
+    @rewards_array = @available_rewards.map { |reward| [reward.name, reward.id] }
   end
 
   def destroy
@@ -30,6 +33,9 @@ class RestaurantsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     end
   end
+
+
+  
 
   private
   def restaurant_params
