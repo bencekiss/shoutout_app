@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,6 +38,8 @@ gem 'cancancan'
 gem 'cocoon'
 gem 'carrierwave', '~>1.0'
 gem 'mini_magick', '~> 4.3'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -59,3 +61,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+gem 'rails-erd'

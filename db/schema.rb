@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228003144) do
+ActiveRecord::Schema.define(version: 20170228175456) do
+
+  create_table "redemptions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "reward_id"
+    t.boolean  "redemption_status", default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
@@ -29,11 +37,6 @@ ActiveRecord::Schema.define(version: 20170228003144) do
     t.integer  "point_value"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "rewards_users", force: :cascade do |t|
-    t.integer "reward_id"
-    t.integer "user_id"
   end
 
   create_table "shouts", force: :cascade do |t|

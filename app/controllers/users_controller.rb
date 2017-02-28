@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # byebug
     if @user.save
       auto_login(@user) #sorcery
       redirect_to root_url
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
     if params[:reward_id]
       flash[:notice] = "Redeemed a reward!"
       @reward = Reward.find(params[:reward_id])
-      current_user.redeemed_rewards << @reward
+      current_user.rewards << @reward
     end
 
     @user = current_user
