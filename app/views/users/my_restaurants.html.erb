@@ -1,0 +1,13 @@
+<h1>My Restaurants</h1>
+
+<% @owned_restaurants.each do |restaurant| %>
+  <h2><%= restaurant.name %></p>
+  <h2><%= restaurant.address %></p>
+  <h3>The redeemers at this restaurant:</h3>
+  <% restaurant.rewards.each do |reward| %>
+    <% reward.redeemers.each do |redeemer| %>
+      <p><b><%= "#{redeemer.first_name.upcase} #{redeemer.last_name.upcase}"%></b> is redeeming <b><%="#{reward.name.upcase}" %></b></p>
+    <% end %>
+  <% end %>
+
+<% end %>

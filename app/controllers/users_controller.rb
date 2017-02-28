@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       current_user.redeemed_rewards << @reward
     end
 
-    
+
 
     @user = current_user
     @shouts = Shout.all.where(user_id: @user.id)
@@ -43,6 +43,11 @@ class UsersController < ApplicationController
   end
 
   def redeem
+  end
+
+  def my_restaurants
+    @user = current_user
+    @owned_restaurants = @user.owned_restaurants
   end
 
   private

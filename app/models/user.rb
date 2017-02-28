@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_many :shouts
   has_many :rewards, through: :shouts
-  has_many :owned_restaurants, class_name: "Restaurant"
+  has_many :owned_restaurants, class_name: "Restaurant", foreign_key: "owner_id"
   has_and_belongs_to_many :redeemed_rewards, class_name: "Reward"
 
 
