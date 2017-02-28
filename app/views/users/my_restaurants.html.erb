@@ -3,11 +3,12 @@
 <% @owned_restaurants.each do |restaurant| %>
   <h2><%= restaurant.name %></p>
   <h2><%= restaurant.address %></p>
-  <h3>The redeemers at this restaurant:</h3>
-  <% restaurant.rewards.each do |reward| %>
-    <% reward.redeemers.each do |redeemer| %>
-      <p><b><%= "#{redeemer.first_name.upcase} #{redeemer.last_name.upcase}"%></b> is redeeming <b><%="#{reward.name.upcase}" %></b></p>
-    <% end %>
+  <h3>The users at this restaurant:</h3>
+  <% redemptions = Redemption.redeemable(restaurant) %>
+  <% redemptions.each do |redemption| %>
+    <p><%= User.find(redemption.user_id).first_name %> <%= User.find(redemption.user_id).last_name %> wants to redeem the following reward:</p>
+    <p><%= Reward.find(redemption.reward_id).name %> <%= Reward.find(redemption.reward_id).point_value %></p>
+    <p><%= button_to "Redeem", { controller: "users", action: "change_redemption_status", :redemption_id => redemption.id }, method: :post %></p>
   <% end %>
 
 <% end %>

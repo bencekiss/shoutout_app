@@ -42,7 +42,13 @@ class UsersController < ApplicationController
     @uploader = AvatarUploader.new ###Not sure what we need this for yet.
   end
 
-
+  def change_redemption_status
+    @redemption = Redemption.find(params[:redemption_id])
+    @redemption.redemption_status = true
+    @redemption.save
+    
+    redirect_to my_restaurants_path
+  end
 
   def my_restaurants
     @user = current_user

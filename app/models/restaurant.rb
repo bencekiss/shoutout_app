@@ -35,4 +35,6 @@ class Restaurant < ApplicationRecord
     points
   end
 
+  
+
 end
