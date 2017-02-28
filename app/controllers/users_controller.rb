@@ -27,8 +27,6 @@ class UsersController < ApplicationController
       current_user.redeemed_rewards << @reward
     end
 
-
-
     @user = current_user
     @shouts = Shout.all.where(user_id: @user.id)
     @shouted_resto = []
@@ -40,10 +38,10 @@ class UsersController < ApplicationController
     @shout = Shout.new
     @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
 
+    @uploader = AvatarUploader.new ###Not sure what we need this for yet.
   end
 
-  def redeem
-  end
+
 
   def my_restaurants
     @user = current_user
@@ -52,6 +50,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :avatar)
   end
 end
