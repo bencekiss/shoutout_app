@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    # raise params.inspect
+
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.owner_id = current_user.id
     if @restaurant.save
@@ -35,7 +35,7 @@ class RestaurantsController < ApplicationController
   end
 
 
-  
+
 
   private
   def restaurant_params
