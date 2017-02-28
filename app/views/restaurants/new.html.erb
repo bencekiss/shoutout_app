@@ -21,12 +21,14 @@
     <%= f.label :rest_image %>
     <%= f.text_field :rest_image %>
   </div>
+
   <h2>Rewards</h2>
+  
   <%= f.fields_for :rewards do |r| %>
     <%= render 'reward_fields', :f => r %>
   <% end %>
 
-  <div>
+  <div class = "button">
     <%= link_to_add_association 'Add Reward', f, :rewards %>
   </div>
   <%= f.submit %>
