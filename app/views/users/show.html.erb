@@ -2,16 +2,24 @@
 <p><%= @user.email %></p>
 <%= image_tag @user.avatar.profile.url %><br>
 
-<p>Pending rewards:</p>
 
 
-<% @user.redemptions.each do |redemption| %>
-  <% if !(redemption.redemption_status) %>
-    <p><em>Pending reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
-  <% else %>
-    <p><em>Redeemed reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+<div class="pending">
+  <h3>Pending rewards</h3>
+  <% @redemptions.each do |redemption| %>
+    <% if !(redemption.redemption_status) %>
+      <p><em>Pending reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+<div class="redeemed">
+  <h3>Redeemed rewards</h3>
+  <% @redemptions.each do |redemption| %>
+    <% if redemption.redemption_status %>
+      <p><em>Redeemed reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+    <% end %>
+  <% end %>
+</div>
 
 
 <%= render '/shouts/form' %>

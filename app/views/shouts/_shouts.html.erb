@@ -1,7 +1,7 @@
   <h1>Shoutouts for <%= @user.first_name %></h1>
 <% @shouted_resto.each do |resto| %>
 
-  <h3> <strong> <%= resto.name %> </strong> </h3>
+  <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>
   <p>Total points earned at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
   <p>Points you've redeemed: <%= resto.redeemed_points(@user) %></p>
 

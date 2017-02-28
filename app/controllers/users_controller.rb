@@ -29,6 +29,8 @@ class UsersController < ApplicationController
     end
 
     @user = current_user
+
+    @redemptions = @user.redemptions
     @shouts = Shout.all.where(user_id: @user.id)
     @shouted_resto = []
     @shouts.each do |shout|
@@ -46,7 +48,7 @@ class UsersController < ApplicationController
     @redemption = Redemption.find(params[:redemption_id])
     @redemption.redemption_status = true
     @redemption.save
-    
+
     redirect_to my_restaurants_path
   end
 
