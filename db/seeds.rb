@@ -34,6 +34,7 @@ end
     last_name: Faker::Name.last_name,
     email: Faker::Internet.free_email,
     password: 'password',
+    password_confirmation: 'password'
     )
   5.times do
     Shout.create!(

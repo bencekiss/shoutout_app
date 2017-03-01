@@ -15,6 +15,9 @@
       <%= link_to ' Log Out ', :logout, method: :post %> <br>
       <%= link_to ' My data ', user_path(current_user.id) %> |
       <%= link_to "Add a restaurant", new_restaurant_path %>
+      <% if !current_user.owned_restaurants.empty? %>
+        | <%= link_to "My restaurants", my_restaurants_path %>
+      <% end %>
     <% else %>
       <%= link_to ' Sign Up ', new_user_path %> |
       <%= link_to ' Log In ', new_user_session_path %>

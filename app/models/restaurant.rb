@@ -16,7 +16,7 @@ class Restaurant < ApplicationRecord
     end
 
 
-    user.redeemed_rewards.each do |reward|
+    user.rewards.each do |reward|
       if reward.restaurant_id == self.id
         points -= reward.point_value
       end
@@ -27,12 +27,14 @@ class Restaurant < ApplicationRecord
 
   def redeemed_points(user)
     points = 0
-    user.redeemed_rewards.each do |reward|
+    user.rewards.each do |reward|
       if reward.restaurant_id == self.id
         points += reward.point_value
       end
     end
     points
   end
+
+  
 
 end

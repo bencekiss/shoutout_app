@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # byebug
     if @user.save
       auto_login(@user) #sorcery
       redirect_to root_url
@@ -24,9 +25,12 @@ class UsersController < ApplicationController
     if params[:reward_id]
       flash[:notice] = "Redeemed a reward!"
       @reward = Reward.find(params[:reward_id])
-      current_user.redeemed_rewards << @reward
+      current_user.rewards << @reward
     end
+
     @user = current_user
+
+    @redemptions = @user.redemptions
     @shouts = Shout.all.where(user_id: @user.id)
     @shouted_resto = []
     @shouts.each do |shout|
@@ -40,7 +44,18 @@ class UsersController < ApplicationController
     @uploader = AvatarUploader.new ###Not sure what we need this for yet.
   end
 
+  def change_redemption_status
+    @redemption = Redemption.find(params[:redemption_id])
+    @redemption.redemption_status = true
+    @redemption.save
 
+    redirect_to my_restaurants_path
+  end
+
+  def my_restaurants
+    @user = current_user
+    @owned_restaurants = @user.owned_restaurants
+  end
 
   private
   def user_params
