@@ -17,12 +17,20 @@
   </div>
 
   <% @restaurant.rewards.each do |reward| %>
+  <% if @restaurant.owner_id == current_user.id || reward.active %>
     <p> <strong><%= reward.name %></strong>  </p>
     <p>Description: <%= reward.description %></p>
     <p>Point Value: <%= reward.point_value %></p>
     <% if @restaurant.owner_id == current_user.id %>
-      <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward.id) %> |
-      <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %>
+      <p>Active: <%= reward.active %></p>
+      <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
+      <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
+      <% if reward.active %>
+        <%= link_to "Hide Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+      <% else %>
+        <%= link_to "Activate Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+      <% end %>
     <% end %>
+  <% end %>
 
   <% end %>

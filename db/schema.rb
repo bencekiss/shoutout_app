@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302173434) do
+ActiveRecord::Schema.define(version: 20170302205923) do
 
   create_table "redemptions", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 20170302173434) do
     t.string   "name"
     t.text     "description"
     t.integer  "point_value"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "active",        default: true
   end
 
   create_table "shouts", force: :cascade do |t|

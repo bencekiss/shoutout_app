@@ -36,6 +36,19 @@ class RewardsController < ApplicationController
     end
   end
 
+  def toggle_reward
+    # byebug
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reward = Reward.find(params[:id])
+    if @reward.active
+      @reward.active = false
+    else
+      @reward.active = true
+    end
+    @reward.save
+    redirect_to restaurant_path(@restaurant)
+  end
+
   private
   def reward_params
     params.require(:reward).permit(:name, :description, :point_value)
