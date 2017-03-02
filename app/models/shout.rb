@@ -7,4 +7,5 @@ class Shout < ApplicationRecord
   def self.points(shout)
     (shout.retweets * RETWEET_CONSTANT) + (shout.favourites * FAVORITE_CONSTANT)
   end
+  mount_uploader :shout_image, ShoutImageUploader
 end

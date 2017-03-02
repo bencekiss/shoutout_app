@@ -1,5 +1,5 @@
 <div class="shout">
-  <%= image_tag(@shout.twitter_image) %><br>
+  <%= image_tag(@shout.shout_image.url) %><br>
   <p><%= @shout.twitter_text %></p>
   <p>Retweets: <%= @shout.retweets %>, Favorites: <%= @shout.favourites %></p>
   <p>Shouted on <%= Restaurant.find(@shout.restaurant_id).name %></p>
