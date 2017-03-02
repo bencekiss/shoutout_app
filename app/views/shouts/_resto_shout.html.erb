@@ -1,0 +1,19 @@
+<h1>Shout OUT</h1>
+
+<%= form_for [@user, @shout] do |f| %>
+ <%= f.hidden_field :twitter_id, value: 7 %>
+ <%= f.hidden_field :user_id, value: @user.id %>
+ <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+
+ <div class="field">
+   <%= f.label :twitter_text, value: "Text to be tweeted" %><br>
+   <%= f.text_area :twitter_text, placeholder: "Share the good news" %>
+ </div>
+ <div class="field">
+   <%= f.label :shout_image, value: "Upload your picture!" %><br>
+   <%= f.file_field :shout_image, placeholder: "https://your images address" %>
+ </div>
+ <div class="actions">
+   <%= f.submit "SHOUT! OUT!" %>
+ </div>
+<% end %>
