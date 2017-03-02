@@ -25,17 +25,17 @@ class ShoutImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
-  # def scale(width, height)
-  #   # do something
-  # end
+  def scale(width = 10, height = 10)
+
+  end
 
   # Create different versions of your uploaded files:
   version :thumb do
     process resize_to_fit: [150, 150]
   end
 
-  version :profile do
-    process resize_to_fit: [250, 150]
+  version :image_resize do
+    process resize_to_fit: [400, 200]
 end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
