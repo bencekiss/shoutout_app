@@ -9,7 +9,7 @@
     <% if shout.restaurant_id == resto.id %>
 
     <div class="shout">
-      <p><%= link_to image_tag(shout.shout_image.url), user_shout_path(current_user, shout) %></p>
+      <p><%= link_to image_tag(shout.shout_image.image_resize.url), user_shout_path(current_user, shout) %></p>
       <p>Tweet: <%= shout.twitter_text %></p>
       <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
       <p>ShoutOut points you gained from <%= resto.name %>: <strong><%= Shout.points(shout) %></strong> </p>
