@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   delete '/restaurants/:restaurant_id/rewards/:id' => 'rewards#destroy', as: :delete_reward
   get '/my_restaurants' => "users#my_restaurants", as: :my_restaurants
   post '/my_restaurants' => "users#change_redemption_status", as: :redeem_me
+  post '/restaurants/:restaurant_id/rewards/:id' => "rewards#toggle_reward", as: :toggle_reward
   post '/users/:id' => "users#show"
-
 end

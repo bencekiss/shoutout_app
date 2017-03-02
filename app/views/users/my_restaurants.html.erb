@@ -1,7 +1,7 @@
 <h1>My Restaurants</h1>
 
 <% @owned_restaurants.each do |restaurant| %>
-  <h2><%= restaurant.name %></p>
+  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
   <h2><%= restaurant.address %></p>
   <h3>The users at this restaurant:</h3>
   <% redemptions = Redemption.redeemable(restaurant) %>
