@@ -27,7 +27,11 @@ class RewardsController < ApplicationController
   def destroy
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reward = Reward.find(params[:id])
-    if @reward.destroy
+    if Redemption.where(reward_id: @reward.id).empty?
+      @reward.destroy
+      redirect_to restaurant_path(@restaurant)
+    else
+      flash[:alert] = "Sorry. There are pending redemptions."
       redirect_to restaurant_path(@restaurant)
     end
   end
