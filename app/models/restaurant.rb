@@ -27,9 +27,6 @@ class Restaurant < ApplicationRecord
   def redeem_reward(user, reward)
     if self.points(user) >= reward.point_value
       user.rewards << reward
-      # flash[:notice] = "Redeemed a reward!"
-    # else
-      # flash[:notice] = "Reward could not be redeemed."
     end
   end
 
