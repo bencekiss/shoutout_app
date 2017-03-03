@@ -22,12 +22,11 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = current_user
     if params[:reward_id]
-      flash[:notice] = "Redeemed a reward!"
       @reward = Reward.find(params[:reward_id])
       # byebug
-      current_user.rewards << @reward
+      Restaurant.find(@reward.restaurant_id).redeem_reward(@user, @reward)
       # redirect_to user_path(current_user.id)
       respond_to do |format|
         format.html

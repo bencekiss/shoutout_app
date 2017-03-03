@@ -46,7 +46,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "Bence cannot redeem points from one restaurant at another restaurant" do
-    redemption = FactoryGirl.create :redemption, user_id: @bence.id, reward_id: @other_reward.id, redemption_status: false
+    @other_restaurant.redeem_reward(@bence, @other_reward)
     assert_equal @generic_number*12, @restaurant.points(@bence)
     assert_equal 0, @other_restaurant.points(@bence)
   end

@@ -10,11 +10,10 @@ class Restaurant < ApplicationRecord
   def points(user)
     shouts = Shout.all.where("user_id = ? AND restaurant_id = ?", user.id, self.id)
     points = 0
+
     shouts.each do |shout|
       points += Shout.points(shout) # positive points from shouts
-
     end
-
 
     user.rewards.each do |reward|
       if reward.restaurant_id == self.id
@@ -23,6 +22,15 @@ class Restaurant < ApplicationRecord
     end
 
     points
+  end
+
+  def redeem_reward(user, reward)
+    if self.points(user) >= reward.point_value
+      user.rewards << reward
+      # flash[:notice] = "Redeemed a reward!"
+    # else
+      # flash[:notice] = "Reward could not be redeemed."
+    end
   end
 
   def redeemed_points(user)
@@ -35,6 +43,6 @@ class Restaurant < ApplicationRecord
     points
   end
 
-  
+
 
 end
