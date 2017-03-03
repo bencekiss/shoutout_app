@@ -22,7 +22,7 @@ $(document).on("turbolinks:load",function(){
     }).done(function(data){
 
       console.log(data);
-      // location.reload()
+      location.pathname = "users/" + user_id
     }).fail(function(){
       console.log("Failed");
     });
