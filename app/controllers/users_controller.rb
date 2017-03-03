@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       current_user.rewards << @reward
       redirect_to user_path(current_user.id)
       respond_to do |format|
-        format.html 
+        format.html
       end
     end
 
