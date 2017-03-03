@@ -33,6 +33,7 @@ class UsersController < ApplicationController
         format.json do
           render json: @reward
         end
+
       end
     end
 
