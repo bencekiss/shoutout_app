@@ -21,9 +21,8 @@ $(document).on("turbolinks:load",function(){
       dataType:"html"
 
     }).done(function(data){
-
       console.log(data);
-
+      window.location.pathname = "/users/" + user_id;
     }).fail(function(){
       console.log("Failed");
     });
