@@ -8,8 +8,8 @@ $(document).on("turbolinks:load",function(){
   });
   $(".redeem-button").on('click', function(e){
     e.stopPropagation();
-    var user_id = $(".hidden-user").val();
-    var reward_id = $(".hidden-reward").val();
+    var user_id = $(this).children(".hidden-user").val();
+    var reward_id = $(this).children(".hidden-reward").val();
     $.ajax({
       url:"/users/"+ user_id,
       method:"POST",
@@ -18,12 +18,11 @@ $(document).on("turbolinks:load",function(){
         "user_id": user_id,
         "id": user_id
       },
-      dataType:"html"
-
+      dataType:"json"
     }).done(function(data){
 
       console.log(data);
-
+      // location.reload()
     }).fail(function(){
       console.log("Failed");
     });
