@@ -26,10 +26,15 @@ class UsersController < ApplicationController
     if params[:reward_id]
       flash[:notice] = "Redeemed a reward!"
       @reward = Reward.find(params[:reward_id])
+      
       current_user.rewards << @reward
-      redirect_to user_path(current_user.id)
+      # redirect_to user_path(current_user.id)
       respond_to do |format|
         format.html
+        format.json do
+          render json: @reward
+        end
+
       end
     end
 
