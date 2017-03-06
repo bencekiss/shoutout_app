@@ -41,10 +41,5 @@ class Restaurant < ApplicationRecord
     end
     points
   end
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> master
 end

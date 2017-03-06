@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302205923) do
+ActiveRecord::Schema.define(version: 20170306194654) do
 
   create_table "redemptions", force: :cascade do |t|
     t.integer  "user_id"
@@ -64,6 +64,11 @@ ActiveRecord::Schema.define(version: 20170302205923) do
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.string   "avatar"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "profile_image"
+    t.string   "t_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
   end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/auth/:provider/callback', to: 'user_sessions#create'
   root "users#index"
   resources :users do
     resources :shouts
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   post '/my_restaurants' => "users#change_redemption_status", as: :redeem_me
   post '/restaurants/:restaurant_id/rewards/:id' => "rewards#toggle_reward", as: :toggle_reward
   post '/users/:id' => "users#show"
+
 end
