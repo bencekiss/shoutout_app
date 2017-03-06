@@ -22,18 +22,22 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = current_user
     if params[:reward_id]
-      flash[:notice] = "Redeemed a reward!"
       @reward = Reward.find(params[:reward_id])
+<<<<<<< HEAD
       # byebug
       current_user.rewards << @reward
+=======
+>>>>>>> fdce87feeb57b8902e786d3ea1cbeecf82e5ad09
       respond_to do |format|
         format.html
         format.json do
-          render json: @reward
+          if Restaurant.find(@reward.restaurant_id).redeem_reward(@user, @reward)
+            flash[:notice] = "You redeemed #{@reward.name.upcase}!"
+            render json: @reward
+          end
         end
-
       end
     end
 

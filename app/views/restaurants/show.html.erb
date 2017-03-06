@@ -17,22 +17,22 @@
   </div>
 
   <% @restaurant.rewards.each do |reward| %>
-  <% if @restaurant.owner_id == current_user.id || reward.active %>
-    <div class="reward-button">
-      <p> <strong><%= reward.name %></strong>  </p>
-      <p>Point Value: <%= reward.point_value %></p>
-      <div class="reward-modal">
-        <p> <strong><%= reward.name %></strong>  </p>
-        <p>Point Value: <%= reward.point_value %></p>
-        <p>Description: <%= reward.description %></p>
-        <p>Enter user_points later</p>
-        <button class= "redeem-button" type="button" name="button">Redeem It!
-          <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
-          <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
-        </button>
-        <div class="close">X</div>
-      </div>
-    </div>
+ <% if @restaurant.owner_id == current_user.id || reward.active %>
+   <div class="reward-button">
+     <p> <strong><%= reward.name %></strong>  </p>
+     <p>Point Value: <em class="reward-point"> <%= reward.point_value %>  </em> </p>
+     <div class="reward-modal">
+       <p> <strong><%= reward.name %></strong>  </p>
+       <p>Point Value: <em class = "reward-point"> <%= reward.point_value %> </em> </p>
+       <p>Description: <%= reward.description %></p>
+       <p>Enter user_points later</p>
+       <button class= "redeem-button" type="button" name="button">Redeem It!
+         <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
+         <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
+       </button>
+       <div class="close">X</div>
+     </div>
+   </div>
     <% if @restaurant.owner_id == current_user.id %>
       <p>Active: <%= reward.active %></p>
       <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
