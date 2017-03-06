@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class ShoutTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "shout can be made" do
+    FactoryGirl.create :shout
+    assert_equal 1, Shout.all.count
+  end
 end

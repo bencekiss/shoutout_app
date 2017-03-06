@@ -26,6 +26,12 @@ class Restaurant < ApplicationRecord
     points
   end
 
+  def redeem_reward(user, reward)
+    if self.points(user) >= reward.point_value
+      user.rewards << reward
+    end
+  end
+
   def redeemed_points(user)
     points = 0
     user.rewards.each do |reward|
@@ -35,4 +41,10 @@ class Restaurant < ApplicationRecord
     end
     points
   end
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master
 end
