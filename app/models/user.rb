@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  authenticates_with_sorcery!
+  # authenticates_with_sorcery!
 
   has_many :shouts
   has_many :owned_restaurants, class_name: "Restaurant", foreign_key: "owner_id"
@@ -13,4 +13,16 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
   mount_uploader :avatar, AvatarUploader
+
+  def self.find_or_create_from_auth_hash(auth_hash)
+    #going to look up the user, or create them
+    user =  where(provider: auth_hash[:provider], uid: auth_hash[:uid]).first_or_create
+    user.update(
+      t_name: auth_hash[:info][:name],
+      profile_image: auth_hash[:info][:image],
+      token: auth_hash.credentials.token,
+      secret: auth_hash.credentials.secret
+    )
+    user
+  end
 end

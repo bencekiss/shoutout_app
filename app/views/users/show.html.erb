@@ -2,6 +2,9 @@
 <p><%= @user.email %></p>
 <%= image_tag @user.avatar.profile.url %><br>
 
+<% if flash.any? %>
+<%= flash %>
+<% end %>
 
 
 <div class="pending">

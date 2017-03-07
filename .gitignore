@@ -23,3 +23,8 @@
 
 # ignore the uploaded avatar pictures
 /public/uploads
+
+#ignore the application.yml
+application.yml
+
+# Ignore application configuration
