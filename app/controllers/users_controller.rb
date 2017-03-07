@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # byebug
     if @user.save
-      auto_login(@user) #sorcery
+      # auto_login(@user) #sorcery
       redirect_to root_url
     else
       flash[:alert] = "couldnt create user"
