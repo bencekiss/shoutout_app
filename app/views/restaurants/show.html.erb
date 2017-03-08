@@ -18,7 +18,7 @@
 
   <% @restaurant.rewards.each do |reward| %>
  <% if @restaurant.owner_id == current_user.id || reward.active %>
-   <div class="reward-button">
+   <div class="reward-button on-button">
      <p> <strong><%= reward.name %></strong>  </p>
      <p>Point Value: <em class="reward-point"> <%= reward.point_value %>  </em> </p>
      <div class="reward-modal">
