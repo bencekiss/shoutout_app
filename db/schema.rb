@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170307231933) do
 
   create_table "authentications", force: :cascade do |t|
@@ -20,6 +21,9 @@ ActiveRecord::Schema.define(version: 20170307231933) do
     t.datetime "updated_at", null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
+=======
+ActiveRecord::Schema.define(version: 20170308030623) do
+>>>>>>> 0658913191102303d06212b664f2526941e39dca
 
   create_table "redemptions", force: :cascade do |t|
     t.integer  "user_id"
@@ -65,14 +69,10 @@ ActiveRecord::Schema.define(version: 20170307231933) do
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.string   "remember_me_token"
-    t.datetime "remember_me_token_expires_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "avatar"
+<<<<<<< HEAD
     t.string   "uid"
     t.string   "token"
     t.string   "secret"
@@ -81,6 +81,14 @@ ActiveRecord::Schema.define(version: 20170307231933) do
     t.string   "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
+=======
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "profile_image"
+>>>>>>> 0658913191102303d06212b664f2526941e39dca
   end
 
 end

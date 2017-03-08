@@ -32,10 +32,16 @@ end
   User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
+<<<<<<< HEAD
     email: Faker::Internet.free_email,
     password: 'password',
     password_confirmation: 'password',
     provider: 'twitter'
+=======
+    # email: Faker::Internet.free_email,
+    # password: 'password',
+    # password_confirmation: 'password'
+>>>>>>> 0658913191102303d06212b664f2526941e39dca
     )
   5.times do
     Shout.create!(
