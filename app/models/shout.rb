@@ -4,6 +4,13 @@ class Shout < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
 
+  before_create :post_to_twitter
+
+  def post_to_twitter
+    body = twitter_text + " #ShoutOut ##{Restaurant.find(self.restaurant_id).name}"
+    user.twitter.update_with_media(body, File.new())
+  end
+
   def self.points(shout)
     (shout.retweets * RETWEET_CONSTANT) + (shout.favourites * FAVORITE_CONSTANT)
   end

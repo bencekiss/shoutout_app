@@ -9,7 +9,7 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-consumer_key: "jixVANGwRrDFksjkOoSalUbVV"
-consumer_secret: "zpuHL5NZG27Ijz8KjSA6Bl2ffqBri0G7mCKWMv5mUd89on41qg"
+consumer_key: "IGCZTuqJIV06xWeoZ9dVRTzwx"
+consumer_secret: "Oqll8z0qIgmTZgL0HY3ZtUGrZhgR5R4CikXaXQ999nq9ViaAdg"
 access_token: "835614186763874304-ioFEwOv85AMO3acWekFQTv7cAzOUGS3"
 access_token_secret:	"xJeaRjHhqIeEgmlj5xyCoOaWBceJWlXN8VtT1jXfn6iIp"

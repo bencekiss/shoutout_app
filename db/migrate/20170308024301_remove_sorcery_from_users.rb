@@ -5,5 +5,8 @@ class RemoveSorceryFromUsers < ActiveRecord::Migration[5.0]
     remove_column :users, :salt, :string
     remove_column :users, :crypted_password, :string
     remove_column :users, :email, :string
+    remove_column :users, :first_name, :string
+    remove_column :users, :last_name, :string
+    remove_column :users, :username, :string
   end
 end

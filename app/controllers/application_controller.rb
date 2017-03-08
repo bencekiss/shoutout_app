@@ -3,8 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :require_login
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id]
+      unless User.where(id: session[:user_id]).empty?
+        @current_user ||= User.find(session[:user_id])
+      end
+    end
   end
+
   helper_method :current_user
 
   private

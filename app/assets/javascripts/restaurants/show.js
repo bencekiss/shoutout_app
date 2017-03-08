@@ -2,15 +2,15 @@ $(document).on("turbolinks:load",function(){
 
   var userPoints = parseFloat($(".points-remaining p strong").text());
   for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
-    var points = $(".reward-button > p em.reward-point")[i].innerText;
-    var rewardPoints = parseFloat(points);
+    var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
+    var rewardButton = $(".reward-button")[i];
+    // debugger;
     if (userPoints < rewardPoints){
-      var reward = $(".reward-button")[i];
-      $(reward).addClass("nope");
-      $(reward).removeClass("reward-button");
+      $(rewardButton).addClass("nope");
+      $(rewardButton).removeClass("on-button");
     }};
 
-  $(".reward-button").on('click',function(e){
+  $(".on-button").on('click',function(e){
     $(this).children(".reward-modal").fadeIn("slow");
   });
   $(".close").on("click",function(e){

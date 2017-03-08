@@ -14,7 +14,9 @@
   <body>
     <%= link_to 'Home', root_path %> |
     <% if current_user %>
+
       <%= "Signed in as #{current_user.name}" %> |
+
       <%= link_to ' Log Out ', :logout, method: :post %> <br>
       <%= link_to ' My data ', user_path(current_user.id) %> |
       <%= link_to "Add a restaurant", new_restaurant_path %>

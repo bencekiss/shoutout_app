@@ -9,7 +9,7 @@ class ShoutsController < ApplicationController
     @shout = Shout.new(shout_params)
     @shout.retweets = 0
     @shout.favourites = 0
-    $client.update(shout_params[:twitter_text])
+    @shout.twitter_id
     if @shout.save
       flash[:notice] = "Successfully created SHOUT"
       redirect_to user_url(current_user.id)
