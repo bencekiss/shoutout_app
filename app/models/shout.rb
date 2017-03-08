@@ -8,7 +8,7 @@ class Shout < ApplicationRecord
 
   def post_to_twitter
     body = twitter_text + " #ShoutOut ##{Restaurant.find(self.restaurant_id).name}"
-    user.twitter.update_with_media(body, File.new())
+    user.twitter.update_with_media(body, File.new(self.shout_image.file.file))
   end
 
   def self.points(shout)
