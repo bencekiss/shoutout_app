@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i(index new create show)
 
   def index
+    params[:provider] = "twitter"
     @users = User.all
     @restaurants = Restaurant.all
   end
