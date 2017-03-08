@@ -39,7 +39,10 @@ gem 'cocoon'
 gem 'carrierwave', '~>1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'twitter'
-gem 'twitter'
+gem 'bourbon'
+gem 'neat'
+
+
 
 
 
@@ -67,4 +70,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'rails-erd'
-gem 'omniauth-twitter'
