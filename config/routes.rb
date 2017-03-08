@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
   root "users#index"
   resources :users do
     resources :shouts
@@ -19,9 +19,11 @@ Rails.application.routes.draw do
   post '/restaurants/:restaurant_id/rewards/:id' => "rewards#toggle_reward", as: :toggle_reward
   post '/users/:id' => "users#show"
 
+
   # sorcery external login
   # config/routes.rb
 post "auth/twitter/callback" => "oauths#callback"
 get "auth/twitter/callback" => "oauths#callback" # for use with Github, Facebook
 get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
 end
