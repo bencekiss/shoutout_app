@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   post '/my_restaurants' => "users#change_redemption_status", as: :redeem_me
   post '/restaurants/:restaurant_id/rewards/:id' => "rewards#toggle_reward", as: :toggle_reward
   post '/users/:id' => "users#show"
+
+  # sorcery external login
+  # config/routes.rb
+post "auth/twitter/callback" => "oauths#callback"
+get "auth/twitter/callback" => "oauths#callback" # for use with Github, Facebook
+get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 end

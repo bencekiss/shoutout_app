@@ -1,5 +1,11 @@
 class User < ApplicationRecord
-  authenticates_with_sorcery!
+  attr_accessor :email, :password, :password_confirmation, :authentication_attributes
+  authenticates_with_sorcery! do |config|
+    config.authentications_class = Authentication
+  end
+
+  has_many :authentications, :dependent => :destroy
+  accepts_nested_attributes_for :authentications
 
   has_many :shouts
   has_many :owned_restaurants, class_name: "Restaurant", foreign_key: "owner_id"

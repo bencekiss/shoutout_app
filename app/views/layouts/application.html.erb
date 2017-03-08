@@ -22,6 +22,7 @@
         | <%= link_to "My restaurants", my_restaurants_path %>
       <% end %>
     <% else %>
+      <%= link_to 'Login with TWITTER', auth_at_provider_path(:provider => :twitter) %>  |
       <%= link_to ' Sign Up ', new_user_path %> |
       <%= link_to ' Log In ', new_user_session_path %>
     <% end %>
@@ -36,6 +37,6 @@
     <% end %>
 
     <%= yield %>
-  
+
   </body>
 </html>
