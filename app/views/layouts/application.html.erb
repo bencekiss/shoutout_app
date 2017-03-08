@@ -13,6 +13,7 @@
 
   <body>
     <%= link_to 'Home', root_path %> |
+    <%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %>
     <% if current_user %>
       <%= "Signed in as " + current_user.first_name %> |
       <%= link_to ' Log Out ', :logout, method: :post %> <br>
@@ -36,6 +37,6 @@
     <% end %>
 
     <%= yield %>
-  
+
   </body>
 </html>

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306194654) do
+ActiveRecord::Schema.define(version: 20170307231933) do
+
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  end
 
   create_table "redemptions", force: :cascade do |t|
     t.integer  "user_id"
@@ -69,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170306194654) do
     t.string   "secret"
     t.string   "profile_image"
     t.string   "t_name"
+    t.string   "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
   end
