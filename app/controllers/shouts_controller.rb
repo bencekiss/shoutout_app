@@ -1,12 +1,16 @@
 class ShoutsController < ApplicationController
   before_action :require_login
+  # before_action :post_to_twitter, only: [:create]
 
   def new
     @shout = Shout.new
   end
 
   def create
+
     @shout = Shout.new(shout_params)
+    @shout.twitter_id = @shout.post_to_twitter
+    # byebug
     @shout.retweets = 0
     @shout.favourites = 0
     @shout.twitter_id

@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170308030623) do
 
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  end
+
   create_table "redemptions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "reward_id"
@@ -41,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170308030623) do
   end
 
   create_table "shouts", force: :cascade do |t|
-    t.integer  "twitter_id"
+    t.string   "twitter_id"
     t.string   "twitter_text"
     t.string   "twitter_image"
     t.integer  "retweets"
