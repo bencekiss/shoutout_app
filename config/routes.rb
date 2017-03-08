@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/restaurants/:restaurant_id/rewards/:id' => "rewards#toggle_reward", as: :toggle_reward
   post '/users/:id' => "users#show"
 
+  get '/auth/:provider/callback' => "user_sessions#create"
+  get '/auth/:provider' => 'user_sessions#new', as: :twitter_signin
 
-  get '/auth/twitter/callback' => 'user_sessions#create'
 end
