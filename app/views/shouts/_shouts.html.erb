@@ -1,4 +1,4 @@
-  <h1>Shoutouts for <%= @user.first_name %></h1>
+  <h1>Shoutouts for <%= @user.name %></h1>
 <% @shouted_resto.each do |resto| %>
 
   <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>

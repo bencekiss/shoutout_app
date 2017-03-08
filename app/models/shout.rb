@@ -7,7 +7,8 @@ class Shout < ApplicationRecord
   before_create :post_to_twitter
 
   def post_to_twitter
-    user.twitter.update(twitter_text)
+    body = twitter_text + " #ShoutOut ##{Restaurant.find(self.restaurant_id).name}"
+    user.twitter.update_with_media(body, File.new())
   end
 
   def self.points(shout)
