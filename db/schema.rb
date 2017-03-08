@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302205923) do
+ActiveRecord::Schema.define(version: 20170308044250) do
 
   create_table "redemptions", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,18 +54,15 @@ ActiveRecord::Schema.define(version: 20170302205923) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.string   "remember_me_token"
-    t.datetime "remember_me_token_expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "username"
     t.string   "avatar"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "secret"
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

@@ -28,23 +28,23 @@ Shout.destroy_all
   end
 end
 
-10.times do
-  User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.free_email,
-    password: 'password',
-    password_confirmation: 'password'
-    )
-  5.times do
-    Shout.create!(
-    twitter_id: rand(10).ceil,
-    twitter_text: Faker::Lorem.sentence,
-    twitter_image: 'http://lorempixel.com/300/300/food/',
-    retweets: rand(100),
-    favourites: rand(100),
-    user_id: rand(10).ceil,
-    restaurant_id: rand(25).ceil,
-    )
-  end
-end
+# 10.times do
+#   User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: Faker::Internet.free_email,
+#     password: 'password',
+#     password_confirmation: 'password'
+#     )
+#   5.times do
+#     Shout.create!(
+#     twitter_id: rand(10).ceil,
+#     twitter_text: Faker::Lorem.sentence,
+#     twitter_image: 'http://lorempixel.com/300/300/food/',
+#     retweets: rand(100),
+#     favourites: rand(100),
+#     user_id: rand(10).ceil,
+#     restaurant_id: rand(25).ceil,
+#     )
+#   end
+# end
