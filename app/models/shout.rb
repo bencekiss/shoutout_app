@@ -34,28 +34,14 @@ class Shout < ApplicationRecord
     begin
       @user_tweet= user.twitter.status(shout.twitter_id)
     rescue
-      puts "test1"
-      raise # Reraise exception
+
     ensure
-      if @user_tweet.retweeted_status.class == Twitter::NullObject
+
+
         retweets_from_twitter = @user_tweet.retweet_count
         favorites_from_twitter = @user_tweet.favorite_count
         shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
         return (retweets_from_twitter * RETWEET_CONSTANT) + (favorites_from_twitter * FAVORITE_CONSTANT)
-      else
-        id = user.twitter.status(shout.twitter_id).retweeted_status.id
-        retweets_from_twitter = user.twitter.status(id).retweet_count
-        favorites_from_twitter = user.twitter.status(id).favorite_count
-        shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
-        return (retweets_from_twitter * RETWEET_CONSTANT + favorites_from_twitter * FAVORITE_CONSTANT)
       end
     end
-  end
-
-
-
-
-
-
-
 end
