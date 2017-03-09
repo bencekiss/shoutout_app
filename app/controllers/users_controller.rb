@@ -27,8 +27,6 @@ class UsersController < ApplicationController
     @user = current_user
     if params[:reward_id]
       @reward = Reward.find(params[:reward_id])
-      # byebug
-      current_user.rewards << @reward
 
       respond_to do |format|
         format.html
@@ -45,7 +43,7 @@ class UsersController < ApplicationController
     @redemptions = @user.redemptions
     @shouts = Shout.all.where(user_id: @user.id)
     @shouted_resto = []
-    
+
     @shouts.each do |shout|
       if !(@shouted_resto.include?(Restaurant.find(shout.restaurant_id)))
         @shouted_resto << Restaurant.find(shout.restaurant_id)

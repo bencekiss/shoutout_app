@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
   def show
     @user = current_user
     @shout = Shout.new
-    
+
     @restaurant = Restaurant.find(params[:id])
     @points = @restaurant.points(current_user)
     @available_rewards = Reward.all.where("restaurant_id = ? AND point_value <= ?", @restaurant.id, @points)
