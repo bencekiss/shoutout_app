@@ -1,43 +1,51 @@
+<div class="modal">
   <h1><%= @restaurant.name %></h1>
 
   <img src ="<%= @restaurant.rest_image %>">
+  <% if @restaurant.owner_id != current_user.id %>
+    <div class="form shout-form">
+      <%= render 'shouts/resto_shout' %>
+    </div>
+    <div class="field points-remaining">
+      <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
+    </div>
+  <% else %>
+    <h2>These are your restaurant's rewards.</h2>
+  <% end %>
 
-  <%= render 'shouts/resto_shout' %>
-
-
-  <div class="field points-remaining">
-    <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
-  </div>
-
-  
-
+<div class="rewards">
   <% @restaurant.rewards.each do |reward| %>
- <% if @restaurant.owner_id == current_user.id || reward.active %>
-   <div class="reward-button on-button">
-     <p> <strong><%= reward.name %></strong>  </p>
-     <p>Point Value: <em class="reward-point"> <%= reward.point_value %>  </em> </p>
-     <div class="reward-modal">
-       <p> <strong><%= reward.name %></strong>  </p>
-       <p>Point Value: <em class = "reward-point"> <%= reward.point_value %> </em> </p>
-       <p>Description: <%= reward.description %></p>
-       <p>Enter user_points later</p>
-       <button class= "redeem-button" type="button" name="button">Redeem It!
-         <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
-         <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
-       </button>
-       <div class="close">X</div>
-     </div>
-   </div>
-    <% if @restaurant.owner_id == current_user.id %>
-      <p>Active: <%= reward.active %></p>
-      <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
-      <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
-      <% if reward.active %>
-        <%= link_to "Hide Reward", toggle_reward_path(@restaurant, reward), method: :post %>
-      <% else %>
-        <%= link_to "Activate Reward", toggle_reward_path(@restaurant, reward), method: :post %>
-      <% end %>
+  <div class="reward-button-box">
+    <% if @restaurant.owner_id == current_user.id || reward.active %>
+       <div class="reward-button on-button">
+         <p> <strong><%= reward.name %></strong>  </p>
+         <p>Point Value: <em class="reward-point"> <%= reward.point_value %>  </em> </p>
+         <% if @restaurant.owner_id == current_user.id %>
+           <p>Active: <%= reward.active %></p>
+         <% end %>
+         <div class="reward-modal">
+           <p> <strong><%= reward.name %></strong>  </p>
+           <p>Point Value: <em class = "reward-point"> <%= reward.point_value %> </em> </p>
+           <p>Description: <%= reward.description %></p>
+           <p>Enter user_points later</p>
+           <button class= "redeem-button" type="button" name="button">Redeem It!
+             <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
+             <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
+           </button>
+           <div class="close">X</div>
+         </div>
+        <% end %>
+      </div>
+    </div>
+        <% if @restaurant.owner_id == current_user.id %>
+          <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
+          <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
+        <% if reward.active %>
+          <%= link_to "Hide Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+        <% else %>
+          <%= link_to "Activate Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+        <% end %>
     <% end %>
   <% end %>
-
-  <% end %>
+</div>
+</div>

@@ -47,9 +47,11 @@ $(document).on("turbolinks:load",function(){
 
   $('#logo-button').on('mousedown', function() {
     $(this).css("box-shadow", "inset 10px 10px 10px black");
+    $('#rick').css("display", "block")
   });
   $('#logo-button').on('mouseup', function() {
     $(this).css("box-shadow", "10px 10px 10px black");
+    $('#rick').css("display", "none")
   });
 
 });

@@ -13,23 +13,23 @@
   </head>
 
   <body>
-    <%= link_to 'Home', root_path %> |
-    <% if current_user %>
-
-      <%= "Signed in as #{current_user.name}" %> |
-
-      <%= link_to ' Log Out ', :logout, method: :post %> <br>
-      <%= link_to ' My data ', user_path(current_user.id) %> |
-      <%= link_to "Add a restaurant", new_restaurant_path %>
-      <% if !current_user.owned_restaurants.empty? %>
-        | <%= link_to "My restaurants", my_restaurants_path %>
+    <%# if @do_not_show_header %>
+      <% if current_user %>
+        <nav>
+          <div id="logo">ShoutOut!</div>
+          <!-- <div class="twitter-profile"> -->
+            <%= image_tag @user.profile_image, class: "avatar" %><p>Signed in as <%= @user.name %></p>
+          <!-- </div> -->
+          <!-- <div class="logout"> -->
+          <% if !current_user.owned_restaurants.empty? %>
+            | <%= link_to "My restaurants", my_restaurants_path %>
+          <% end %>
+            | <%= link_to ' Log Out ', :logout, method: :post %>
+          <!-- </div> -->
+        </nav>
+        <%# link_to "Add a restaurant", new_restaurant_path %>
       <% end %>
-    <% else %>
-
-      <%= link_to ' Log In With Twitter', twitter_signin_path("twitter") %>
-
-    <% end %>
-
+    <%# end %>
 
     <% if flash.any? %>
       <div class="flash">

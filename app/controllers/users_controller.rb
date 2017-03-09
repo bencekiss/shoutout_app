@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i(index new create show)
 
   def index
-
+    @do_not_show_header = true
     params[:provider] = "twitter"
     @users = User.all
     @restaurants = Restaurant.all
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @redemptions = @user.redemptions
     @shouts = Shout.all.where(user_id: @user.id)
     @shouted_resto = []
-    
+
     @shouts.each do |shout|
       if !(@shouted_resto.include?(Restaurant.find(shout.restaurant_id)))
         @shouted_resto << Restaurant.find(shout.restaurant_id)
