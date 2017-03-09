@@ -15,7 +15,7 @@ $(document).on("turbolinks:load",function(){
   });
   $(".close").on("click",function(e){
     e.stopPropagation();
-    $(".reward-modal").fadeOut("slow");
+    $(".modal").fadeOut("slow");
   });
 
   $(".nope").on("click", function(e){
@@ -53,5 +53,9 @@ $(document).on("turbolinks:load",function(){
     $(this).css("box-shadow", "10px 10px 10px black");
     $('#rick').css("display", "none")
   });
+
+  $('#call-shout-modal').on('click', function() {
+    $('.modal').fadeIn();
+  })
 
 });
