@@ -12,7 +12,7 @@ class Restaurant < ApplicationRecord
     points = 0
 
     shouts.each do |shout|
-      points += Shout.points(shout) # positive points from shouts
+      points += Shout.points(shout, user) # positive points from shouts
     end
 
     user.rewards.each do |reward|

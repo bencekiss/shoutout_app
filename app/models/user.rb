@@ -19,7 +19,7 @@ class User < ApplicationRecord
     user = where(provider: auth_hash[:provider], uid: auth_hash[:uid]).first_or_create
     # byebug
     user.update(
-    name: "@" + auth_hash.info.nickname,
+    name: auth_hash.info.nickname,
     profile_image: auth_hash.info.image,
     token: auth_hash.credentials.token,
     secret: auth_hash.credentials.secret
@@ -40,7 +40,14 @@ class User < ApplicationRecord
 
   def refresh
     self.shouts.each do |shout|
-      self.twitter.search(shout.twitter_id)
+      if self.twitter.status(shout.twitter_id)
+        new_retweets= self.twitter.status(shout.twitter_id).retweet_count
+        new_favs = self.twitter.status(shout.twitter_id).favorite_count
+        shout.refresh(new_retweets, new_favs)
+        # active = true
+        # else
+        # active = false
+      end
     end
   end
 end

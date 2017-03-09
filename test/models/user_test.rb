@@ -28,7 +28,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "David can earn points from his shouts" do
-    assert_equal 12, Shout.points(@shout)
+    assert_equal 12, Shout.points(@shout, @david)
   end
 
   test "David can redeem reward 1" do
