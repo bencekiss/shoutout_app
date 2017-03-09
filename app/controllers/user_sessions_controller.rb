@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
     # byebug
     current_user = @user
     session[:user_id] = @user.id
-    redirect_to root_path
+    redirect_to user_path(@user)
   end
 
   def destroy
