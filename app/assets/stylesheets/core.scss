@@ -7,7 +7,24 @@
 }
 
 body {
-  background: $yellow;
+  background: $primary;
+}
+
+nav {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+  background: $secondary;
+
+  p, img, a {
+    display: inline;
+  }
+}
+
+textarea, input, select {
+  padding: 5px;
+  font-size: 1.2em;
 }
 
 // body:hover {

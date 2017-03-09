@@ -14,17 +14,20 @@
 
   <body>
     <%# if @do_not_show_header %>
-            <% if current_user %>
-        <div class="twitter-profile">
-          <%= image_tag @user.profile_image, class: "greeting" %><p>Signed in as <%= @user.name %></p>
-        </div>
-        <div class="logout">
-          <%= link_to ' Log Out ', :logout, method: :post %>
-        </div>
+      <% if current_user %>
+        <nav>
+          <div id="logo">ShoutOut!</div>
+          <!-- <div class="twitter-profile"> -->
+            <%= image_tag @user.profile_image, class: "avatar" %><p>Signed in as <%= @user.name %></p>
+          <!-- </div> -->
+          <!-- <div class="logout"> -->
+          <% if !current_user.owned_restaurants.empty? %>
+            | <%= link_to "My restaurants", my_restaurants_path %>
+          <% end %>
+            | <%= link_to ' Log Out ', :logout, method: :post %>
+          <!-- </div> -->
+        </nav>
         <%# link_to "Add a restaurant", new_restaurant_path %>
-        <% if !current_user.owned_restaurants.empty? %>
-        | <%= link_to "My restaurants", my_restaurants_path %>
-        <% end %>
       <% end %>
     <%# end %>
 
