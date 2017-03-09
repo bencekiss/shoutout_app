@@ -33,15 +33,18 @@ class Shout < ApplicationRecord
     # whether this is a temporary solution or not, we should explore this question further, but it's currently  a good work around.
     begin
       @user_tweet= user.twitter.status(shout.twitter_id)
-    rescue
+      retweets_from_twitter = @user_tweet.retweet_count
+      favorites_from_twitter = @user_tweet.favorite_count
+      shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
+      # return (retweets_from_twitter * RETWEET_CONSTANT) + (favorites_from_twitter * FAVORITE_CONSTANT)
+      return (shout.retweets * RETWEET_CONSTANT) + (shout.favourites * FAVORITE_CONSTANT)
 
-    ensure
+    rescue # do this if there was an error
+      return (shout.retweets * RETWEET_CONSTANT) + (shout.favourites * FAVORITE_CONSTANT)
+    ensure # do this always
 
 
-        retweets_from_twitter = @user_tweet.retweet_count
-        favorites_from_twitter = @user_tweet.favorite_count
-        shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
-        return (retweets_from_twitter * RETWEET_CONSTANT) + (favorites_from_twitter * FAVORITE_CONSTANT)
+
       end
     end
 end
