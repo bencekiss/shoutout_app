@@ -25,17 +25,30 @@ class Shout < ApplicationRecord
   def self.points(shout, user)
     # (shout.retweets * RETWEET_CONSTANT) + (shout.favourites * FAVORITE_CONSTANT)
 
-    if user.twitter.status(shout.twitter_id).retweeted_status.class == Twitter::NullObject
-      retweets_from_twitter = user.twitter.status(shout.twitter_id).retweet_count
-      favorites_from_twitter = user.twitter.status(shout.twitter_id).favorite_count
-      shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
-      return (retweets_from_twitter * RETWEET_CONSTANT) + (favorites_from_twitter * FAVORITE_CONSTANT)
-    else
-      id = user.twitter.status(shout.twitter_id).retweeted_status.id
-      retweets_from_twitter = user.twitter.status(id).retweet_count
-      favorites_from_twitter = user.twitter.status(id).favorite_count
-      shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
-      return (retweets_from_twitter * RETWEET_CONSTANT + favorites_from_twitter * FAVORITE_CONSTANT)
+    # My understanding of this is as follows:
+    # When you delete a tweet, that ID no longer exists within twitter, yet we're still looking for it through our points array
+    # To bypass this, the 'begin' 'rescue' 'ensure' method below will 1. Check for a user_tweet and if it returns back <null> will
+    # be "looked over" It prevents an error message from occuring and will continue to do code lines 38-48 ALWAYS. If I placed that block
+    # of code within 'rescue' it will error at points calculation due to a twitter::tweet can't be coerced into a fixnum error
+    # whether this is a temporary solution or not, we should explore this question further, but it's currently  a good work around.
+    begin
+      @user_tweet= user.twitter.status(shout.twitter_id)
+    rescue
+      puts "test1"
+      raise # Reraise exception
+    ensure
+      if @user_tweet.retweeted_status.class == Twitter::NullObject
+        retweets_from_twitter = @user_tweet.retweet_count
+        favorites_from_twitter = @user_tweet.favorite_count
+        shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
+        return (retweets_from_twitter * RETWEET_CONSTANT) + (favorites_from_twitter * FAVORITE_CONSTANT)
+      else
+        id = user.twitter.status(shout.twitter_id).retweeted_status.id
+        retweets_from_twitter = user.twitter.status(id).retweet_count
+        favorites_from_twitter = user.twitter.status(id).favorite_count
+        shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
+        return (retweets_from_twitter * RETWEET_CONSTANT + favorites_from_twitter * FAVORITE_CONSTANT)
+      end
     end
   end
 
