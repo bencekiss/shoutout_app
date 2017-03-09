@@ -38,16 +38,5 @@ class User < ApplicationRecord
   end
 
 
-  def refresh
-    self.shouts.each do |shout|
-      if self.twitter.status(shout.twitter_id)
-        new_retweets= self.twitter.status(shout.twitter_id).retweet_count
-        new_favs = self.twitter.status(shout.twitter_id).favorite_count
-        shout.refresh(new_retweets, new_favs)
-        # active = true
-        # else
-        # active = false
-      end
-    end
-  end
+  
 end

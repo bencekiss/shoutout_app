@@ -11,7 +11,7 @@ class ShoutsController < ApplicationController
     @shout = Shout.new(shout_params)
     @shout.twitter_id = @shout.post_to_twitter
 
-    byebug
+    # byebug
     @shout.retweets = 0
     @shout.favourites = 0
 

@@ -20,21 +20,22 @@ class Shout < ApplicationRecord
     t.id
   end
 
-  def refresh(num_retweets, num_favorites)
-    self.update({
-      retweets: num_retweets,
-      favourites: num_favorites
-    })
-  end
+
 
   def self.points(shout, user)
     # (shout.retweets * RETWEET_CONSTANT) + (shout.favourites * FAVORITE_CONSTANT)
 
     if user.twitter.status(shout.twitter_id).retweeted_status.class == Twitter::NullObject
-      return ((user.twitter.status(shout.twitter_id).retweet_count) * RETWEET_CONSTANT) + (user.twitter.status(shout.twitter_id).favorite_count * FAVORITE_CONSTANT)
+      retweets_from_twitter = user.twitter.status(shout.twitter_id).retweet_count
+      favorites_from_twitter = user.twitter.status(shout.twitter_id).favorite_count
+      shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
+      return (retweets_from_twitter * RETWEET_CONSTANT) + (favorites_from_twitter * FAVORITE_CONSTANT)
     else
       id = user.twitter.status(shout.twitter_id).retweeted_status.id
-      return (user.twitter.status(id).retweet_count * RETWEET_CONSTANT + user.twitter.status(id).favorite_count * FAVORITE_CONSTANT)
+      retweets_from_twitter = user.twitter.status(id).retweet_count
+      favorites_from_twitter = user.twitter.status(id).favorite_count
+      shout.update(retweets: retweets_from_twitter, favourites: favorites_from_twitter)
+      return (retweets_from_twitter * RETWEET_CONSTANT + favorites_from_twitter * FAVORITE_CONSTANT)
     end
   end
 

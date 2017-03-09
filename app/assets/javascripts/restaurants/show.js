@@ -18,6 +18,10 @@ $(document).on("turbolinks:load",function(){
     $(".reward-modal").fadeOut("slow");
   });
 
+  $(".nope").on("click", function(e){
+    e.stopPropagation();
+    alert("You don't have enough points to redeem this reward.");
+  });
 
   $(".redeem-button").on('click', function(e){
     e.stopPropagation();
@@ -38,7 +42,6 @@ $(document).on("turbolinks:load",function(){
     }).fail(function(){
       console.log("Failed");
       location.reload();
-      alert("You don't have enough points to redeem this reward.")
     });
   });
 

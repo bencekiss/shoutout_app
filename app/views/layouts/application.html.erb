@@ -24,8 +24,6 @@
         | <%= link_to "My restaurants", my_restaurants_path %>
       <% end %>
     <% else %>
-      <%= link_to ' Sign Up ', new_user_path %> |
-      <%= link_to ' Log In ', new_user_session_path %> |
       <%= link_to ' Log In With Twitter', twitter_signin_path("twitter") %>
     <% end %>
 

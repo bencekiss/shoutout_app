@@ -6,7 +6,7 @@
   <h3>The users at this restaurant:</h3>
   <% redemptions = Redemption.redeemable(restaurant) %>
   <% redemptions.each do |redemption| %>
-    <p><%= User.find(redemption.user_id).first_name %> <%= User.find(redemption.user_id).last_name %> wants to redeem the following reward:</p>
+    <p><%= User.find(redemption.user_id).name %> wants to redeem the following reward:</p>
     <p><%= Reward.find(redemption.reward_id).name %> <%= Reward.find(redemption.reward_id).point_value %></p>
     <p><%= button_to "Redeem", { controller: "users", action: "change_redemption_status", :redemption_id => redemption.id }, method: :post %></p>
   <% end %>

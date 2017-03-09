@@ -9,12 +9,7 @@
     <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
   </div>
 
-  <div class="field redeem-button" id = "redeem">
-    <%= form_tag "/users/#{current_user.id}" %>
-    <%= label_tag "Redeemable rewards" %><br>
-    <%= select_tag "reward_id", options_for_select(@rewards_array) %><br>
-    <%= submit_tag "REDEEM IT!" %>
-  </div>
+  
 
   <% @restaurant.rewards.each do |reward| %>
  <% if @restaurant.owner_id == current_user.id || reward.active %>

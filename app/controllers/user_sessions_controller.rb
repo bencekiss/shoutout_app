@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   def create
 
     @user = User.find_or_create_from_auth_hash(auth_hash)
-    # @user.refresh
+    
     # byebug
     current_user = @user
     session[:user_id] = @user.id
