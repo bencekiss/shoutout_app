@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables';
+
 .field {
   display: block;
   padding: 5px;
@@ -14,4 +16,19 @@
 .actions {
   padding: 10px;
 
+}
+
+.shoutout-box {
+  width: 90%;
+  border: $border;
+  display: inline-block;
+  text-align: center;
+
+  .resto-shoutout-box {
+    width: 40%;
+  }
+
+  .shout {
+    width: 60%;
+  }
 }

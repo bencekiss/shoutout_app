@@ -1,11 +1,10 @@
-<div class="shoutout-box">
-<h1>Shoutouts for <%= @user.name %></h1>
 <% @shouted_resto.each do |resto| %>
   <div class="resto-shoutout-box">
     <div class="resto-info">
       <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>
-      <p>Points at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
-      <p>Points you've redeemed: <%= resto.redeemed_points(@user) %></p>
+      <p>Points you've earned at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
+      <p>Points you've redeemed: <strong><%= resto.redeemed_points(@user) %></strong></p>
+      <%= image_tag resto.rest_image %>
     </div>
   <% @shouts.each do |shout|%>
     <% if shout.restaurant_id == resto.id %>
@@ -17,11 +16,10 @@
       <div class="shout-info">
         <p>Tweet: <%= shout.twitter_text %></p>
         <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
-        <p>ShoutOut points you gained from <%= resto.name %>: <strong><%= Shout.points(shout, @user) %></strong> </p>
+        <p>ShoutOut points you've earned for <%= resto.name %>: <strong><%= Shout.points(shout, @user) %></strong> </p>
       </div>
     </div>
   </div>
     <% end %>
   <% end %>
 <% end %>
-</div>

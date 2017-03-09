@@ -1,5 +1,6 @@
 @import 'variables';
 
+//Initial Settings
 *{
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +11,7 @@ body {
   background: $primary;
 }
 
+//This refers to the top bar.
 nav {
   display: inline-block;
   width: 100%;
@@ -22,11 +24,8 @@ nav {
   }
 }
 
+//This will make all the input fields padded and slightly bigger.
 textarea, input, select {
   padding: 5px;
   font-size: 1.2em;
 }
-
-// body:hover {
-//   background: orange;
-// }

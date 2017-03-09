@@ -21,4 +21,7 @@
 </div>
 
 <!-- This renders the shouts that were made by the user -->
-<%= render '/shouts/shouts' %>
+<div class="shoutout-box">
+  <h1>Shoutouts for <%= @user.name %></h1>
+  <%= render '/shouts/shouts' %>
+</div>
