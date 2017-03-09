@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   def create
 
     @user = User.find_or_create_from_auth_hash(auth_hash)
-    
+
     # byebug
     current_user = @user
     session[:user_id] = @user.id
@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    session[:user_id] = nil
     redirect_to root_url, notice: 'Logged out!'
   end
 

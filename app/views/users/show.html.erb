@@ -1,9 +1,3 @@
-<h1><%= @user.name %></h1>
-
-<%= image_tag @user.profile_image %><br>
-
-
-
 <div class="pending">
   <h3>Pending rewards</h3>
   <% @redemptions.each do |redemption| %>
@@ -21,6 +15,13 @@
   <% end %>
 </div>
 
+<!-- This renders the shout form to make a shout out-->
+<div class="modal">
+  <%= render '/shouts/form' %>
+</div>
 
-<%= render '/shouts/form' %>
-<%= render '/shouts/shouts' %>
+<!-- This renders the shouts that were made by the user -->
+<div class="shoutout-box">
+  <h1>Shoutouts for <%= @user.name %></h1>
+  <%= render '/shouts/shouts' %>
+</div>

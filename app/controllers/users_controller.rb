@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i(index new create show)
 
   def index
-
+    @do_not_show_header = true
     params[:provider] = "twitter"
     @users = User.all
     @restaurants = Restaurant.all
@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     @user = current_user
     if params[:reward_id]
       @reward = Reward.find(params[:reward_id])
+<<<<<<< HEAD
+=======
+      # byebug
+      # current_user.rewards << @reward
+>>>>>>> 124f8d935ba3964817eafef5c520bc4bca7df0e6
 
       respond_to do |format|
         format.html
