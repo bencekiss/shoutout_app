@@ -27,12 +27,6 @@ class UsersController < ApplicationController
     @user = current_user
     if params[:reward_id]
       @reward = Reward.find(params[:reward_id])
-<<<<<<< HEAD
-=======
-      # byebug
-      # current_user.rewards << @reward
->>>>>>> 124f8d935ba3964817eafef5c520bc4bca7df0e6
-
       respond_to do |format|
         format.html
         format.json do
