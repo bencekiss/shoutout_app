@@ -13,6 +13,9 @@
       <p>Tweet: <%= shout.twitter_text %></p>
       <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
       <p>ShoutOut points you gained from <%= resto.name %>: <strong><%= Shout.points(shout, @user) %></strong> </p>
+      <% unless shout.active %>
+        <p>This shout was removed from twitter and stopped collecting points</p>
+      <% end %>
     </div>
     <% end %>
   <% end %>

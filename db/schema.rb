@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308030623) do
+ActiveRecord::Schema.define(version: 20170309213508) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -57,9 +57,10 @@ ActiveRecord::Schema.define(version: 20170308030623) do
     t.integer  "favourites"
     t.integer  "user_id"
     t.integer  "restaurant_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "shout_image"
+    t.boolean  "active",        default: true
   end
 
   create_table "users", force: :cascade do |t|
