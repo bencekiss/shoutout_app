@@ -8,7 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
+    <meta name="viewport" content=width-size=1;"">
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Didact+Gothic|Passion+One:700" rel="stylesheet">
   </head>
 
   <body>
@@ -26,7 +27,6 @@
     <% else %>
       <%= link_to ' Sign Up ', new_user_path %> |
       <%= link_to ' Log In ', new_user_session_path %> |
-      <%= link_to ' Log In With Twitter', twitter_signin_path("twitter") %>
     <% end %>
 
 
@@ -37,8 +37,8 @@
         <% end %>
       </div>
     <% end %>
-
-    <%= yield %>
-
+    <div class="shell">
+      <%= yield %>
+    </div>
   </body>
 </html>
