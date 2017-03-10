@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="restaurant-show">
   <h1><%= @restaurant.name %></h1>
   <%= image_tag(@restaurant.rest_img.image_resize.url) %>
   <!-- <img src ="<%= @restaurant.rest_img %>"> -->
@@ -23,7 +23,7 @@
          <% if @restaurant.owner_id == current_user.id %>
            <p>Active: <%= reward.active %></p>
          <% end %>
-         <div class="reward-modal">
+         <div class="reward-modal modal">
            <p> <strong><%= reward.name %></strong>  </p>
            <p>Point Value: <em class = "reward-point"> <%= reward.point_value %> </em> </p>
            <p>Description: <%= reward.description %></p>

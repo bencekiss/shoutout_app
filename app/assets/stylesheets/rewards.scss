@@ -5,7 +5,7 @@
 
 .reward-modal{
   position: fixed;
-  display: none;
+  display: inline-block;
   width: 300px;
   margin: auto;
   top: 300px;
@@ -39,16 +39,13 @@
   background-color: grey;
   text-align: center;
 }
+
 .close{
   background: black;
   color: white;
   border-radius: 50px;
-  position:absolute;
+  position: absolute;
   top: 5px;
   right: 5px;
   padding: 3px;
-}
-
-.modal {
-  display: none;
 }

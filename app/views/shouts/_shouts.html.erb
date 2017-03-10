@@ -1,29 +1,30 @@
-<% @shouted_resto.each do |resto| %>
-  <div class="resto-shoutout-box">
-    <div class="resto-info">
-      <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>
-      <p>Points you've earned at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
-      <p>Points you've redeemed: <strong><%= resto.redeemed_points(@user) %></strong></p>
-      <%= image_tag resto.rest_image %>
+<div id="shoutout-boxset">
+  <% @shouted_resto.each do |resto| %>
+  <div id="shoutout-box">
+    <div class="resto-shoutout-box">
+      <div class="resto-info">
+        <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>
+        <p>Points you've earned at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
+        <p>Points you've redeemed: <strong><%= resto.redeemed_points(@user) %></strong></p>
+        <%= image_tag resto.rest_image %>
+      </div>
     </div>
-  <% @shouts.each do |shout|%>
-    <% if shout.restaurant_id == resto.id %>
-
-    <div class="shout">
-      <div class="shout-image">
-        <%= link_to image_tag(shout.shout_image.image_resize.url), user_shout_path(current_user, shout) %>
-      </div>
-      <div class="shout-info">
-        <p>Tweet: <%= shout.twitter_text %></p>
-        <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
-        <p>ShoutOut points you've earned for <%= resto.name %>: <strong><%= Shout.points(shout, @user) %></strong> </p>
-        <% unless shout.active %>
-        <p>This shout was removed from Twitter and stopped collecting points</p>
-        <% end %>
-      </div>
-
+    <div class="tweet-shoutout-box">
+      <% @shouts.each do |shout|%>
+        <% if shout.restaurant_id == resto.id %>
+        <div class="shout">
+          <div class="shout-image">
+            <%= link_to image_tag(shout.shout_image.image_resize.url), user_shout_path(current_user, shout) %>
+          </div>
+          <div class="shout-info">
+            <p>Tweet: <%= shout.twitter_text %></p>
+            <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
+            <p>ShoutOut points you've earned for <%= resto.name %>: <strong><%= Shout.points(shout, @user) %></strong> </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
     </div>
   </div>
-    <% end %>
   <% end %>
-<% end %>
+</div>

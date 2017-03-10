@@ -15,13 +15,13 @@
   <% end %>
 </div>
 
+<button id="call-shout-modal">Make a Shout!</button>
+
 <!-- This renders the shout form to make a shout out-->
 <div class="modal">
   <%= render '/shouts/form' %>
 </div>
 
 <!-- This renders the shouts that were made by the user -->
-<div class="shoutout-box">
-  <h1>Shoutouts for <%= @user.name %></h1>
+<h1>Shoutouts for <%= @user.name %></h1>
   <%= render '/shouts/shouts' %>
-</div>

@@ -15,20 +15,60 @@
 
 .actions {
   padding: 10px;
-
 }
 
-.shoutout-box {
-  width: 90%;
-  border: $border;
+#shoutout-boxset {
+}
+
+#shoutout-box {
+  margin: 10px;
+  width: 75%;
+  border-top: $border;
   display: inline-block;
-  text-align: center;
 
   .resto-shoutout-box {
     width: 40%;
+    display: inline-block;
+    // border: $border;
+
+    img {
+      width: 100%; //This ensures that the image stays within resto-shoutout-box div.
+    }
   }
 
-  .shout {
-    width: 60%;
+  .tweet-shoutout-box {
+    width: 50%;
+    display: inline-block;
+    float: right;
+    // border: $border;
+
+    .shout {
+      padding: 10px;
+
+      .shout-image {
+        display: inline-block;
+        float: left;
+
+        img {
+          width: 100px;
+          height: 100px;
+          max-width: 100%;
+        }
+      }
+
+      .shout-info {
+        padding: 20px;
+        text-align: left;
+        vertical-align: top;
+        display: inline-block;
+        width: 340px;
+      }
+    }
   }
+}
+
+#call-shout-modal {
+  background-color: $secondary;
+  padding: 15px;
+  font-size: 1.5em;
 }
