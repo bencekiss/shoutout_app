@@ -30,8 +30,10 @@
     <div class="dropdown">
       <p><%= link_to "View Restaurants", restaurants_path %></p>
       <p><%=  link_to "Add a restaurant", new_restaurant_path %></p>
-      <% if !current_user.owned_restaurants.empty? %>
-        <p><%= link_to "My restaurants", my_restaurants_path %></p>
+      <% if current_user %>
+        <% if !current_user.owned_restaurants.empty? %>
+          <p><%= link_to "My restaurants", my_restaurants_path %></p>
+        <% end %>
       <% end %>
     </div>
 
