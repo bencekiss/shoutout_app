@@ -56,6 +56,18 @@ nav {
   }
 }
 
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: magenta;
+}
+
+a:hover {
+  text-decoration: overline;
+
+}
+
 //This will make all the input fields padded and slightly bigger.
 textarea, input, select {
   padding: 5px;
