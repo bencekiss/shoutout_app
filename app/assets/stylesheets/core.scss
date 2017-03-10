@@ -15,16 +15,44 @@ body {
   background: $primary;
 }
 
+.shell {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-top: 66px;
+}
+
 //This refers to the top bar.
 nav {
   display: inline-block;
   width: 100%;
   text-align: right;
-  padding: 10px;
+  padding: 10px 10px 0;
   background: $secondary;
+  padding: 5px 0;
+  position: fixed;
 
-  p, img, a {
-    display: inline;
+  img {
+    margin-bottom: -15px;
+  }
+
+  .nav-text{
+    display: inline-block;
+
+    p, a {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      letter-spacing: 0.2em;
+    }
+
+    a {
+      text-transform: uppercase;
+    }
+    a:hover {
+      text-decoration: overline;
+    }
   }
 }
 

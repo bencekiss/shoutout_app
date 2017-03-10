@@ -10,7 +10,7 @@
     <h3>Pending rewards</h3>
     <% @redemptions.each do |redemption| %>
       <% if !(redemption.redemption_status) %>
-        <p><em>Pending reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+        <p><%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
       <% end %>
     <% end %>
   </div>
@@ -18,7 +18,7 @@
     <h3>Redeemed rewards</h3>
     <% @redemptions.each do |redemption| %>
       <% if redemption.redemption_status %>
-        <p><em>Redeemed reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+        <p><%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
       <% end %>
     <% end %>
   </div>

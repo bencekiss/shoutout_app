@@ -29,7 +29,7 @@ $(document).on("turbolinks:load",function(){
     var user_id = $(this).children(".hidden-user").val();
     var reward_id = $(this).children(".hidden-reward").val();
     $.ajax({
-      url:"/users/"+ user_id,
+      url:"/redemption",
       method:"POST",
       data:{
         "reward_id": reward_id,
@@ -39,9 +39,10 @@ $(document).on("turbolinks:load",function(){
       dataType:"json"
     }).done(function(data){
       console.log(data)
-      location.pathname = "users/" + user_id
+      location.pathname = "/"
     }).fail(function(){
       console.log("Failed");
+      debugger;
       location.reload();
     });
   });

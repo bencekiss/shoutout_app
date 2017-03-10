@@ -1,6 +1,13 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.restaurant-show-container {
+  width: 40%;
+  margin: auto;
+}
+
 .restaurant-description {
   width: 30%;
   display: inline-block;
@@ -18,4 +25,11 @@
 
 .restaurant-container {
   overflow: hidden;
+}
+
+.restaurant {
+  padding: 20px;
+  border-bottom: $border;
+  width: 40%;
+  margin: 20px auto;
 }

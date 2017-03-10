@@ -10,18 +10,6 @@ class UsersController < ApplicationController
 
     if current_user
       @user = current_user
-      if params[:reward_id]
-        @reward = Reward.find(params[:reward_id])
-        respond_to do |format|
-          format.html
-          format.json do
-            if Restaurant.find(@reward.restaurant_id).redeem_reward(@user, @reward)
-              flash[:notice] = "You redeemed #{@reward.name.upcase}!"
-              render json: @reward
-            end
-          end
-        end
-      end
 
       @redemptions = @user.redemptions
       @shouts = Shout.all.where(user_id: @user.id)
@@ -56,6 +44,22 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def redeem
+    @user = current_user
+    if params[:reward_id]
+      @reward = Reward.find(params[:reward_id])
+      respond_to do |format|
+        format.html
+        format.json do
+          if Restaurant.find(@reward.restaurant_id).redeem_reward(@user, @reward)
+            flash[:notice] = "You redeemed #{@reward.name.upcase}!"
+            render json: @reward
+          end
+        end
+      end
+    end
   end
 
   def change_redemption_status

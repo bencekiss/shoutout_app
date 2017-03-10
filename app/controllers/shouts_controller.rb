@@ -15,7 +15,7 @@ class ShoutsController < ApplicationController
 
     if @shout.save
       flash[:notice] = "Successfully created SHOUT"
-      redirect_to user_url(current_user.id)
+      redirect_to root_url
     else
       flash[:alert] = "You know nothing. No, just didnt manage to shout out right now."
       render user_path(current_user.id)

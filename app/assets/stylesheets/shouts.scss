@@ -9,7 +9,16 @@
   padding: 5px;
 
   textarea, input, select {
-    width: 90%;
+    width: 80%;
+  }
+
+  input {
+    border: $border;
+    border-radius: 5px;
+  }
+
+  textarea {
+    height: 100px;
   }
 }
 
@@ -44,6 +53,8 @@
 
     .shout {
       padding: 10px;
+      border-bottom: $border;
+      overflow: auto;
 
       .shout-image {
         display: inline-block;
@@ -57,7 +68,7 @@
       }
 
       .shout-info {
-        padding: 20px;
+        // padding: 20px;
         text-align: left;
         vertical-align: top;
         display: inline-block;
@@ -65,6 +76,22 @@
       }
     }
   }
+}
+
+.show-shout {
+  width: 50%;
+  margin: auto;
+  .passive {
+    max-width: 60%;
+    margin: 20px auto;
+  }
+}
+
+.passive {
+  background: $tertiary;
+  border: $border;
+  padding: 10px;
+  text-align: center;
 }
 
 #shout-modal-call-button,

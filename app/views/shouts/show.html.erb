@@ -1,7 +1,14 @@
-<div class="shout">
-  <%= image_tag(@shout.shout_image.image_resize.url) %><br>
-  <p><%= @shout.twitter_text %></p>
-  <p>Retweets: <%= @shout.retweets %>, Favorites: <%= @shout.favourites %></p>
-  <p>Shouted on <%= Restaurant.find(@shout.restaurant_id).name %></p>
-  <p><%= link_to 'Edit', edit_user_shout_path(current_user, @shout) %> | <%= link_to 'Delete', user_shout_path(current_user, @shout), method: :delete, data: {confirm: "Are you sure you want to delete this shoutout?"} %></p>
+<div class="show-shout">
+  <div class="shout">
+    <% unless @shout.active %>
+      <div class="passive">
+        <p><em>This shout is no longer gaining points because the tweet has been deleted.</em></p>
+      </div>
+    <% end %>
+    <%= image_tag(@shout.shout_image.image_resize.url) %><br>
+    <p><%= @shout.twitter_text %></p>
+    <p>Retweets: <%= @shout.retweets %>, Favorites: <%= @shout.favourites %></p>
+    <p>Shouted on <%= Restaurant.find(@shout.restaurant_id).name %></p>
+    <%= link_to 'Delete', user_shout_path(current_user, @shout), method: :delete, data: {confirm: "Are you sure you want to delete this shoutout?"} %></p>
+  </div>
 </div>
