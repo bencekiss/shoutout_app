@@ -36,6 +36,10 @@
   </div>
 
   <!-- This renders the shouts that were made by the user -->
-  <h1>Your ShoutOuts</h1>
+  <% if current_user.shouts.empty? %>
+    <h1>You currently have no ShoutOuts.</h1>
+  <% else %>
+    <h1>Your ShoutOuts</h1>
+  <% end %>
     <%= render '/shouts/shouts' %>
 <% end %>
