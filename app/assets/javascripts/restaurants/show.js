@@ -11,7 +11,7 @@ $(document).on("turbolinks:load",function(){
     }};
 
   $(".on-button").on('click',function(e){
-    $(this).children(".reward-modal").fadeIn("slow");
+    $(this).find(".reward-modal").fadeIn("slow");
   });
 
   $(".close").on("click",function(e){
