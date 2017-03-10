@@ -28,3 +28,31 @@
     margin: 0 10px;
   }
 }
+
+
+#avatar {
+  border: 2px solid red;
+}
+
+#avatar:hover {
+  border: 2px solid white;
+}
+
+.dropdown {
+  position: absolute;
+  background: $secondary;
+  width: 310px;
+  right: 112px;
+  top: 64px;
+  padding: 0 15px 15px;
+  border: 1px solid black;
+  border-top: none;
+  display: none;
+
+  a:hover {
+    color: black;
+    line-height: 1.5em;
+    font-weight: 900;
+    font-style: italic;
+  }
+}

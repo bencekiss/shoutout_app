@@ -19,19 +19,21 @@
           <div id="logo">
             <%= link_to "ShoutOut!", root_path %>
           </div>
-          <%= image_tag current_user.profile_image, class: "avatar" %>
+          <%= image_tag current_user.profile_image, id: "avatar" %>
           <div class="nav-text">
-            <p>Signed in as <%= current_user.name %></p>
-            | <%= link_to "See Restaurants", restaurants_path %>
-            | <%=  link_to "Add a restaurant", new_restaurant_path %>
-            <% if !current_user.owned_restaurants.empty? %>
-              | <%= link_to "My restaurants", my_restaurants_path %>
-            <% end %>
+          <p>Signed in as <%= current_user.name %></p>
             | <%= link_to ' Log Out ', :logout, method: :post %>
           </div>
         </nav>
       <% end %>
     <%# end %>
+    <div class="dropdown">
+      <p><%= link_to "View Restaurants", restaurants_path %></p>
+      <p><%=  link_to "Add a restaurant", new_restaurant_path %></p>
+      <% if !current_user.owned_restaurants.empty? %>
+        <p><%= link_to "My restaurants", my_restaurants_path %></p>
+      <% end %>
+    </div>
 
     <% if flash.any? %>
       <div class="flash">

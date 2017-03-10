@@ -64,4 +64,8 @@ $(document).on("turbolinks:load",function(){
     $('.rewards-modal').fadeIn();
   });
 
+  $('#avatar').on('click', function() {
+    $('.dropdown').slideToggle()
+  });
+
 });
