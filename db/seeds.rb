@@ -81,7 +81,7 @@ Reward.destroy_all
   end
   rest.save!
 
-  50.times do
+  20.times do
     Reward.create!(
       name: Faker::Commerce.product_name,
       description: Faker::Lorem.sentence,

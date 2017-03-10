@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-# ruby '2.3.3'
+ruby '2.3.1'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -39,6 +39,7 @@ gem 'carrierwave', '~>1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'twitter'
 gem 'omniauth-twitter'
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -46,7 +47,6 @@ gem 'omniauth-twitter'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'sqlite3'
 end
