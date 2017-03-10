@@ -16,7 +16,7 @@
     <%# if @do_not_show_header %>
       <% if current_user %>
         <nav>
-          <div id="logo"><%= link_to "ShoutOut!", user_path(@user) %></div>
+          <div id="logo"><%= link_to "ShoutOut!", user_path(current_user) %></div>
           <!-- <div class="twitter-profile"> -->
             <%= image_tag current_user.profile_image, class: "avatar" %><p>Signed in as <%= current_user.name %></p>
           <!-- </div> -->

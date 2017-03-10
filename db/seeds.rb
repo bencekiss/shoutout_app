@@ -11,14 +11,14 @@
 # Shout.destroy_all
 
 
-
-  # Restaurant.create!(
-  #   name: "Shawarma King",
-  #   address: "220 Kings St. West",
-  #   phone_number: "416-967-1111",
-  #   rest_image: "http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png",
-  #   owner_id: 1
-  # )
+  
+  Restaurant.create(
+    name: "Shawarma King",
+    address: "220 Kings St. West",
+    phone_number: "416-967-1111",
+    # rest_image: "http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png",
+    owner_id: 1
+  )
   #
   # Restaurant.create!(
   #   name: "Shawarma King",
