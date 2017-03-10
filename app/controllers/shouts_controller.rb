@@ -9,7 +9,7 @@ class ShoutsController < ApplicationController
   def create
 
     @shout = Shout.new(shout_params)
-    byebug
+    # byebug
     @shout.twitter_id = @shout.post_to_twitter
 
     @shout.retweets = 0
