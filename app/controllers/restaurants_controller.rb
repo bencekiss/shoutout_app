@@ -19,6 +19,19 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def edit
+    @restaurant = Restaurant.find(restaurant_params[:id])
+  end
+
+  def update
+    @restaurant = Restaurant.find(restaurant_params[:id])
+    if @restaurant.update_attributes
+      redirect_to restaurant_path(@restaurant)
+    else
+      render 'edit'
+    end
+  end
+
   def show
     @user = current_user
     @shout = Shout.new

@@ -1,9 +1,41 @@
+<% unless current_user %>
   <div id="logo-button">
     <h1><a href="/auth/twitter">ShoutOut!</a></h1>
     <%= image_tag "rickastley", id: "rick" %>
   </div>
-  <div class="stripe">
+  <div class="stripe"></div>
+<% else %>
+<div class="modal rewards-modal">
+  <div class="pending">
+    <h3>Pending rewards</h3>
+    <% @redemptions.each do |redemption| %>
+      <% if !(redemption.redemption_status) %>
+        <p><em>Pending reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="redeemed">
+    <h3>Redeemed rewards</h3>
+    <% @redemptions.each do |redemption| %>
+      <% if redemption.redemption_status %>
+        <p><em>Redeemed reward</em>: <%= Reward.find(redemption.reward_id).name %> at <%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="close">X</div>
 </div>
-<%# @restaurants.each do |restaurant| %>
-  <%# link_to restaurant.name, restaurant_url(restaurant) %><br>
-<%# end %>
+
+<div class="button-bar">
+  <button id="shout-modal-call-button">Make a ShoutOut!</button>
+  <button id="reward-modal-call-button">View Your Rewards</button>
+</div>
+
+  <!-- This renders the shout form to make a shout out-->
+  <div class="modal shout-modal">
+    <%= render '/shouts/form' %>
+  </div>
+
+  <!-- This renders the shouts that were made by the user -->
+  <h1>Your ShoutOuts</h1>
+    <%= render '/shouts/shouts' %>
+<% end %>

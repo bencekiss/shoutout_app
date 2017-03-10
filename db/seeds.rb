@@ -10,15 +10,38 @@ Reward.destroy_all
 # User.destroy_all
 # Shout.destroy_all
 
+#
 
+<<<<<<< HEAD
+  Restaurant.create!(
+    name: "Shawarma King",
+    address: "220 Kings St. West",
+    phone_number: "416-967-1111",
+    # rest_image: "http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png",
+    owner_id: 1
+  )
 
-  # Restaurant.create!(
-  #   name: "Shawarma King",
-  #   address: "220 Kings St. West",
-  #   phone_number: "416-967-1111",
-  #   rest_image: "http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png",
-  #   owner_id: 1
-  # )
+  Restaurant.create!(
+    name: "Shawarma King",
+    address: "220 Kings St. West",
+    phone_number: "416-967-1111",
+    # rest_image: "http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png",
+    owner_id: 1
+  )
+
+  Restaurant.create!(
+=======
+  
+  Restaurant.create(
+>>>>>>> css
+    name: "Shawarma King",
+    address: "220 Kings St. West",
+    phone_number: "416-967-1111",
+    # rest_image: "http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png",
+    owner_id: 1
+  )
+<<<<<<< HEAD
+=======
   #
   # Restaurant.create!(
   #   name: "Shawarma King",
@@ -115,7 +138,25 @@ Reward.destroy_all
   end
 #
 # end
+>>>>>>> css
 
+  p = Restaurant.create!(
+    name: Faker::App.name,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    # rest_image: "http://lorempixel.com/400/200/city/",
+    owner_id: rand(5).ceil
+  )
+#
+  5.times do
+    p.rewards.create!(
+      name: Faker::Commerce.product_name,
+      description: Faker::Lorem.sentence,
+      point_value: rand(100)
+    )
+#
+end
+#
 # 10.times do
 #   User.create!(
 #     first_name: Faker::Name.first_name,
