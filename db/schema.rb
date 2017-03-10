@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309213508) do
+ActiveRecord::Schema.define(version: 20170310001022) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20170309213508) do
     t.string   "name"
     t.string   "address"
     t.string   "phone_number"
-    t.string   "rest_image"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "owner_id"
+    t.string   "rest_img"
   end
 
   create_table "rewards", force: :cascade do |t|

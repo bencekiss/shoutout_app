@@ -1,12 +1,8 @@
 class Shout < ApplicationRecord
   mount_uploader :shout_image, ShoutImageUploader
-<<<<<<< HEAD
   RETWEET_CONSTANT = 50
   FAVORITE_CONSTANT = 50
-=======
-  RETWEET_CONSTANT = 100
-  FAVORITE_CONSTANT = 55
->>>>>>> 124f8d935ba3964817eafef5c520bc4bca7df0e6
+
   belongs_to :restaurant
   belongs_to :user
   # before_create :post_to_twitter

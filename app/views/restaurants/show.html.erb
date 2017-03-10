@@ -1,7 +1,7 @@
 <div class="modal">
   <h1><%= @restaurant.name %></h1>
-
-  <img src ="<%= @restaurant.rest_image %>">
+  <%= image_tag(@restaurant.rest_img.image_resize.url) %>
+  <!-- <img src ="<%= @restaurant.rest_img %>"> -->
   <% if @restaurant.owner_id != current_user.id %>
     <div class="form shout-form">
       <%= render 'shouts/resto_shout' %>

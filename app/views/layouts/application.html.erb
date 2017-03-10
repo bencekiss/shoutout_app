@@ -18,7 +18,7 @@
         <nav>
           <div id="logo">ShoutOut!</div>
           <!-- <div class="twitter-profile"> -->
-            <%= image_tag @user.profile_image, class: "avatar" %><p>Signed in as <%= @user.name %></p>
+            <%= image_tag current_user.profile_image, class: "avatar" %><p>Signed in as <%= current_user.name %></p>
           <!-- </div> -->
           <!-- <div class="logout"> -->
           <% if !current_user.owned_restaurants.empty? %>
@@ -27,7 +27,7 @@
             | <%= link_to ' Log Out ', :logout, method: :post %>
           <!-- </div> -->
         </nav>
-        <%# link_to "Add a restaurant", new_restaurant_path %>
+        <%=  link_to "Add a restaurant", new_restaurant_path %>
       <% end %>
     <%# end %>
 

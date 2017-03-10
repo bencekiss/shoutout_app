@@ -1,6 +1,7 @@
 <h1>My Restaurants</h1>
 
 <% @owned_restaurants.each do |restaurant| %>
+<%= image_tag(restaurant.rest_img.image_resize.url) %>
   <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
   <h2><%= restaurant.address %></p>
   <h3>The users at this restaurant:</h3>

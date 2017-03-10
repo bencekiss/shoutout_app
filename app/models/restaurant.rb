@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+  mount_uploader :rest_img, RestImgUploader
   has_many :rewards
   has_many :shouts
   has_many :users, through: :shouts

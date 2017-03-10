@@ -18,12 +18,11 @@
   </div>
 
   <div class="field">
-    <%= f.label :rest_image %>
-    <%= f.text_field :rest_image %>
+    <%= f.label :rest_img, value: "Appa Papp!" %><br>
+    <%= f.file_field :rest_img, placeholder: "https://your images address" %>
   </div>
-
   <h2>Rewards</h2>
-  
+
   <%= f.fields_for :rewards do |r| %>
     <%= render 'reward_fields', :f => r %>
   <% end %>
