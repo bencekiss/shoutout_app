@@ -1,0 +1,10 @@
+<div class="restaurant-container">
+  <% @restaurants.each do |resto| %>
+    <div class="restaurant-description">
+      <h3><%= resto.name %></h3>
+      <%= image_tag(resto.rest_image, class: "restaurant-image") %>
+      <p><%= resto.address %></p>
+      <p><%= resto.phone_number %></p>
+    </div>
+  <% end %>
+</div>
