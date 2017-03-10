@@ -18,7 +18,7 @@ class ShoutsController < ApplicationController
       redirect_to root_url
     else
       flash[:alert] = "You know nothing. No, just didnt manage to shout out right now."
-      render user_path(current_user.id)
+      render root_path
     end
   end
   def show
@@ -45,7 +45,7 @@ class ShoutsController < ApplicationController
     @shout = Shout.find(params[:id])
     @shout.destroy
     flash[:notice] = "Deleted shoutout"
-    redirect_back_or_to user_path(current_user)
+    redirect_back_or_to root_path
   end
 
   private
