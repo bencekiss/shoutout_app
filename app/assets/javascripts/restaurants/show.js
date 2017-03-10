@@ -13,6 +13,7 @@ $(document).on("turbolinks:load",function(){
   $(".on-button").on('click',function(e){
     $(this).children(".reward-modal").fadeIn("slow");
   });
+
   $(".close").on("click",function(e){
     e.stopPropagation();
     $(".modal").fadeOut("slow");
@@ -54,8 +55,12 @@ $(document).on("turbolinks:load",function(){
     $('#rick').css("display", "none")
   });
 
-  $('#call-shout-modal').on('click', function() {
-    $('.modal').fadeIn();
-  })
+  $('#shout-modal-call-button').on('click', function() {
+    $('.shout-modal').fadeIn();
+  });
+
+  $('#reward-modal-call-button').on('click', function() {
+    $('.rewards-modal').fadeIn();
+  });
 
 });

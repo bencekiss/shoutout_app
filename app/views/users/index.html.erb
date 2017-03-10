@@ -3,9 +3,9 @@
     <h1><a href="/auth/twitter">ShoutOut!</a></h1>
     <%= image_tag "rickastley", id: "rick" %>
   </div>
-  <div class="stripe">
-  </div>
+  <div class="stripe"></div>
 <% else %>
+<div class="modal rewards-modal">
   <div class="pending">
     <h3>Pending rewards</h3>
     <% @redemptions.each do |redemption| %>
@@ -22,15 +22,20 @@
       <% end %>
     <% end %>
   </div>
+  <div class="close">X</div>
+</div>
 
-  <button id="call-shout-modal">Make a Shout!</button>
+<div class="button-bar">
+  <button id="shout-modal-call-button">Make a ShoutOut!</button>
+  <button id="reward-modal-call-button">View Your Rewards</button>
+</div>
 
   <!-- This renders the shout form to make a shout out-->
-  <div class="modal">
+  <div class="modal shout-modal">
     <%= render '/shouts/form' %>
   </div>
 
   <!-- This renders the shouts that were made by the user -->
-  <h1>Shoutouts for <%= @user.name %></h1>
+  <h1>Your ShoutOuts</h1>
     <%= render '/shouts/shouts' %>
 <% end %>
