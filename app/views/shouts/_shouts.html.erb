@@ -4,7 +4,7 @@
     <div class="resto-shoutout-box">
       <div class="resto-info">
         <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>
-        <p>Points you've earned at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
+        <p>Points you currently have at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
         <p>Points you've redeemed: <strong><%= resto.redeemed_points(@user) %></strong></p>
         <%= image_tag resto.rest_img %>
       </div>

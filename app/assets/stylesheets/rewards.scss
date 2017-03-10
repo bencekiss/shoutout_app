@@ -20,24 +20,34 @@
 .rewards {
   display: inline-block;
   text-align: center;
-  width: 80%;
 }
 
 .reward-button{
   border: 2px darksalmon solid;
   text-align: center;
   padding: 5px;
+  background-color: yellow;
+  position: relative;
+  z-index: -1;
+  width: 80%;
+  display: inline-block;
+  p {
+    z-index: 3;
+    text-transform: uppercase;
+  }
 }
 
 .reward-button-box {
   border: $border;
   padding: 2px;
   margin: 20px 0;
+  width: 79%;
+  display: inline-block;
 }
 
 .nope{
   border: 2px darksalmon solid;
-  background-color: grey;
+  background-color: lightgray;
   text-align: center;
 }
 
@@ -49,4 +59,32 @@
   top: 5px;
   right: 5px;
   padding: 3px;
+}
+
+.points-bar {
+  background: yellow;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // opacity: 0.4;
+  z-index: -1;
+}
+
+.percentage-remaining {
+  border: 2px solid darksalmon;
+  display: inline-block;
+  padding: 13px;
+  width: 17%;
+  background: magenta;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+}
+
+.positioning-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
