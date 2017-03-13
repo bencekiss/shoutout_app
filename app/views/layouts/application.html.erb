@@ -16,23 +16,33 @@
     <%# if @do_not_show_header %>
       <% if current_user %>
         <nav>
-          <div id="logo">
-            <%= link_to "ShoutOut!", root_path %>
-          </div>
+          <a href="/">
+            <div id="logo">
+              <i class="fa fa-bullhorn" aria-hidden="true"></i>
+            </div>
+          </a>
           <%= image_tag current_user.profile_image, id: "avatar" %>
-          <div class="nav-text">
-          <p>Signed in as <%= current_user.name %></p>
+          <!-- <div class="nav-text"> -->
+          <!-- <p>Signed in as <%# current_user.name %></p> -->
             | <%= link_to ' Log Out ', :logout, method: :post %>
-          </div>
+          <!-- </div> -->
         </nav>
       <% end %>
     <%# end %>
     <div class="dropdown">
-      <p><%= link_to "View Restaurants", restaurants_path %></p>
-      <p><%=  link_to "Add a restaurant", new_restaurant_path %></p>
+      <div class="dropdown-button">
+        <i class="fa fa-trophy"></i>
+        <small>Rewards</small>
+      </div>
+      <div class="dropdown-button">
+        <i class="fa fa-search"></i>
+        <small>Restaurants</small>
+      </div>
+      <p><%# link_to "View Restaurants", restaurants_path %></p>
+      <p><%#  link_to "Add a restaurant", new_restaurant_path %></p>
       <% if current_user %>
         <% if !current_user.owned_restaurants.empty? %>
-          <p><%= link_to "My restaurants", my_restaurants_path %></p>
+          <p><%# link_to "My restaurants", my_restaurants_path %></p>
         <% end %>
       <% end %>
     </div>

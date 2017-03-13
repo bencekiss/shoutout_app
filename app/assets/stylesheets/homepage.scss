@@ -1,33 +1,31 @@
 @import "variables";
 
 #logo-button {
-  width: 500px;
-  height: 500px;
+  //Physical Structure
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background-color: $secondary;
-  border: 2px solid black;
-  box-shadow: 10px 10px 10px black;
-  // position: relative;
+  box-shadow: $logo-shadow;
+  background-color: $primary;
+  border: $thin-border;
+
+  //Positional Structure
+  position: relative;
   display: inline-block;
   text-align: center;
   margin: auto;
-  position: relative;
-  top: 20px;
+  transform: rotate(-12deg);
 
-  h1 {
+  i {
     position: absolute;
-    top: 182px;
-    left: 6px;
-    font-family: "Passion One";
-    font-size: 7em;
-    transform: rotate(-12deg);
-
-    a {
-      color: black;
-      text-decoration: none;
-      text-transform: none;
-      letter-spacing: 0;
-    }
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-top: -80px;
+    margin-left: -90px;
+    color: white;
+    font-size: 10em;
+    text-shadow: $drop-shadow;
   }
 }
 
@@ -35,21 +33,25 @@
   float: left;
   display: inline-block;
   font-size: 3em;
+  padding: 0 10px;
+  i {
+    color: white;
+    text-shadow: $drop-shadow;
+  }
 }
 
 #logo-button:hover {
-  background: yellow;
+  background: white;
+  i {
+    color: $primary;
+  }
 }
 
 .stripe {
-  background-color: $tertiary;
-  height: 200px;
+  background-color: $primary;
+  height: 100px;
   position: absolute;
-  top: 35%;
+  // top: 35%;
   width: 100%;
-  z-index: -1;
-}
-
-.stripe:hover {
-  background-color: orange;
+  bottom: 0;
 }

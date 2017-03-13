@@ -1,18 +1,18 @@
 @import 'variables';
 
 //Initial Settings
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-family: "Courier New", serif;
+  font-family: "Helvetica", serif;
 }
 
 body {
-  background: $primary;
+  background: $background-color;
 }
 
 .shell {
@@ -29,9 +29,10 @@ nav {
   width: 100%;
   text-align: right;
   padding: 10px 10px 0;
-  background: $secondary;
+  background: $primary;
   padding: 5px 0;
   position: fixed;
+  box-shadow: $drop-shadow;
 
   img {
     margin-bottom: -15px;
@@ -44,7 +45,6 @@ nav {
       display: inline-block;
       text-decoration: none;
       color: black;
-      letter-spacing: 0.2em;
     }
 
     a {
@@ -59,7 +59,6 @@ nav {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: black;
 }
 

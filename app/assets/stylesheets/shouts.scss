@@ -13,7 +13,7 @@
   }
 
   input {
-    border: $border;
+    border: $normal-border;
     border-radius: 5px;
   }
 
@@ -32,13 +32,13 @@
 #shoutout-box {
   margin: 10px;
   width: 75%;
-  border-top: $border;
+  border-top: $normal-border;
   display: inline-block;
 
   .resto-shoutout-box {
     width: 40%;
     display: inline-block;
-    // border: $border;
+    // border: $normal-border;
 
     img {
       width: 100%; //This ensures that the image stays within resto-shoutout-box div.
@@ -49,11 +49,11 @@
     width: 50%;
     display: inline-block;
     float: right;
-    // border: $border;
+    // border: $normal-border;
 
     .shout {
       padding: 10px;
-      border-bottom: $border;
+      border-bottom: $normal-border;
       overflow: auto;
 
       .shout-image {
@@ -89,7 +89,7 @@
 
 .passive {
   background: $tertiary;
-  border: $border;
+  border: $normal-border;
   padding: 10px;
   text-align: center;
 }

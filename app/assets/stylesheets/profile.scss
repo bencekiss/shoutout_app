@@ -1,7 +1,7 @@
 @import 'variables';
 
 .modal {
-  border: $border;
+  border: $normal-border;
   background: $modal-color;
   padding: 20px;
   width: 500px;
@@ -31,7 +31,9 @@
 
 
 #avatar {
-  border: 2px solid red;
+  border: $thin-border;
+  border-radius: 50%;
+  margin: 0 10px;
 }
 
 #avatar:hover {
@@ -40,19 +42,25 @@
 
 .dropdown {
   position: fixed;
-  background: $secondary;
-  width: 310px;
-  right: 112px;
-  top: 64px;
-  padding: 0 15px 15px;
-  border: 1px solid black;
-  border-top: none;
+  background: $background-color;
+  width: 100%;
+  top: 66px;
+  padding: 2px 12px 1px;
   display: none;
+  box-shadow: $drop-shadow;
 
-  a:hover {
+  .dropdown-button {
+    display: inline-block;
+    // border: $thin-border;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 2em;
+    width: 49%;
+    color: gray;
+  }
+
+  .dropdown-button:hover {
+    border-bottom: 4px solid $primary;
     color: black;
-    line-height: 1.5em;
-    font-weight: 900;
-    font-style: italic;
   }
 }
