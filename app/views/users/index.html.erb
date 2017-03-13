@@ -1,7 +1,8 @@
 <% unless current_user %>
   <a href="/auth/twitter">
     <div id="logo-button">
-      <%= image_tag "shout1.png" %>
+      <%= image_tag "shout1.png", id: "shout-static" %>
+      <%= image_tag "shout2.png", id: "shout-hover" %>
     </div>
   </a>
   <div class="stripe"></div>

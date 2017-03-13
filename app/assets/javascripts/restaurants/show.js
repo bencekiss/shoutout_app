@@ -56,6 +56,14 @@ $(document).on("turbolinks:load",function(){
     $('#rick').css("display", "none")
   });
 
+  $('#logo-button').mouseenter(function() {
+    $('#shout-static').toggle();
+    $('#shout-hover').css('display', 'block');
+  }).mouseleave(function(){
+    $('#shout-static').css('display', 'block');
+    $('#shout-hover').css('display', 'none');
+  })
+
   $('#shout-modal-call-button').on('click', function() {
     $('.shout-modal').fadeIn();
   });

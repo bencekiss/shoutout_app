@@ -1,20 +1,33 @@
 @import "variables";
 
+#shout-static, #shout-hover {
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+#shout-hover {
+  display: none;
+}
+
 #logo-button {
   //Physical Structure
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  box-shadow: $logo-shadow;
-  background-color: $primary;
+  background-color: transparent;
   border: $thin-border;
+  z-index: 2;
 
   //Positional Structure
   position: relative;
   display: inline-block;
   text-align: center;
   margin: auto;
-  transform: rotate(-12deg);
+  // transform: rotate(-12deg);
 
   i {
     position: absolute;
