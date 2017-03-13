@@ -58,7 +58,7 @@ class UsersController < ApplicationController
             render json: @reward
             to_post = [@user, @reward]
             ActionCable.server.broadcast('redeem_channel', to_post)
-byebug
+
           end
         end
       end
