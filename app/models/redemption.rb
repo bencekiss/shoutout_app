@@ -9,8 +9,12 @@ class Redemption < ApplicationRecord
       redempts = Redemption.where(reward_id: reward.id)
       redempts.each { |redemp| redemptions << redemp if !(redemp.redemption_status) }
     end
-    
-    redemptions
+
+    if redemptions.any?
+      ActionCable.server.broadcast 'redeem_channel',
+
+    end
+
   end
 
 end
