@@ -29,13 +29,15 @@ $(document).on("turbolinks:load",function(){
     e.stopPropagation();
     var user_id = $(this).children(".hidden-user").val();
     var reward_id = $(this).children(".hidden-reward").val();
+    var auth_token = $(this).children(".hidden-authenticity").val();
     $.ajax({
       url:"/redemption",
       method:"POST",
       data:{
         "reward_id": reward_id,
         "user_id": user_id,
-        "id": user_id
+        "id": user_id,
+        "authenticity_token": auth_token
       },
       dataType:"json"
     }).done(function(data){

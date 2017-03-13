@@ -56,7 +56,8 @@ class UsersController < ApplicationController
           if Restaurant.find(@reward.restaurant_id).redeem_reward(@user, @reward)
             flash[:notice] = "You redeemed #{@reward.name.upcase}!"
             render json: @reward
-            to_post = [@user, @reward]
+            to_post = [@user, @reward, Redemption.last, params[:authenticity_token]]
+            
             ActionCable.server.broadcast('redeem_channel', to_post)
 
           end
