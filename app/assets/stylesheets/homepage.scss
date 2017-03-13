@@ -1,19 +1,5 @@
 @import "variables";
 
-#shout-static, #shout-hover {
-  width: 350px;
-  height: 350px;
-  margin-top: -180px;
-  margin-left: -161px;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: rotate(-20deg)
-}
-#shout-hover {
-  display: none;
-}
-
 #logo-button {
   //Physical Structure
   width: 197px;
@@ -29,7 +15,19 @@
   display: inline-block;
   text-align: center;
   margin: auto;
-
+  #shout-static, #shout-hover {
+    width: 350px;
+    height: 350px;
+    margin-top: -180px;
+    margin-left: -161px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: rotate(-20deg)
+  }
+  #shout-hover {
+    display: none;
+  }
 }
 
 #logo {
@@ -40,6 +38,11 @@
   i {
     color: white;
     text-shadow: $drop-shadow;
+  }
+
+  img {
+    width: 50px;
+    padding-bottom: 5px;
   }
 }
 
@@ -62,21 +65,5 @@
 
   p {
     font-size: 1.3em;
-  }
-}
-
-footer {
-  vertical-align: middle;
-  background-color: $primary;
-  height: 60px;
-  position: absolute;
-  // top: 35%;
-  width: 100%;
-  bottom: 0;
-
-  p {
-    text-align: right;
-    color: white;
-    padding: 20px;
   }
 }

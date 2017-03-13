@@ -9,11 +9,11 @@
 
 html {
   font-family: "Helvetica Neue", "Helvetica",  "sans-serif";
-  overflow: hidden;
 }
 
 body {
   background: $background-color;
+  margin-bottom: 160px; //This is to clear the ShoutOut button so it doesn't cover the tweets.
 }
 
 .shell {
@@ -24,6 +24,21 @@ body {
   margin-top: 66px;
 }
 
+footer {
+  vertical-align: middle;
+  background-color: $primary;
+  height: 60px;
+  position: fixed;
+  // top: 35%;
+  width: 100%;
+  bottom: 0;
+
+  p {
+    text-align: right;
+    color: white;
+    padding: 20px;
+  }
+}
 //This refers to the top bar.
 nav {
   display: inline-block;
@@ -34,6 +49,7 @@ nav {
   padding: 5px 0;
   position: fixed;
   box-shadow: $drop-shadow;
+  z-index: 5;
 
   img {
     margin-bottom: -15px;
@@ -61,7 +77,12 @@ a {
 
 a:hover {
   text-decoration: overline;
+}
 
+h1 {
+  font-family: "Passion One";
+  padding: 10px 0;
+  font-size: 3em;
 }
 
 //This will make all the input fields padded and slightly bigger.

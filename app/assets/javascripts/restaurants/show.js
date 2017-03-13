@@ -66,8 +66,26 @@ $(document).on("turbolinks:load",function(){
     $('.shout-modal').fadeIn();
   });
 
+  $('#shout-modal-call-button').mousedown(function(){
+    $('#shout-modal-call-button-outline').css('box-shadow', 'none')
+  }).mouseup(function(){
+    $('#shout-modal-call-button-outline').css('box-shadow', '2px 2px 2px gray')
+  });
+
+  $('#shout-modal-call-button-outline').mouseenter(function() {
+    $('#shout-call-static').toggle();
+    $('#shout-call-hover').css('display', 'block');
+  }).mouseleave(function(){
+    $('#shout-call-static').css('display', 'block');
+    $('#shout-call-hover').css('display', 'none');
+  });
+
   $('#reward-modal-call-button').on('click', function() {
     $('.rewards-modal').fadeIn();
+  });
+
+  $('.shoutout-box').on('click', function() {
+    $(this).children('.tweet-shoutout-box').slideToggle();
   });
 
   $('#avatar').on('click', function() {

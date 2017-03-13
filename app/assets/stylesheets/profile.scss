@@ -11,6 +11,7 @@
   margin-top: -250px;
   left: 50%;
   top: 50%;
+  z-index: 2;
 }
 
 .shout-modal {
@@ -42,7 +43,7 @@
 
 .dropdown {
   position: fixed;
-  background: $background-color;
+  background: $secondary;
   width: 100%;
   top: 66px;
   padding: 2px 12px 1px;
@@ -54,7 +55,7 @@
     // border: $thin-border;
     padding: 10px 10px;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     width: 49%;
     color: gray;
   }
