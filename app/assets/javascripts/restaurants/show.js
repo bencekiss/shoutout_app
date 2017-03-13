@@ -40,6 +40,7 @@ $(document).on("turbolinks:load",function(){
       dataType:"json"
     }).done(function(data){
       console.log(data)
+      debugger;
       location.pathname = "/"
     }).fail(function(){
       console.log("Failed");
