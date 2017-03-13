@@ -8,13 +8,8 @@ class Redemption < ApplicationRecord
     rewards_at_my_resto.each do |reward|
       redempts = Redemption.where(reward_id: reward.id)
       redempts.each { |redemp| redemptions << redemp if !(redemp.redemption_status) }
-    end
-
-    if redemptions.any?
-      ActionCable.server.broadcast 'redeem_channel',
 
     end
-
+    redemptions
   end
-
 end

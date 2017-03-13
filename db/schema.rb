@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20170310001022) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
   end
 
   create_table "redemptions", force: :cascade do |t|
