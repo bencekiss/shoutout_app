@@ -21,8 +21,9 @@ $(document).on("turbolinks:load",function(){
 
   $(".positioning-box").on("click", function(e){
     if ($(this).children(".nope")){
-    e.stopPropagation();
-    alert("You don't have enough points to redeem this reward.");}
+      e.stopPropagation();
+      alert("You don't have enough points to redeem this reward.");
+    }
   });
 
   $(".redeem-button").on('click', function(e){
