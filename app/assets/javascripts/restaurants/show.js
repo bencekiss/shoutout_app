@@ -6,8 +6,8 @@ $(document).on("turbolinks:load",function(){
     var rewardButton = $(".reward-button")[i];
     // debugger;
     if (userPoints < rewardPoints){
-      $(rewardButton).addClass("nope");
-      $(rewardButton).removeClass("on-button");
+      $(".positioning-box").children(".reward-button").addClass("nope");
+      $(".positioning-box").removeClass("on-button");
     }};
 
   $(".on-button").on('click',function(e){
@@ -19,9 +19,10 @@ $(document).on("turbolinks:load",function(){
     $(".modal").fadeOut("slow");
   });
 
-  $(".nope").on("click", function(e){
+  $(".positioning-box").on("click", function(e){
+    if ($(this).children(".nope")){
     e.stopPropagation();
-    alert("You don't have enough points to redeem this reward.");
+    alert("You don't have enough points to redeem this reward.");}
   });
 
   $(".redeem-button").on('click', function(e){
