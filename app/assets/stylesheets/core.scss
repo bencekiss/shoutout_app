@@ -8,7 +8,8 @@
 }
 
 html {
-  font-family: "Helvetica", serif;
+  font-family: "Helvetica Neue", "Helvetica",  "sans-serif";
+  overflow: hidden;
 }
 
 body {
@@ -47,9 +48,6 @@ nav {
       color: black;
     }
 
-    a {
-      text-transform: uppercase;
-    }
     a:hover {
       text-decoration: overline;
     }
@@ -58,7 +56,6 @@ nav {
 
 a {
   text-decoration: none;
-  text-transform: uppercase;
   color: black;
 }
 

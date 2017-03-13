@@ -1,13 +1,14 @@
 @import "variables";
 
 #shout-static, #shout-hover {
-  width: 500px;
-  height: 500px;
-  margin-top: -250px;
-  margin-left: -250px;
+  width: 350px;
+  height: 350px;
+  margin-top: -180px;
+  margin-left: -161px;
   top: 50%;
   left: 50%;
   position: absolute;
+  transform: rotate(-20deg)
 }
 #shout-hover {
   display: none;
@@ -15,9 +16,10 @@
 
 #logo-button {
   //Physical Structure
-  width: 280px;
-  height: 280px;
+  width: 197px;
+  height: 197px;
   border-radius: 50%;
+  box-shadow: 3px 3px 3px gray;
   background-color: transparent;
   border: $thin-border;
   z-index: 2;
@@ -27,19 +29,7 @@
   display: inline-block;
   text-align: center;
   margin: auto;
-  // transform: rotate(-12deg);
 
-  i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    margin-top: -80px;
-    margin-left: -90px;
-    color: white;
-    font-size: 10em;
-    text-shadow: $drop-shadow;
-  }
 }
 
 #logo {
@@ -60,11 +50,33 @@
   }
 }
 
-.stripe {
+.blurb {
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
+
+  #title {
+    font-family: "Passion One";
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+}
+
+footer {
+  vertical-align: middle;
   background-color: $primary;
-  height: 100px;
+  height: 60px;
   position: absolute;
   // top: 35%;
   width: 100%;
   bottom: 0;
+
+  p {
+    text-align: right;
+    color: white;
+    padding: 20px;
+  }
 }

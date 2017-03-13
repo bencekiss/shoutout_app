@@ -5,7 +5,10 @@
       <%= image_tag "shout2.png", id: "shout-hover" %>
     </div>
   </a>
-  <div class="stripe"></div>
+  <div class="blurb">
+    <h2 id="title">ShoutOut!</h2>
+    <p>Reward your tweets! <i class="fa fa-twitter"></i></p>
+  </div>
 <% else %>
 <div class="modal rewards-modal">
   <div class="pending">
@@ -45,3 +48,8 @@
   <% end %>
     <%= render '/shouts/shouts' %>
 <% end %>
+
+<div id="shout-modal-call-button">
+  <%= image_tag "shout1.png", id: "shout-static" %>
+  <%= image_tag "shout2.png", id: "shout-hover" %>
+</div>
