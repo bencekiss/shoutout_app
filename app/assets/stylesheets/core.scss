@@ -1,18 +1,19 @@
 @import 'variables';
 
 //Initial Settings
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-family: "Courier New", serif;
+  font-family: "Helvetica Neue", "Helvetica",  "sans-serif";
 }
 
 body {
-  background: $primary;
+  background: $background-color;
+  margin-bottom: 160px; //This is to clear the ShoutOut button so it doesn't cover the tweets.
 }
 
 .shell {
@@ -23,15 +24,32 @@ body {
   margin-top: 66px;
 }
 
+footer {
+  vertical-align: middle;
+  background-color: $primary;
+  height: 60px;
+  position: fixed;
+  // top: 35%;
+  width: 100%;
+  bottom: 0;
+
+  p {
+    text-align: right;
+    color: white;
+    padding: 20px;
+  }
+}
 //This refers to the top bar.
 nav {
   display: inline-block;
   width: 100%;
   text-align: right;
   padding: 10px 10px 0;
-  background: $secondary;
+  background: $primary;
   padding: 5px 0;
   position: fixed;
+  box-shadow: $drop-shadow;
+  z-index: 5;
 
   img {
     margin-bottom: -15px;
@@ -44,12 +62,8 @@ nav {
       display: inline-block;
       text-decoration: none;
       color: black;
-      letter-spacing: 0.2em;
     }
 
-    a {
-      text-transform: uppercase;
-    }
     a:hover {
       text-decoration: overline;
     }
@@ -58,14 +72,17 @@ nav {
 
 a {
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: black;
 }
 
 a:hover {
   text-decoration: overline;
+}
 
+h1 {
+  font-family: "Passion One";
+  padding: 10px 0;
+  font-size: 3em;
 }
 
 //This will make all the input fields padded and slightly bigger.

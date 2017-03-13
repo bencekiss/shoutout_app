@@ -53,20 +53,44 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#logo-button').on('mousedown', function() {
-    $(this).css("box-shadow", "inset 10px 10px 10px black");
-    $('#rick').css("display", "block")
+    $(this).css("box-shadow", "none");
   });
   $('#logo-button').on('mouseup', function() {
-    $(this).css("box-shadow", "10px 10px 10px black");
-    $('#rick').css("display", "none")
+    $(this).css("box-shadow", "2px 2px 2px gray");
   });
+
+  $('#logo-button').mouseenter(function() {
+    $('#shout-static').toggle();
+    $('#shout-hover').css('display', 'block');
+  }).mouseleave(function(){
+    $('#shout-static').css('display', 'block');
+    $('#shout-hover').css('display', 'none');
+  })
 
   $('#shout-modal-call-button').on('click', function() {
     $('.shout-modal').fadeIn();
   });
 
+  $('#shout-modal-call-button').mousedown(function(){
+    $('#shout-modal-call-button-outline').css('box-shadow', 'none')
+  }).mouseup(function(){
+    $('#shout-modal-call-button-outline').css('box-shadow', '2px 2px 2px gray')
+  });
+
+  $('#shout-modal-call-button-outline').mouseenter(function() {
+    $('#shout-call-static').toggle();
+    $('#shout-call-hover').css('display', 'block');
+  }).mouseleave(function(){
+    $('#shout-call-static').css('display', 'block');
+    $('#shout-call-hover').css('display', 'none');
+  });
+
   $('#reward-modal-call-button').on('click', function() {
     $('.rewards-modal').fadeIn();
+  });
+
+  $('.shoutout-box').on('click', function() {
+    $(this).children('.tweet-shoutout-box').slideToggle();
   });
 
   $('#avatar').on('click', function() {

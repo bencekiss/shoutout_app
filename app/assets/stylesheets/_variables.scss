@@ -1,5 +1,12 @@
-$primary: lime;
-$secondary: red;
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$primary: #1DA1F2; //This is Twitter's color
+$secondary: #F5F8FA;
 $tertiary: cyan;
-$border: 2px solid gray;
+$thin-border: 1px solid gray;
+$normal-border: 2px solid gray;
 $modal-color: fuchsia;
+$background-color: #E9EBEE; //This is Twitter's background
+$logo-shadow: 10px 10px 10px darkgray;
+$drop-shadow: 2px 2px 2px gray

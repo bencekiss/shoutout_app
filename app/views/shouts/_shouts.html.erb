@@ -1,12 +1,18 @@
 <div id="shoutout-boxset">
   <% @shouted_resto.each do |resto| %>
-  <div id="shoutout-box">
+  <div class="shoutout-box">
     <div class="resto-shoutout-box">
       <div class="resto-info">
-        <h3> <strong> <%= link_to resto.name, restaurant_path(resto.id) %> </strong> </h3>
-        <p>Points you currently have at <%= resto.name %>: <strong><%= resto.points(@user) %></strong></p>
-        <p>Points you've redeemed: <strong><%= resto.redeemed_points(@user) %></strong></p>
-        <%= image_tag resto.rest_img %>
+        <div class="resto-rewards">
+          <i class="fa fa-trophy" aria-hidden="true"></i>
+        </div>
+        <div class="resto-name">
+          <h3><%= resto.name %></h3>
+        </div>
+        <div class="resto-points">
+          <p class="points-label">POINTS</p>
+          <p><strong><%= resto.points(@user) %></strong></p>
+        </div>
       </div>
     </div>
     <div class="tweet-shoutout-box">
@@ -22,9 +28,17 @@
               <p><em>This shout is no longer gaining points because the tweet has been deleted.</em></p>
             </div>
             <% end %>
-            <p>Tweet: <%= shout.twitter_text %></p>
-            <p><%= shout.retweets %> retweets and <%= shout.favourites %> likes/favorites.</p>
-            <p>ShoutOut points you've earned for <%= resto.name %>: <strong><%= Shout.points(shout, @user) %></strong> </p>
+            <p class="tweet-text">
+              <%= shout.twitter_text %>
+            </p>
+            <p class="tweet-stats">
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+              <%= shout.retweets %>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <%= shout.favourites %>
+              <i class="fa fa-trophy" aria-hidden="true"></i>
+              <%= Shout.points(shout, @user) %>
+            </p>
           </div>
         </div>
       <% end %>

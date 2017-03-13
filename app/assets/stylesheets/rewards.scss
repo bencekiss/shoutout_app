@@ -33,12 +33,11 @@
   display: inline-block;
   p {
     z-index: 3;
-    text-transform: uppercase;
   }
 }
 
 .reward-button-box {
-  border: $border;
+  border: $normal-border;
   padding: 2px;
   margin: 20px 0;
   width: 79%;

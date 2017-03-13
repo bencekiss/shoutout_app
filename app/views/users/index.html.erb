@@ -1,9 +1,14 @@
 <% unless current_user %>
-  <div id="logo-button">
-    <h1><a href="/auth/twitter">ShoutOut!</a></h1>
-    <%= image_tag "rickastley", id: "rick" %>
+  <a href="/auth/twitter">
+    <div id="logo-button">
+      <%= image_tag "shout1.png", id: "shout-static" %>
+      <%= image_tag "shout2.png", id: "shout-hover" %>
+    </div>
+  </a>
+  <div class="blurb">
+    <h2 id="title">ShoutOut!</h2>
+    <p>Reward your tweets! <i class="fa fa-twitter"></i></p>
   </div>
-  <div class="stripe"></div>
 <% else %>
 <div class="modal rewards-modal">
   <div class="pending">
@@ -25,10 +30,10 @@
   <div class="close">X</div>
 </div>
 
-<div class="button-bar">
+<!-- <div class="button-bar">
   <button id="shout-modal-call-button">Make a ShoutOut!</button>
   <button id="reward-modal-call-button">View Your Rewards</button>
-</div>
+</div> -->
 
   <!-- This renders the shout form to make a shout out-->
   <div class="modal shout-modal">

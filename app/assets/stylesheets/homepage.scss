@@ -1,33 +1,32 @@
 @import "variables";
 
 #logo-button {
-  width: 500px;
-  height: 500px;
+  //Physical Structure
+  width: 197px;
+  height: 197px;
   border-radius: 50%;
-  background-color: $secondary;
-  border: 2px solid black;
-  box-shadow: 10px 10px 10px black;
-  // position: relative;
+  box-shadow: 3px 3px 3px gray;
+  background-color: transparent;
+  border: $thin-border;
+  z-index: 2;
+
+  //Positional Structure
+  position: relative;
   display: inline-block;
   text-align: center;
   margin: auto;
-  position: relative;
-  top: 20px;
-
-  h1 {
+  #shout-static, #shout-hover {
+    width: 350px;
+    height: 350px;
+    margin-top: -180px;
+    margin-left: -161px;
+    top: 50%;
+    left: 50%;
     position: absolute;
-    top: 182px;
-    left: 6px;
-    font-family: "Passion One";
-    font-size: 7em;
-    transform: rotate(-12deg);
-
-    a {
-      color: black;
-      text-decoration: none;
-      text-transform: none;
-      letter-spacing: 0;
-    }
+    transform: rotate(-20deg)
+  }
+  #shout-hover {
+    display: none;
   }
 }
 
@@ -35,21 +34,36 @@
   float: left;
   display: inline-block;
   font-size: 3em;
+  padding: 0 10px;
+  i {
+    color: white;
+    text-shadow: $drop-shadow;
+  }
+
+  img {
+    width: 50px;
+    padding-bottom: 5px;
+  }
 }
 
 #logo-button:hover {
-  background: yellow;
+  background: white;
+  i {
+    color: $primary;
+  }
 }
 
-.stripe {
-  background-color: $tertiary;
-  height: 200px;
-  position: absolute;
-  top: 35%;
-  width: 100%;
-  z-index: -1;
-}
+.blurb {
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
 
-.stripe:hover {
-  background-color: orange;
+  #title {
+    font-family: "Passion One";
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
 }
