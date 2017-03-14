@@ -27,11 +27,11 @@
         <div class="dropdown">
           <div class="dropdown-button">
             <i class="fa fa-trophy"></i>
-            <small>Rewards</small>
+            <%= link_to "Rewards", root_path, class: "dropdown-button" %>
           </div>
           <div class="dropdown-button">
             <i class="fa fa-search"></i>
-            <small>Restaurants</small>
+            <%= link_to 'Restaurants', restaurants_path, class: "dropdown-button"  %>
           </div>
         </div>
         <% end %>

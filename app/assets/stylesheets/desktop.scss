@@ -48,7 +48,15 @@
       }
 
     }
-
+    .submit-item {
+      text-align: center;
+      input {
+        padding: 10px 20px;
+        font-family: $font-one;
+        background: $primary;
+        border: none;
+        color: white;
+      }
     ////MAKE A SHOUTOUT FORM
     .menu-structure {
       height: 100%;
@@ -85,15 +93,15 @@
         }
       }
 
-      .submit-item {
-        text-align: center;
-        input {
-          padding: 10px 20px;
-          font-family: $font-one;
-          background: $primary;
-          border: none;
-          color: white;
-        }
+      // .submit-item {
+      //   text-align: center;
+      //   input {
+      //     padding: 10px 20px;
+      //     font-family: $font-one;
+      //     background: $primary;
+      //     border: none;
+      //     color: white;
+      //   }
         input:hover {
           font-weight: 900;
         }
