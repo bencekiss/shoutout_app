@@ -81,12 +81,11 @@
     width: 100%;
     display: inline-block;
     float: right;
-    border: $thin-border;
     display: none;
 
     .shout {
       padding: 2px;
-      border-bottom: $normal-border;
+      border-top: $thin-border;
       overflow: hidden;
       position: relative;
 
