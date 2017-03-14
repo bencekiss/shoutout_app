@@ -174,3 +174,22 @@
     box-shadow: $drop-shadow;
   }
 }
+// Shout-out form, button and textarea styling.
+select#shout_restaurant_id, div.field textarea, .field input {
+    background-color: #e9ebee;
+    border-radius: 10px;
+}
+
+ div.actions input {
+    background-repeat: no-repeat;
+    width:25%;
+    height:25%;
+    border-radius:100px;
+    border-radius: 100px;
+}
+
+  .actions input:hover {
+    background-color: #1e75ac;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1e75ac), to($primary));
+    background-image: linear-gradient(top, bottom, $primary, #1e75ac, $secondary);
+}

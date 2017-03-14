@@ -18,7 +18,7 @@
     <%= f.file_field :shout_image, placeholder: "https://your images address" %>
   </div>
   <div class="actions">
-    <%= f.submit "SHOUT! OUT!" %>
+    <%= f.submit "SHOUT! OUT!", :type => :image, :src => image_path("shout4.png") %>
   </div>
   <div class="close">X</div>
 <% end %>
