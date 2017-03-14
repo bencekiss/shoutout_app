@@ -46,7 +46,7 @@
 }
 
 .nope{
-  border: 2px darksalmon solid;
+
   background-color: lightgray;
   text-align: center;
 
@@ -70,16 +70,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  // opacity: 0.4;
   z-index: -1;
 }
 
 .percentage-remaining {
-  border: 2px solid darksalmon;
   display: inline-block;
   padding: 13px;
   width: 17%;
-  background: magenta;
+  background: $primary;
   color: white;
   font-weight: 900;
   text-align: center;
