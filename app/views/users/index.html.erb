@@ -25,9 +25,7 @@
   </div> -->
 
   <!-- This renders the shout form to make a shout out-->
-  <div class="modal shout-modal">
-    <%= render '/shouts/form' %>
-  </div>
+
 
   <!-- This renders the shouts that were made by the user -->
   <% if current_user.shouts.empty? %>
@@ -35,5 +33,6 @@
   <% else %>
     <h1>Your ShoutOuts</h1>
   <% end %>
-    <%= render '/shouts/shouts'%>
+    <%= render '/shouts/shouts' %>
+  
 <% end %>

@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @all_restaurants = Restaurant.all
+    @user = current_user
+    @shout = Shout.new
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+
   end
 
   def new

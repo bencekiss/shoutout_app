@@ -23,10 +23,11 @@
 }
 
 .reward-button{
-  border: 2px darksalmon solid;
+  // border: 2px darksalmon solid;
   text-align: center;
   padding: 5px;
-  background-color: yellow;
+  color: white;
+
   position: relative;
   z-index: -1;
   width: 80%;
@@ -37,7 +38,7 @@
 }
 
 .reward-button-box {
-  border: $normal-border;
+  // border: $normal-border;
   padding: 2px;
   margin: 20px 0;
   width: 79%;
@@ -63,7 +64,7 @@
 }
 
 .points-bar {
-  background: yellow;
+  background: $primary;
   width: 50%;
   height: 100%;
   position: absolute;

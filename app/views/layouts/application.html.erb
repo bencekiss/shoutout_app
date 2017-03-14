@@ -34,19 +34,33 @@
             <small>Restaurants</small>
           </div>
         </div>
+        <% end %>
 
         <!-- DESKTOP VIEW IS TO MAKE THE VIEW ADAPT TO THE WIDE MONITOR -->
         <div class="desktop-view">
 
+
           <%= render "users/left-sidebar" %>
 
           <div class="shell">
-            <%= yield %>
+            <% if current_user %>
+            <!--  -->
+              <% if params[:controller] == "restaurants" && params[:id] %>
+              <div class="modal shout-modal">
+                <%= render '/shouts/resto_shout' %>
+              </div>
+              <% else %>
+              <div class="modal shout-modal">
+                <%= render '/shouts/form' %>
+              </div>
+              <% end %>
             <div id="shout-modal-call-button">
               <%= image_tag "shout1.png", id: "shout-call-static" %>
               <%= image_tag "shout3.png", id: "shout-call-hover" %>
               <div id="shout-modal-call-button-outline"></div>
             </div>
+            <% end %>
+            <%= yield %>
           </div>
 
           <div class="right-sidebar">
@@ -61,7 +75,8 @@
               <div class="menu-item">About Bence Kiss</div>
             </div>
           </div>
-      <% end %>
+
+
     </div>
 
     <% unless current_user %>
