@@ -7,12 +7,14 @@
  <div class="field">
    <%= f.label :twitter_text, value: "Text to be tweeted" %><br>
    <%= f.text_area :twitter_text, placeholder: "Share the good news" %>
+   <div id="textarea_feedback"></div>
  </div>
  <div class="field">
    <%= f.label :shout_image, value: "Upload your picture!" %><br>
    <%= f.file_field :shout_image, placeholder: "https://your images address" %>
  </div>
- <div class="actions">
-   <%= f.submit "SHOUT! OUT!" %>
+ <div class="submit-item">
+   <%= f.submit "Shout it out!" %>
  </div>
+ <div class="close">X</div>
 <% end %>

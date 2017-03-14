@@ -11,7 +11,7 @@
   </div>
   <div class="field">
     <%= f.label :twitter_text, value: "What do you wanna say?" %><br>
-    <%= f.text_area :twitter_text, placeholder: "Share the good news" %></br>
+    <%= f.text_area :twitter_text, placeholder: "Share the good news", maxlength: "140" %></br>
     <div id="textarea_feedback"></div>
 
   </div>
@@ -19,8 +19,8 @@
     <%= f.label :shout_image, value: "Share a photo of your experience!" %><br>
     <%= f.file_field :shout_image, placeholder: "https://your images address" %>
   </div>
-  <div class="actions">
-    <%= f.submit "SHOUT! OUT!", :type => :image, :src => image_path("shout4.png") %>
+  <div class="submit-item">
+    <%= f.submit "Shout it out!"%>
   </div>
   <div class="close">X</div>
 <% end %>
