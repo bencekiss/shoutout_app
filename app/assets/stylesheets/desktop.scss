@@ -1,0 +1,55 @@
+@import "variables";
+
+@media only screen and (min-width: 1024px) {
+
+  .sidebar {
+    width: 19.4%;
+    background: $secondary;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 2px 2px 2px darkgray;
+
+    .sidebar-logo-container {
+      height: 200px;
+      width: 100%;
+      background: lime;
+      position: relative;
+      background: $primary;
+
+      #sidebar-logo-image {
+        width: 193.61px;
+        width: 199.27px;
+        position: absolute;
+        left: 50%;
+        margin-left: -99px;
+      }
+
+    }
+    .menu-structure {
+      height: 100%;
+
+      .menu-item {
+        height: 10%;
+        padding: 20px;
+        font-family: $font-one;
+        font-size: 1.5em;
+      }
+
+      .menu-item:hover {
+        color: $primary;
+        background: $secondary-hover;
+      }
+    }
+  }
+
+  nav, .shell, footer {
+    width: 80.6%;
+    float: right;
+    margin-left: 19.4%;
+  }
+
+  #logo img {
+    display: none;
+  }
+}
