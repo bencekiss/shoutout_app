@@ -1,7 +1,9 @@
 @import "variables";
 
-.desktop-view {
-  height: 100vh;
+@media only screen and (max-width: 1023px) {
+  .desktop-view {
+    height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -92,6 +94,7 @@
         border: none;
         color: white;
       }
+    }
     ////MAKE A SHOUTOUT FORM
     .menu-structure {
       height: 100%;
@@ -128,15 +131,15 @@
         }
       }
 
-      // .submit-item {
-      //   text-align: center;
-      //   input {
-      //     padding: 10px 20px;
-      //     font-family: $font-one;
-      //     background: $primary;
-      //     border: none;
-      //     color: white;
-      //   }
+      .submit-item {
+        text-align: center;
+        input {
+          padding: 10px 20px;
+          font-family: $font-one;
+          background: $primary;
+          border: none;
+          color: white;
+        }
         input:hover {
           font-weight: 900;
         }
@@ -220,4 +223,5 @@
   body {
     margin: 0;
   }
+
 }
