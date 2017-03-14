@@ -8,7 +8,7 @@
 }
 
 html {
-  font-family: "Helvetica Neue", "Helvetica",  "sans-serif";
+  font-family: $font-one, "Helvetica",  "sans-serif";
   color: $font-color;
 }
 
@@ -64,9 +64,6 @@ nav {
       color: $font-color;
     }
 
-    a:hover {
-      text-decoration: overline;
-    }
   }
 }
 
@@ -75,12 +72,9 @@ a {
   color: $font-color;
 }
 
-a:hover {
-  text-decoration: overline;
-}
 
 h1 {
-  font-family: "Passion One";
+
   padding: 10px 0;
   font-size: 3em;
 }

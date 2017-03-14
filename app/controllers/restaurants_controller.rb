@@ -1,10 +1,10 @@
 class RestaurantsController < ApplicationController
   def index
     @all_restaurants = Restaurant.all
-    @user = current_user
     @shout = Shout.new
     @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
-
+    @user = current_user
+    @redemptions = @user.redemptions
   end
 
   def new
@@ -39,11 +39,12 @@ class RestaurantsController < ApplicationController
   def show
     @user = current_user
     @shout = Shout.new
-
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
     @restaurant = Restaurant.find(params[:id])
     @points = @restaurant.points(current_user)
     @available_rewards = Reward.all.where("restaurant_id = ? AND point_value <= ?", @restaurant.id, @points)
     @rewards_array = @available_rewards.map { |reward| [reward.name, reward.id] }
+    @redemptions = @user.redemptions
   end
 
   def destroy
