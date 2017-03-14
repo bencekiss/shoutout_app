@@ -50,23 +50,33 @@
       .resto-rewards, .resto-name, .resto-points {
         display: inline-block;
         color: $font-color;
-        padding: 10px 0;
       }
 
       .resto-rewards {
         width: 20%;
         font-size: 2em;
+        padding: 10px 0;
       }
 
       .resto-name {
         width: 57%;
         padding: 15px 0;
         font-size: 1.4em;
-
+        padding: 10px 0;
       }
 
       .resto-points {
         width: 20%;
+        padding: 2px 0;
+
+        .points-label {
+          font-family: $font-two;
+          font-size: 0.8em;
+        }
+        .points-number {
+          font-family: $font-one;
+          font-size: 1.4em;
+        }
       }
     }
 
@@ -81,12 +91,11 @@
     width: 100%;
     display: inline-block;
     float: right;
-    border: $thin-border;
     display: none;
 
     .shout {
       padding: 2px;
-      border-bottom: $normal-border;
+      border-top: $thin-border;
       overflow: hidden;
       position: relative;
 

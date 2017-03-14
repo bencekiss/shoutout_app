@@ -7,25 +7,31 @@
     padding: 20px;
   }
 
-  ////LEFT SIDEBAR
+  ////SIDEBAR
   .left-sidebar, .shell, .right-sidebar {
     margin: 0 10px;
   }
 
   .left-sidebar {
     width: 24%;
+    background: $secondary;
   }
 
   .right-sidebar {
     width: 24%;
     vertical-align: top;
+    background: white;
+    font-family: $font-one;
+
+    #you-have-rewards-at-the-following {
+      padding: 0 20px;
+    }
   }
 
   .left-sidebar, .right-sidebar {
     display: inline-block;
     border: $thin-border;
     border-radius: 10px;
-    background: $secondary;
     height: 100%;
     z-index: 3;
     box-shadow: 2px 2px 2px darkgray;
@@ -46,7 +52,32 @@
         left: 50%;
         margin-left: -99px;
       }
+    }
 
+    .rewards-heading {
+      text-align: left;
+      padding-left: 27px;
+      padding-right: 27px;
+      font-family: $font-one;
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+    .rewards-heading-paragraph {
+      font-family: $font-one;
+      padding: 0 27px;
+      font-size: 1.1em
+    }
+    .reward-box {
+      width: 100%;
+      padding: 10px 27px;
+      border-top: $thin-border;
+      p {
+        font-family: $font-one;
+      }
+      .reward-resto {
+        font-weight: 900;
+        font-size: 1.2em;
+      }
     }
     .submit-item {
       text-align: center;
@@ -124,6 +155,10 @@
     display: none;
   }
 
+  #shout-modal-call-button {
+    display: none;
+  }
+
   ////CENTER appearance: em K. A.; SHELL
   .shell {
     display: inline-block;
@@ -142,7 +177,7 @@
     padding-left: 27px;
     padding-right: 27px;
     font-family: $font-one;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
   }
 
