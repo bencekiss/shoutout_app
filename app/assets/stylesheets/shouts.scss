@@ -98,6 +98,7 @@
       border-top: $thin-border;
       overflow: hidden;
       position: relative;
+      font-family: $font-one;
 
       .shout-image {
         display: inline-block;
@@ -105,10 +106,11 @@
         width: 32%;
 
         img {
-          width: 100px;
-          height: 100px;
+          width: 100%;
+          height: 100%;
           max-width: 100%;
           float: left;
+          border-radius: 10px;
         }
       }
 
@@ -151,10 +153,13 @@
 }
 
 .passive {
-  background: $tertiary;
-  border: $normal-border;
-  padding: 10px;
   text-align: center;
+  color: gray;
+  p {
+    text-align: left;
+    // font-style: italic;
+    font-weight: 900;
+  }
 }
 
 #shout-modal-call-button {
