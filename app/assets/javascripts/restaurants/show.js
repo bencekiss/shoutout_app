@@ -89,7 +89,7 @@ $(document).on("turbolinks:load",function(){
   }).mouseleave(function(){
     $('#shout-static').css('display', 'block');
     $('#shout-hover').css('display', 'none');
-  })
+  });
 
   $('#shout-modal-call-button-outline').on('click', function() {
     $('.shout-modal').fadeIn();
@@ -118,7 +118,8 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#avatar').on('click', function() {
-    $('.dropdown').slideToggle()
+    if ($(document).width() <= "1024") {
+      $('.dropdown').slideToggle()
+    }
   });
-
 });

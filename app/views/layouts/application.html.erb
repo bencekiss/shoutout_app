@@ -53,18 +53,18 @@
                    <%= render '/shouts/form' %>
                  </div>
                <% end %>
-               <div id="shout-modal-call-button">
-                 <%= image_tag "shout1.png", id: "shout-call-static" %>
-                 <%= image_tag "shout3.png", id: "shout-call-hover" %>
-                 <div id="shout-modal-call-button-outline"></div>
-               </div>
              <% end %>
+             <div id="shout-modal-call-button">
+               <%= image_tag "shout1.png", id: "shout-call-static" %>
+               <%= image_tag "shout3.png", id: "shout-call-hover" %>
+               <div id="shout-modal-call-button-outline"></div>
+             </div>
              <%= yield %>
            </div>
 
            <%= render "users/right-sidebar" %>
-
          </div>
+
        <% end %>
 
 

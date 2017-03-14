@@ -47,10 +47,10 @@
 }
 
 .dropdown {
-  position: fixed;
+  position: absolute;
   background: $secondary;
   width: 100%;
-  top: 66px;
+  top: 76px;
   padding: 2px 12px 1px;
   display: none;
   box-shadow: $drop-shadow;
@@ -63,7 +63,6 @@
     font-size: 1.5em;
     width: 49%;
     color: gray;
-    font-size: 1em;
 
     p{
     }
