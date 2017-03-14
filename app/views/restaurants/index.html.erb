@@ -3,8 +3,10 @@
     <div class="restaurant-description">
       <h3><%= link_to resto.name, restaurant_path(resto) %></h3>
       <%= image_tag(resto.rest_img, class: "restaurant-image", size: "300x300") %>
-      <p><%= resto.address %></p>
-      <p><%= resto.phone_number %></p>
+      <div class="restaurant-details">
+        <p><%= resto.address %></p>
+        <p><%= resto.phone_number %></p>
+      </div>
     </div>
   <% end %>
 </div>

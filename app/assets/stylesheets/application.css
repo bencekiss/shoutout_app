@@ -13,8 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-#rick {
-  width: 300px;
-  display: none;
-}
