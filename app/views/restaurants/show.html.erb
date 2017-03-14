@@ -3,10 +3,8 @@
     <h1><%= @restaurant.name %></h1>
     <%= image_tag(@restaurant.rest_img.image_resize.url) %>
 
-    <% if @restaurant.owner_id != current_user.id %>
-      <div class="form shout-form">
-        <%= render 'shouts/resto_shout' %>
-      </div>
+     <% if @restaurant.owner_id != current_user.id %>
+    
       <div class="field points-remaining">
         <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
       </div>
