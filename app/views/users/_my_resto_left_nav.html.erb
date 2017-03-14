@@ -1,9 +1,14 @@
-<div class="menu-structure">My Restaurants
-  <ul>
-    <% @owned_restaurants.each do |restaurant| %>
-      <div class="menu-item">
-        <li><%= restaurant.name %></li>
-      </div>
-    <% end %>
-  </ul>
+<div class="left-sidebar">
+  <div class="left-sidebar-logo-container">
+    <%= image_tag "nav-logo-img.png", id: "sidebar-logo-image" %>
+  </div>
+  <div class="menu-structure">My Restaurants
+    <ul>
+      <% @owned_restaurants.each do |restaurant| %>
+        <div class="menu-item" id = '<%=restaurant.name %>'>
+          <li><%= restaurant.name %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
 </div>

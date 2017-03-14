@@ -40,8 +40,12 @@
         <% if current_user %>
 
           <div class="desktop-view">
+            <% if params[:action] != "my_restaurants" %>
             <%= render "users/left-sidebar" %>
-            <div class="shell">
+            <% else  %>
+            <%= render "users/my_resto_left_nav" %>
+            <% end %>
+              <div class="shell">
               <% if params[:controller]== "restaurants" && params[:id] && params[:action] != "my_restaurants"  %>
                 <% if params[:controller] == "restaurants" && params[:id] %>
                   <div class="modal shout-modal">

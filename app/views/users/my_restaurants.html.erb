@@ -2,11 +2,9 @@
 
 
 <% @owned_restaurants.each do |restaurant| %>
-  <div class="restaurant">
+  <div class="restaurant" id = '<%= restaurant.name %>'>
     <div class="restaurant-img-container">
       <%= image_tag(restaurant.rest_img.image_resize.url) %>
-       <!-- <button class= "display-left" onclick="plusDivs(-1)">&#10094;</button>
-       <button class= "display-right" onclick="plusDivs(+1)">&#10095;</button> -->
     </div>
     <div class="restaurant-info-container">
       <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
@@ -30,22 +28,3 @@
     </div>
   </div>
 <% end %>
-<!-- <script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-    showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("restaurant-img-container");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
-}
-</script> -->

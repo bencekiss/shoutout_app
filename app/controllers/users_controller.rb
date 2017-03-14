@@ -76,7 +76,26 @@ class UsersController < ApplicationController
 
   def my_restaurants
     @user = current_user
+    @shout = Shout.new
     @owned_restaurants = @user.owned_restaurants
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+    if current_user
+      @user = current_user
+
+      @redemptions = @user.redemptions
+      @shouts = Shout.all.where(user_id: @user.id)
+      @shouted_resto = []
+
+      @shouts.each do |shout|
+        if !(@shouted_resto.include?(Restaurant.find(shout.restaurant_id)))
+          @shouted_resto << Restaurant.find(shout.restaurant_id)
+        end
+      end
+      @shout = Shout.new
+      @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+
+      @uploader = AvatarUploader.new ###Not sure what we need this for yet.
+    end
   end
 
   private
