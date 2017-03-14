@@ -1,0 +1,24 @@
+<div class="left-sidebar">
+  <div class="left-sidebar-logo-container">
+    <%= image_tag "nav-logo-img.png", id: "sidebar-logo-image" %>
+  </div>
+  <div class="menu-structure">
+    <%= form_for [@user, @shout] do |f| %>
+      <%= f.hidden_field :twitter_id, value: 7 %>
+      <%= f.hidden_field :user_id, value: @user.id %>
+      <div class="heading-item">Make a Shoutout!</div>
+      <div class="menu-item">What restaurant are you at?
+        <%= f.select :restaurant_id, options_for_select(@restaurants) %>
+      </div>
+      <div class="menu-item">What do you want to say?
+        <%= f.text_area :twitter_text, placeholder: "This restaurant is awesome!" %>
+      </div>
+      <div class="menu-item">Share a photo of the experience
+        <%= f.file_field :shout_image, placeholder: "https://your images address" %>
+      </div>
+      <div class="submit-item">
+        <%= f.submit "Shout it out!" %>
+      </div>
+    <% end %>
+  </div>
+</div>

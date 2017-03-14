@@ -7,11 +7,13 @@
 
   <div class="field">
     <%= f.label "What Restaurant Are You At?" %><br>
-    <%= f.select :restaurant_id, options_for_select(@restaurants) %>
+      <%= f.select :restaurant_id, options_for_select(@restaurants) %>
   </div>
   <div class="field">
     <%= f.label :twitter_text, value: "What do you wanna say?" %><br>
-    <%= f.text_area :twitter_text, placeholder: "Share the good news" %>
+    <%= f.text_area :twitter_text, placeholder: "Share the good news" %></br>
+    <div id="textarea_feedback"></div>
+
   </div>
   <div class="field">
     <%= f.label :shout_image, value: "Share a photo of your experience!" %><br>

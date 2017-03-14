@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       end
       @shout = Shout.new
       @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
-
+      
       @uploader = AvatarUploader.new ###Not sure what we need this for yet.
     end
   end
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
             flash[:notice] = "You redeemed #{@reward.name.upcase}!"
             render json: @reward
             to_post = [@user, @reward, Redemption.last, params[:authenticity_token]]
-            
+
             ActionCable.server.broadcast('redeem_channel', to_post)
 
           end
