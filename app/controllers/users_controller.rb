@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       end
       @shout = Shout.new
       @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
-      
+
       @uploader = AvatarUploader.new ###Not sure what we need this for yet.
     end
   end

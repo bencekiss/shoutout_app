@@ -1,31 +1,51 @@
 <h1>My Restaurants</h1>
 
-<script>
-  //window.authenticity_token = "<%= form_authenticity_token %>";
-</script>
 
 <% @owned_restaurants.each do |restaurant| %>
-<div class="restaurant">
-  <%= image_tag(restaurant.rest_img.image_resize.url) %>
-    <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-    <h2><%= restaurant.address %></p>
-    <h3>The users at this restaurant:</h3>
+  <div class="restaurant">
+    <div class="restaurant-img-container">
+      <%= image_tag(restaurant.rest_img.image_resize.url) %>
+       <!-- <button class= "display-left" onclick="plusDivs(-1)">&#10094;</button>
+       <button class= "display-right" onclick="plusDivs(+1)">&#10095;</button> -->
+    </div>
+    <div class="restaurant-info-container">
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+        <h2><%= restaurant.address %></h2>
+          <h3>The users at this restaurant:</h3>
 
-    <div id="redemptions-list">
-      <% redemptions = Redemption.redeemable(restaurant) %>
-      <% redemptions.each do |redemption| %>
-      <div class="redemption-container">
-        <div class="redemption-user">
-          <p><%= User.find(redemption.user_id).name %> wants to redeem the following reward:</p>
-        </div>
-
-        <div class="redemption-reward">
-          <p><%= Reward.find(redemption.reward_id).name %> <%= Reward.find(redemption.reward_id).point_value %></p>
-        </div>
-        <p class = "redemption-button"><%= button_to "Redeem", { controller: "users", action: "change_redemption_status", :redemption_id => redemption.id }, method: :post %></p>
-
+      <div id="redemptions-list">
+        <% redemptions = Redemption.redeemable(restaurant) %>
+          <% redemptions.each do |redemption| %>
+            <div class="redemption-container">
+              <div class="redemption-user">
+                <p><%= User.find(redemption.user_id).name %> wants to redeem the following reward:</p>
+              </div>
+              <div class="redemption-reward">
+                <p><%= Reward.find(redemption.reward_id).name %> <%= Reward.find(redemption.reward_id).point_value %></p>
+              </div>
+                <p class = "redemption-button"><%= button_to "Redeem", { controller: "users", action: "change_redemption_status", :redemption_id => redemption.id }, method: :post %></p>
+            </div>
+          <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-</div>
 <% end %>
+<!-- <script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("restaurant-img-container");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+}
+</script> -->

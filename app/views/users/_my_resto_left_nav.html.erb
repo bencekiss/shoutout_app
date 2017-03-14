@@ -1,0 +1,9 @@
+<div class="menu-structure">My Restaurants
+  <ul>
+    <% @owned_restaurants.each do |restaurant| %>
+      <div class="menu-item">
+        <li><%= restaurant.name %></li>
+      </div>
+    <% end %>
+  </ul>
+</div>
