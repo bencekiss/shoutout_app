@@ -36,7 +36,7 @@
       </div>
       <div class="dropdown-button">
         <i class="fa fa-search"></i>
-        <small>Restaurants</small>
+        <small><%= link_to 'Restaurants', restaurants_path %></small>
       </div>
       <p><%# link_to "View Restaurants", restaurants_path %></p>
       <p><%#  link_to "Add a restaurant", new_restaurant_path %></p>
@@ -59,6 +59,15 @@
     <div class="shell">
       <%= yield %>
       <% if current_user %>
+        <% if params[:controller] == "restaurants" && params[:id] %>
+        <div class="modal shout-modal">
+          <%= render '/shouts/resto_shout' %>
+        </div>
+        <% else %>
+        <div class="modal shout-modal">
+          <%# render '/shouts/form' %>
+        </div>
+        <% end %>
         <div id="shout-modal-call-button">
           <%= image_tag "shout1.png", id: "shout-call-static" %>
           <%= image_tag "shout3.png", id: "shout-call-hover" %>

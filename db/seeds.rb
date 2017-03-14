@@ -10,6 +10,10 @@ Reward.destroy_all
 # User.destroy_all
 # Shout.destroy_all
 
+  User.create(
+    uid: "834852514394677250",
+    provider: "twitter"
+  )
 
   rest = Restaurant.create!(
     name: "Shawarma King",
@@ -18,7 +22,7 @@ Reward.destroy_all
     rest_img: nil,
     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
-    owner_id: 1
+    owner: User.first
   )
   File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg')) do |f|
     rest.rest_img = f
@@ -32,7 +36,7 @@ Reward.destroy_all
     rest_img: nil,
     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
-    owner_id: 1
+    owner: User.first
   )
   File.open(File.join(Rails.root, '/public/images/BurgersPriest.jpeg')) do |f|
     rest.rest_img = f
@@ -46,7 +50,7 @@ Reward.destroy_all
     rest_img: nil,
     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
-    owner_id: 1
+    owner: User.first
   )
   File.open(File.join(Rails.root, '/public/images/BurritoBoyz.png')) do |f|
     rest.rest_img = f
@@ -60,7 +64,7 @@ Reward.destroy_all
     rest_img: nil,
     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
-    owner_id: 1
+    owner: User.first
   )
   File.open(File.join(Rails.root, '/public/images/SmokesPoutine.jpeg')) do |f|
     rest.rest_img = f
@@ -74,7 +78,7 @@ Reward.destroy_all
     rest_img: nil,
     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
-    owner_id: 1
+    owner: User.first
   )
   File.open(File.join(Rails.root, '/public/images/Tokaji.jpeg')) do |f|
     rest.rest_img = f
@@ -86,6 +90,6 @@ Reward.destroy_all
       name: Faker::Commerce.product_name,
       description: Faker::Lorem.sentence,
       point_value: rand(100),
-      restaurant_id: rand(5)
+      restaurant: Restaurant.all.sample
     )
   end
