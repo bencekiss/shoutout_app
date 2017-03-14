@@ -1,16 +1,36 @@
 @import "variables";
 
 @media only screen and (min-width: 1024px) {
+  .desktop-view {
+    width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
 
-  .sidebar {
-    width: 19.4%;
+  .left-sidebar, .shell, .right-sidebar {
+    margin: 0 10px;
+  }
+
+  .left-sidebar {
+    width: 24%;
+  }
+
+  .right-sidebar {
+    width: 24%;
+  }
+
+  .left-sidebar, .right-sidebar {
+    display: inline-block;
+    border: $thin-border;
+    border-radius: 10px;
     background: $secondary;
     height: 100%;
-    position: fixed;
     z-index: 3;
     box-shadow: 2px 2px 2px darkgray;
 
-    .sidebar-logo-container {
+    .left-sidebar-logo-container, .right-sidebar-logo-container {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       height: 200px;
       width: 100%;
       background: lime;
@@ -33,7 +53,7 @@
         height: 10%;
         padding: 20px;
         font-family: $font-one;
-        font-size: 1.5em;
+        font-size: 1em;
       }
 
       .menu-item:hover {
@@ -43,13 +63,26 @@
     }
   }
 
-  nav, .shell, footer {
-    width: 80.6%;
-    float: right;
-    margin-left: 19.4%;
-  }
-
   #logo img {
     display: none;
   }
+
+  .shell {
+    display: inline-block;
+    width: 45%;
+    border: $thin-border;
+    border-radius: 10px;
+    height: 100%;
+    vertical-align: top;
+    margin-top: 0;
+    box-shadow: $drop-shadow;
+  }
+
+  .resto-name h3 {
+    font-size: 1em;
+  }
+
+  nav {
+  }
+
 }

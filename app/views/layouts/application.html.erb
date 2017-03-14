@@ -14,75 +14,57 @@
   </head>
 
   <body>
-    <%# if @do_not_show_header %>
-      <% if current_user %>
+    <% if current_user %>
         <nav>
           <a href="/">
             <div id="logo">
               <%= image_tag "bullhorn.png" %>
             </div>
           </a>
-          <%= image_tag current_user.profile_image, id: "avatar" %>
-          <!-- <div class="nav-text"> -->
-          <!-- <p>Signed in as <%# current_user.name %></p> -->
-            | <%= link_to ' Log Out ', :logout, method: :post %>
-          <!-- </div> -->
+          <%= image_tag current_user.profile_image, id: "avatar" %> | <%= link_to ' Log Out ', :logout, method: :post %>
         </nav>
-        <div class="sidebar">
-          <div class="sidebar-logo-container">
-            <%= image_tag "nav-logo-img.png", id: "sidebar-logo-image" %>
+        <!-- THIS IS THE DROPDOWN FOR MOBILE VIEW. -->
+        <div class="dropdown">
+          <div class="dropdown-button">
+            <i class="fa fa-trophy"></i>
+            <small>Rewards</small>
           </div>
-          <div class="menu-structure">
-            <div class="menu-item">My Profile</div>
-            <div class="menu-item">My Rewards</div>
-            <div class="menu-item">Search Restaurants</div>
-            <div class="menu-item">My Restaurants</div>
-            <div class="menu-item">About Us</div>
-            <div class="menu-item">About PAIR</div>
-            <div class="menu-item">About Bence Kiss</div>
+          <div class="dropdown-button">
+            <i class="fa fa-search"></i>
+            <small>Restaurants</small>
           </div>
         </div>
-      <% end %>
-    <%# end %>
-    <div class="dropdown">
-      <div class="dropdown-button">
-        <i class="fa fa-trophy"></i>
-        <small>Rewards</small>
-      </div>
-      <div class="dropdown-button">
-        <i class="fa fa-search"></i>
-        <small>Restaurants</small>
-      </div>
-      <p><%# link_to "View Restaurants", restaurants_path %></p>
-      <p><%#  link_to "Add a restaurant", new_restaurant_path %></p>
-      <% if current_user %>
-        <% if !current_user.owned_restaurants.empty? %>
-          <p><%# link_to "My restaurants", my_restaurants_path %></p>
-        <% end %>
-      <% end %>
-    </div>
 
-    <!-- THIS SHOWS FLASH WHEN LOGGED. DON'T THINK WE NEED IT. -->
-    <%# if flash.any? %>
-      <!-- <div class="flash"> -->
-        <%# flash.each do |k, v| %>
-          <!-- <%# v %><br> -->
-        <%# end %>
-      <!-- </div> -->
-    <%# end %>
+        <!-- DESKTOP VIEW IS TO MAKE THE VIEW ADAPT TO THE WIDE MONITOR -->
+        <div class="desktop-view">
 
-    <div class="shell">
-      <%= yield %>
-      <% if current_user %>
-        <div id="shout-modal-call-button">
-          <%= image_tag "shout1.png", id: "shout-call-static" %>
-          <%= image_tag "shout3.png", id: "shout-call-hover" %>
-          <div id="shout-modal-call-button-outline"></div>
-        </div>
+          <%= render "users/left-sidebar" %>
+
+          <div class="shell">
+            <%= yield %>
+            <div id="shout-modal-call-button">
+              <%= image_tag "shout1.png", id: "shout-call-static" %>
+              <%= image_tag "shout3.png", id: "shout-call-hover" %>
+              <div id="shout-modal-call-button-outline"></div>
+            </div>
+          </div>
+
+          <div class="right-sidebar">
+            <!-- <div class="right-sidebar-logo-container"></div> -->
+            <div class="menu-structure">
+              <div class="menu-item">My Profile</div>
+              <div class="menu-item">My Rewards</div>
+              <div class="menu-item">Search Restaurants</div>
+              <div class="menu-item">My Restaurants</div>
+              <div class="menu-item">About Us</div>
+              <div class="menu-item">About PAIR</div>
+              <div class="menu-item">About Bence Kiss</div>
+            </div>
+          </div>
       <% end %>
     </div>
     <footer class="footer">
-      <p>&copy PAIR 2017</p>
+      <p>&copy 2017 PAIR</p>
     </footer>
   </body>
 </html>
