@@ -9,6 +9,7 @@
 
 html {
   font-family: "Helvetica Neue", "Helvetica",  "sans-serif";
+  color: $font-color;
 }
 
 body {
@@ -61,7 +62,7 @@ nav {
     p, a {
       display: inline-block;
       text-decoration: none;
-      color: black;
+      color: $font-color;
     }
 
     a:hover {
@@ -72,7 +73,7 @@ nav {
 
 a {
   text-decoration: none;
-  color: black;
+  color: $font-color;
 }
 
 a:hover {
@@ -93,5 +94,5 @@ textarea, input, select {
 
 #logo a {
   text-decoration: none;
-  color: black;
+  color: $font-color;
 }

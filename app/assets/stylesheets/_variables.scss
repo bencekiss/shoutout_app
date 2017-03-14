@@ -6,7 +6,9 @@ $secondary: #F5F8FA;
 $tertiary: cyan;
 $thin-border: 1px solid gray;
 $normal-border: 2px solid gray;
-$modal-color: fuchsia;
+$modal-color: $primary;
+$hover-background: azure;
 $background-color: #E9EBEE; //This is Twitter's background
 $logo-shadow: 10px 10px 10px darkgray;
-$drop-shadow: 2px 2px 2px gray
+$drop-shadow: 2px 2px 2px gray;
+$font-color: #24292E;
