@@ -1,5 +1,15 @@
 $(document).on("turbolinks:load",function(){
 
+  var text_max = 140;
+   $('#textarea_feedback').html(text_max + ' characters remaining');
+
+   $('#textarea').keyup(function() {
+       var text_length = $('#textarea').val().length;
+       var text_remaining = text_max - text_length;
+
+       $('#textarea_feedback').html(text_remaining + ' characters remaining');
+   });
+
   var userPoints = parseFloat($(".points-remaining p strong").text());
   for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
     var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
@@ -67,11 +77,11 @@ $(document).on("turbolinks:load",function(){
     $('#shout-hover').css('display', 'none');
   })
 
-  $('#shout-modal-call-button').on('click', function() {
+  $('#shout-modal-call-button-outline').on('click', function() {
     $('.shout-modal').fadeIn();
   });
 
-  $('#shout-modal-call-button').mousedown(function(){
+  $('#shout-modal-call-button-outline').mousedown(function(){
     $('#shout-modal-call-button-outline').css('box-shadow', 'none')
   }).mouseup(function(){
     $('#shout-modal-call-button-outline').css('box-shadow', '2px 2px 2px gray')

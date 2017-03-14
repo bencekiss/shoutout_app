@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables';
 
-.restaurant-show-container {
-  width: 40%;
-  margin: auto;
-}
 
 .restaurant-description {
   width: 100%;
@@ -64,4 +60,17 @@
 
 input#restaurant_rest_img {
     margin-left: 35%;
+}
+
+
+.restaurant-show-container {
+  margin: 0;
+
+  .restaurant-show img {
+    width: 100%;
+  }
+
+  .restaurant-show h1, h2 {
+      display: none;
+  }
 }
