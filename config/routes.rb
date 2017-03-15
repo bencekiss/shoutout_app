@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => "user_sessions#create"
   get '/auth/:provider' => 'user_sessions#new', as: :twitter_signin
   get '/about' => 'users#about', as: :about
+  get '/contact' => 'users#contact', as: :contact
   mount ActionCable.server, at: '/cable'
 
 

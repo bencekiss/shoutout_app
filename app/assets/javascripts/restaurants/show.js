@@ -125,7 +125,7 @@ $(document).on("turbolinks:load",function(){
 
 //This is the dropdown for the gear in mobile views
   $('.left-footer').on('click', function(){
-    $('.dropdown-bottom').toggle()
+    $('.dropdown-bottom').toggle();
   });
 
 
