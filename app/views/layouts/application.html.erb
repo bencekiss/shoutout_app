@@ -73,7 +73,7 @@
 
       <!-- HEADER LOGO -->
     <% unless current_user %>
-      <div class="shell">
+      <div class="homepage-shell">
         <div id="logo-box">
           <a href="/auth/twitter">
             <div id="logo-button">
@@ -86,7 +86,12 @@
             <p>Raise the volume on your tweets! <i class="fa fa-twitter"></i></p>
           </div>
         </div>
+        <div id="homepage-phone-box">
+          <p>ShoutOut gives you the chance to earn rewards for your tweets! Tweet about your favourite restaurants, and collect points when those tweets get favourited and retweeted. Then use those points towards redeeming rewards at those restaurants. Turn up the volume of your tweets with ShoutOut!</p>
+          <%= image_tag "shoutout-phone.png", id: "shoutout-phone" %>
+        </div>
       </div>
+
     <% end %>
     <footer class="footer">
       <p>&copy 2017 PAIR</p>

@@ -10,10 +10,10 @@
       <div class="menu-item">What restaurant are you at?
         <%= f.select :restaurant_id, options_for_select(@restaurants) %>
       </div>
-      <div class="menu-item">What do you want to say?
+      <div class="menu-item">Write your tweet! <i class="fa fa-twitter" aria-hidden="true"></i>
         <%= f.text_area :twitter_text, placeholder: "This restaurant is awesome!" %>
       </div>
-      <div class="menu-item">Share a photo of the experience
+      <div class="menu-item">Share a photo of the experience!
         <%= f.file_field :shout_image, placeholder: "https://your images address" %>
       </div>
       <div class="submit-item">
