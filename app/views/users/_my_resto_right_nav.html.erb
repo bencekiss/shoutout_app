@@ -1,0 +1,16 @@
+<div class="right-sidebar">
+  <% @owned_restaurants.each do |restaurant| %>
+    <div class="my-restaurant" id = '<%= restaurant.name.gsub(/\s+/, "") %>'>
+        <div class="my-restaurant animated flipInX" id = '<%= restaurant.name.gsub(/\s+/, "") %>' >
+          <h3><%=  restaurant.name %></h3>
+          <div class="restaurant-img-container">
+            <%= image_tag(restaurant.rest_img.image_resize.url) %>
+          </div>
+          <div class="restaurant-info-container">
+            <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+            <h2><%= restaurant.address %></h2>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>

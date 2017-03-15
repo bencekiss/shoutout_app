@@ -122,4 +122,18 @@ $(document).on("turbolinks:load",function(){
       $('.dropdown').slideToggle()
     }
   });
+
+
+//  Insert Jquery function for my-resto. hide all restaurant content
+//  When you click on menu-item restaurant
+
+    $('.menu-item').on('click', function(){
+      $('.my-restaurant').css('display', 'none');
+      var id = $(this).attr('id');
+      var name = "#" + id;
+      var text = name +'.my-restaurant';
+      $(text).css('display', 'block');
+    });
+
+
 });
