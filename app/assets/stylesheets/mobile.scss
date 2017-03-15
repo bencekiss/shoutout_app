@@ -2,4 +2,33 @@
   .left-sidebar, .left-sidebar-logo-container, .right-sidebar {
     display: none
   }
+  .desktop-signin {
+    display: none;
+  }
+  .footer {
+  position: fixed;
+  bottom: 0;
+  }
+  .left-footer {
+    padding: 10px 0 0 10px;
+    float: left;
+    color: white;
+    font-size: 1.5em;
+  }
+  .right-footer {
+    float: right;
+  }
+
+  .dropdown-bottom {
+    display: none;
+    width: 130px;
+    position: absolute;
+    bottom: 60px;
+  }
+
+  .dropdown-mobile {
+    background: lightgray;
+    padding: 2px;
+  }
+
 }
