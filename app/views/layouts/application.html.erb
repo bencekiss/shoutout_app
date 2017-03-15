@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Shoutout</title>
     <%= csrf_meta_tags %>
@@ -13,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Boogaloo|Didact+Gothic|Passion+One:700" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
-
   <body>
     <% if current_user %>
       <nav>
@@ -38,6 +38,7 @@
         </div>
       </div>
     <% end %>
+
 
     <!-- DESKTOP VIEW IS TO MAKE THE VIEW ADAPT TO THE WIDE MONITOR -->
     <% if current_user %>
@@ -70,10 +71,12 @@
           <%= yield %>
         </div>
 
+
       </div>
 
 
     <% end %>
+
 
 
 
@@ -112,4 +115,5 @@
       <p>&copy 2017 PAIR</p>
     </footer>
   </body>
+
 </html>
