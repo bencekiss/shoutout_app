@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+# ruby '2.3.3'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -36,10 +36,12 @@ gem 'cancancan'
 gem 'cocoon'
 gem 'carrierwave', '~>1.0'
 gem 'mini_magick', '~> 4.3'
+
 gem 'twitter'
 gem 'omniauth-twitter'
 gem 'faker'
 gem 'font-awesome-sass'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,3 +70,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'rails-erd'
+gem 'fog'
+gem 'redis'

@@ -82,11 +82,15 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#logo-button').mouseenter(function() {
-    $('#shout-static').toggle();
-    $('#shout-hover').css('display', 'block');
+    if ($(document).width() <= "1024") {
+      $('#shout-static').toggle();
+      $('#shout-hover').css('display', 'block');
+    }
   }).mouseleave(function(){
-    $('#shout-static').css('display', 'block');
-    $('#shout-hover').css('display', 'none');
+    if ($(document).width() <= "1024") {
+      $('#shout-static').css('display', 'block');
+      $('#shout-hover').css('display', 'none');
+    }
   });
 
   $('#shout-modal-call-button-outline').on('click', function() {
@@ -119,6 +123,11 @@ $(document).on("turbolinks:load",function(){
     if ($(document).width() <= "1024") {
       $('.dropdown').slideToggle()
     }
+  });
+
+//This is the dropdown for the gear in mobile views
+  $('.left-footer').on('click', function(){
+    $('.dropdown-bottom').toggle()
   });
 
 

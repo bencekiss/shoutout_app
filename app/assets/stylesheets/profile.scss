@@ -37,9 +37,9 @@
 
 
 #avatar {
-  border: $thin-border;
   border-radius: 50%;
   margin: 0 10px;
+  border: 2px solid $primary;
 }
 
 #avatar:hover {
@@ -60,7 +60,7 @@
     // border: $thin-border;
     padding: 10px 10px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     width: 49%;
     color: gray;
 

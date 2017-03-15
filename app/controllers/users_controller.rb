@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # byebug
     if @user.save
-      auto_login(@user) #sorcery
+      # auto_login(@user) #sorcery
       redirect_to root_url
     else
       flash[:alert] = "couldnt create user"
@@ -96,6 +96,13 @@ class UsersController < ApplicationController
 
       @uploader = AvatarUploader.new ###Not sure what we need this for yet.
     end
+  end
+
+  def about
+    @user = current_user
+    @shout = Shout.new
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+    @redemptions = @user.redemptions
   end
 
   private

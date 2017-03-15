@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Shoutout</title>
     <%= csrf_meta_tags %>
@@ -9,11 +10,10 @@
     <script type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Nunito|Bangers" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Boogaloo|Didact+Gothic|Passion+One:700" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
-
   <body>
     <% if current_user %>
       <nav>
@@ -39,6 +39,7 @@
       </div>
     <% end %>
 
+
     <!-- DESKTOP VIEW IS TO MAKE THE VIEW ADAPT TO THE WIDE MONITOR -->
     <% if current_user %>
 
@@ -51,7 +52,7 @@
           <%= render "users/my_resto_right_nav" %>
         <% end %>
         <div class="shell">
-          <% if params[:controller]== "restaurants" && params[:id] && params[:action] != "my_restaurants"  %>
+          <%# if params[:controller]== "restaurants" && params[:id] && params[:action] != "my_restaurants"  %>
             <% if params[:controller] == "restaurants" && params[:id] %>
               <div class="modal shout-modal">
                 <%= render '/shouts/resto_shout' %>
@@ -61,7 +62,7 @@
                 <%= render '/shouts/form' %>
               </div>
             <% end %>
-          <% end %>
+          <%# end %>
           <div id="shout-modal-call-button">
             <%= image_tag "shout1.png", id: "shout-call-static" %>
             <%= image_tag "shout3.png", id: "shout-call-hover" %>
@@ -69,11 +70,10 @@
           </div>
           <%= yield %>
         </div>
-
       </div>
 
-
     <% end %>
+
 
 
 
@@ -93,14 +93,39 @@
           </div>
         </div>
         <div id="homepage-phone-box">
-          <p>ShoutOut gives you the chance to earn rewards for your tweets! Tweet about your favourite restaurants, and collect points when those tweets get favourited and retweeted. Then use those points towards redeeming rewards at those restaurants. Turn up the volume of your tweets with ShoutOut!</p>
-          <%= image_tag "shoutout-phone.png", id: "shoutout-phone" %>
+          <div class="desktop-homepage-right-div">
+            <%= image_tag "shoutout-phone.png", id: "shoutout-phone" %>
+          </div>
+          <div class="desktop-homepage-left-div">
+            <div class="intro-box">
+              <h2 id="title">ShoutOut!</h2>
+              <p>Raise the volume on your tweets! <i class="fa fa-twitter"></i></p>
+              <p>Earn rewards by tweeting about your favorite restaurants!<br>
+              All you need is a Twitter account to get started.</p>
+              <a id="get-started" href="auth/twitter">
+                <p>Get started!</p>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="homepage-shell-2">
       </div>
 
     <% end %>
+    <!-- left footer only visible in mobile view -->
+    <ul class="dropdown-bottom">
+      <li class="dropdown-mobile"><%= link_to 'About PAIR', about_path %></li>
+      <li class="dropdown-mobile"><%= link_to ' Log Out ', :logout, method: :post %></li>
+    </ul>
     <footer class="footer">
-      <p>&copy 2017 PAIR</p>
+      <div class="left-footer">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+      </div>
+      <div class="right-footer">
+        <p>&copy 2017 PAIR</p>
+      </div>
     </footer>
   </body>
+
 </html>

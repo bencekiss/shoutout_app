@@ -1,4 +1,8 @@
 @import "variables";
+@import "desktop-homepage";
+@import "desktop-sidebars";
+@import "desktop-hidden";
+@import "desktop-center";
 
 @media only screen and (max-width: 1023px) {
   .desktop-view {
@@ -7,12 +11,36 @@
     margin-bottom: -60px;
   }
 
+
+  .homepage-shell {
+    height: 100%;
+  }
+
+  .desktop-signin{
+    font-size: 1em;
+    display: inline-block;
+  }
+
+
+  #logo-box {
+    width: 100%;
+    position: absolute;
+    margin-top: -172px;
+    top: 50%;
+  }
   #homepage-phone-box {
     display: none;
   }
+  #shout-hover { display: none }
+  #shout-static { display: block }
+  #get-started { display: none }
 }
 
+
+
 @media only screen and (min-width: 1024px) {
+  ////CORE CSS ROLES
+
   .desktop-view {
     width: 1200px;
     margin-left: auto;
@@ -20,6 +48,9 @@
     padding: 20px;
   }
 
+  .left-footer {
+    display: none;
+  }
   ////SIDEBAR
   .left-sidebar, .shell, .right-sidebar {
     margin: 0 10px;
@@ -231,34 +262,78 @@
     background: $secondary-hover;
   }
 
+
   body {
     margin: 0;
   }
-
-  .homepage-shell {
-    width: 100%;
-    height: 100%;
+  #logo-box {
+    width: 100px;
+    height: 100px;
     display: inline-block;
-    text-align: center;
-    margin-bottom: 160px;
-    flex: 1;
+    position: relative;
+    #logo-button {
+      top: 115px;
+      left: 150px;
+      position: absolute;
+      #shout-static { display: none }
+      #shout-hover { display: block }
+    }
   }
 
-  #logo-box {
-    display: none;
-    position: static;
-    #title {
-      display: inline-block;
-    }
-    .blurb {
-      margin: 0;
-      display: inline-block;
-      text-align: center;
+  #get-started p {
+    padding: 10px 20px;
+    background: $primary;
+    margin-top: 20px;
+    width: 40%;
+    display: inline-block;
+    color: white;
+  }
+  #get-started:hover {
+    p {
+      font-weight: 900;
     }
   }
 
   #homepage-phone-box {
-    width: 49%;
+    width: 900px;
+    height: 550px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -300px;
+    left: 50%;
+    margin-left: -400px;
+    padding: 20px;
+  }
+
+  .desktop-homepage-right-div {
+    width: 35%;
+    height: 100%;
     display: inline-block;
   }
+
+  .desktop-homepage-left-div {
+    width: 64%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+
+    .intro-box {
+      padding: 20px;
+      font-size: 1.1em;
+      margin-top: 240px;
+      p {
+        padding: 5px 5px;
+      }
+    }
+  }
+
+  .homepage-shell-2 {
+    opacity: 0.5;
+    height: 400px;
+    width: 100%;
+    background: asset-url("restaurant-img.jpg");
+    background-position: center;
+  }
+
 }

@@ -1,0 +1,30 @@
+@import 'variables';
+
+@media only screen and (min-width: 1024px) {
+
+  ////HIDE THE MOBILE VIEW LOGO
+  #logo img {
+    display: none;
+  }
+
+  #shout-modal-call-button {
+    display: none;
+  }
+  #logo-box {
+    width: 100px;
+    #logo-button {
+      position: absolute;
+      display: inline-block;
+      top: -80px;
+      right: 31%;
+    }
+
+    #title {
+      display: inline-block;
+    }
+    .blurb {
+      display: none;
+    }
+  }
+
+}
