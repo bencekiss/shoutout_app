@@ -1,5 +1,12 @@
 @import "variables";
 
+#logo-box {
+  position: absolute;
+  width: 100%;
+  margin-top: -172px;
+  top: 50%;
+}
+
 #logo-button {
   //Physical Structure
   width: 197px;
@@ -9,6 +16,7 @@
   background-color: transparent;
   border: $thin-border;
   z-index: 2;
+  margin-top: 10px;
 
   //Positional Structure
   position: relative;

@@ -1,0 +1,41 @@
+// @import "variables";
+// //Slideshow CSS setup
+// div.restaurant {
+//   // background: $primary;\
+//   display: inline;
+//   width: 10%;
+// }
+//
+// .shell {
+//   position: relative;
+// }
+//
+// .restaurant-image-container {
+//
+// }
+// .restaurant-img-container img {
+//   position: absolute;
+//   top: 70px;
+//   left: 160px;
+//   z-index: 1;
+// }
+//  button.display-left {
+//    z-index: 5;
+//    position: absolute;
+//    top: 270px;
+//    left: 160px;
+//
+//  }
+//
+//  button.display-right {
+//    z-index: 5;
+//    position: absolute;
+//    top: 270px;
+//    left: 350px;
+// }
+@import 'variables';
+
+.shell {
+  height: 450px;
+  background: $secondary;
+}

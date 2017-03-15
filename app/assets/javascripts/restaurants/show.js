@@ -89,7 +89,7 @@ $(document).on("turbolinks:load",function(){
   }).mouseleave(function(){
     $('#shout-static').css('display', 'block');
     $('#shout-hover').css('display', 'none');
-  })
+  });
 
   $('#shout-modal-call-button-outline').on('click', function() {
     $('.shout-modal').fadeIn();
@@ -118,7 +118,22 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#avatar').on('click', function() {
-    $('.dropdown').slideToggle()
+    if ($(document).width() <= "1024") {
+      $('.dropdown').slideToggle()
+    }
   });
+
+
+//  Insert Jquery function for my-resto. hide all restaurant content
+//  When you click on menu-item restaurant
+
+    $('.menu-item').on('click', function(){
+      $('.my-restaurant').css('display', 'none');
+      var id = $(this).attr('id');
+      var name = "#" + id;
+      var text = name +'.my-restaurant';
+      $(text).css('display', 'block');
+    });
+
 
 });

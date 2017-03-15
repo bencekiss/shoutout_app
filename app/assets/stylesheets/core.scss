@@ -10,19 +10,23 @@
 html {
   font-family: $font-one, "Helvetica",  "sans-serif";
   color: $font-color;
+  height: 100%;
 }
 
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   background: $background-color;
 }
 
-.shell {
+.homepage-shell, .shell {
   width: 100%;
   height: 100%;
   display: inline-block;
   text-align: center;
-  margin-top: 66px;
   margin-bottom: 160px;
+  flex: 1;
 }
 
 footer {
@@ -39,6 +43,7 @@ footer {
     font-family: $font-one;
   }
 }
+
 //This refers to the top bar.
 nav {
   display: inline-block;
