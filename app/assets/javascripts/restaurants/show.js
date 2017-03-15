@@ -123,6 +123,11 @@ $(document).on("turbolinks:load",function(){
     }
   });
 
+//This is the dropdown for the gear in mobile views
+  $('.left-footer').on('click', function(){
+    $('.dropdown-bottom').toggle()
+  });
+
 
 //  Insert Jquery function for my-resto. hide all restaurant content
 //  When you click on menu-item restaurant
