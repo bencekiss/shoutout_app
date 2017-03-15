@@ -9,7 +9,7 @@
     <script type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Nunito|Bangers" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Boogaloo|Didact+Gothic|Passion+One:700" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
@@ -93,9 +93,18 @@
           </div>
         </div>
         <div id="homepage-phone-box">
-          <%= image_tag "shoutout-phone.png", id: "shoutout-phone" %>
-          <p>ShoutOut gives you the chance to earn rewards for your tweets! Tweet about your favourite restaurants, and collect points when those tweets get favourited and retweeted. Then use those points towards redeeming rewards at those restaurants. Turn up the volume of your tweets with ShoutOut!</p>
+          <div class="desktop-homepage-right-div">
+            <%= image_tag "shoutout-phone.png", id: "shoutout-phone" %>
+          </div>
+          <div class="desktop-homepage-left-div">
+            <div class="intro-box">
+              <h2 id="title">ShoutOut!</h2>
+              <p>ShoutOut gives you the chance to earn rewards for your tweets! Tweet about your favourite restaurants, and collect points when those tweets get favourited and retweeted. Then use those points towards redeeming rewards at those restaurants.</p> <p>Turn up the volume of your tweets with ShoutOut!</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="homepage-shell-2">
       </div>
 
     <% end %>
