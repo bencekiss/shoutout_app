@@ -2,15 +2,7 @@
 
   <% @owned_restaurants.each do |restaurant| %>
   <div class="my-restaurant animated flipInX" id = '<%= restaurant.name.gsub(/\s+/, "") %>' >
-    <h1><%=  restaurant.name %></h1>
-    <div class="restaurant-img-container">
-      <%= image_tag(restaurant.rest_img.image_resize.url) %>
-    </div>
-    <div class="restaurant-info-container">
-      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-      <h2><%= restaurant.address %></h2>
-      <h3>The users at this restaurant:</h3>
-
+    <h3>The users at this restaurant:</h3>
       <div id="redemptions-list">
         <% redemptions = Redemption.redeemable(restaurant) %>
         <% redemptions.each do |redemption| %>
@@ -26,5 +18,5 @@
         <% end %>
       </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
