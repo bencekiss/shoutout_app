@@ -1,9 +1,9 @@
 
 
+<h3>The users at this restaurant:</h3>
   <% @owned_restaurants.each do |restaurant| %>
-  <div class="my-restaurant animated flipInX" id = '<%= restaurant.name.gsub(/\s+/, "") %>' >
-    <h3>The users at this restaurant:</h3>
-      <div id="redemptions-list">
+  <div class="my-restaurant" id = '<%= restaurant.name.gsub(/\s+/, "") %>'  >
+      <div id="redemptions-list-<%= restaurant.id %>">
         <% redemptions = Redemption.redeemable(restaurant) %>
         <% redemptions.each do |redemption| %>
         <div class="redemption-container">

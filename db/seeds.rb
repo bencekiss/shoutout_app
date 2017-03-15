@@ -75,11 +75,174 @@ Reward.destroy_all
   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/5/Tokaji.jpeg"
   rest.save!
 
-  20.times do
-    Reward.create!(
-      name: Faker::Commerce.product_name,
-      description: Faker::Lorem.sentence,
-      point_value: rand(100),
-      restaurant: Restaurant.all.sample
-    )
+
+  rest = Restaurant.create!(
+    name: "The Captain's Boil",
+    address: "671 College St.",
+    phone_number: "416-538-8868",
+    rest_img: nil,
+    # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
+    # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
+    owner: User.first
+  )
+  File.open(File.join(Rails.root, '/public/images/captains_boil.png')) do |f|
+    rest.rest_img = f
+
   end
+  rest.save!
+  #
+  # 20.times do
+  #   Reward.create!(
+  #     name: Faker::Commerce.product_name,
+  #     description: Faker::Lorem.sentence,
+  #     point_value: rand(100),
+  #     restaurant: Restaurant.all.sample
+  #   )
+  # end
+# Shawarma King rewards
+  Reward.create!(
+    name: "10% off your next meal",
+    description: "Get 10% off your next meal. Conditions apply.",
+    point_value: 200,
+    restaurant_id: 1
+  )
+
+  Reward.create!(
+    name: "Get a free appetizer",
+    description: "Get a free appetizer with your next purchase",
+    point_value: 300,
+    restaurant_id: 1
+  )
+
+  Reward.create!(
+    name: "Shawarma on us",
+    description: "Shawarma of your choice on us",
+    point_value: 400,
+    restaurant_id: 1
+  )
+
+# Burgers Priest rewards
+  Reward.create!(
+    name: "5% off your next meal",
+    description: "Get 5% off your next meal. Conditions apply.",
+    point_value: 200,
+    restaurant_id: 2
+  )
+
+  Reward.create!(
+    name: "Free French fries",
+    description: "Free french fries",
+    point_value: 300,
+    restaurant_id: 2
+  )
+
+  Reward.create!(
+    name: "Free Blue Steel burger",
+    description: "Blue cheeseburger served with a regular bun",
+    point_value: 200,
+    restaurant_id: 2
+  )
+
+#Burrito Boyz rewards
+Reward.create!(
+  name: "Free soda",
+  description: "Your choice of canned soda.",
+  point_value: 100,
+  restaurant_id: 3
+)
+
+Reward.create!(
+  name: "Free chipz and dip",
+  description: "Served with a side of guacamole and salsa",
+  point_value: 200,
+  restaurant_id: 3
+)
+
+Reward.create!(
+  name: "Free standard quesedilla",
+  description: "Tex Mex cheese, tomato, green pepper, green onion, red onion, black beans- Homemade and HOT",
+  point_value: 300,
+  restaurant_id: 3
+)
+
+# Smokes Poutine rewards
+  Reward.create!(
+    name: "Free pop",
+    description: "Free pop with any purchase.",
+    point_value: 300,
+    restaurant_id: 4
+  )
+
+  Reward.create!(
+    name: "Extra cheese",
+    description: "Pick up your free onion rings.",
+    point_value: 300,
+    restaurant_id: 4
+  )
+
+  Reward.create!(
+    name: "Smoke's Shirt",
+    description: "Available in small, medium and extra large",
+    point_value: 400,
+    restaurant_id: 4
+  )
+
+  Reward.create!(
+    name: "Free large Smashed Traditional",
+    description: "Smoke's signature gravy and Quebec cheese curd",
+    point_value: 600,
+    restaurant_id: 4
+  )
+
+# Tokaji rewards
+
+Reward.create!(
+  name: "Free pop",
+  description: "Free pop with any purchase.",
+  point_value: 200,
+  restaurant_id: 5
+)
+
+Reward.create!(
+  name: "Free Takoyaki",
+  description: "5 pieces of takoyaki.",
+  point_value: 300,
+  restaurant_id: 5
+)
+
+Reward.create!(
+  name: "Free Dynamite Roll",
+  description: "Salmon, prawn tempura and masago, with avocado and Japanese mayo",
+  point_value: 400,
+  restaurant_id: 5
+)
+
+Reward.create!(
+  name: "Free Katsudon",
+  description: "Deep fried pork cutlet, egg on steamed rice",
+  point_value: 600,
+  restaurant_id: 5
+)
+
+#Captains Boil rewards
+
+Reward.create!(
+  name: "10% off your next meal",
+  description: "Get 10% off your next purchase.",
+  point_value: 300,
+  restaurant_id: 6
+)
+
+Reward.create!(
+  name: "Captain's Boil Cap",
+  description: "One size fits all",
+  point_value: 400,
+  restaurant_id: 6
+)
+
+Reward.create!(
+  name: "Fish teriayaki with rice",
+  description: "Fried haddock on steamed rice",
+  point_value: 700,
+  restaurant_id: 6
+)

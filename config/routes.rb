@@ -22,15 +22,16 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => "user_sessions#create"
   get '/auth/:provider' => 'user_sessions#new', as: :twitter_signin
+  get '/about' => 'users#about', as: :about
   mount ActionCable.server, at: '/cable'
+
 
   post '/users/:id' => "users#show"
 
 
-  # sorcery external login
-  # config/routes.rb
   post "auth/twitter/callback" => "oauths#callback"
   get "auth/twitter/callback" => "oauths#callback" # for use with Github, Facebook
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
 
 end

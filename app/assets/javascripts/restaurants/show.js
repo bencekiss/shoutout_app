@@ -28,7 +28,7 @@ $(document).on("turbolinks:load",function(){
   for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
     var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
     var rewardButton = $(".reward-button")[i];
-    // debugger;
+
     if (userPoints < rewardPoints){
       $(".positioning-box").children(".reward-button").addClass("nope");
       $(".positioning-box").removeClass("on-button");
@@ -67,11 +67,9 @@ $(document).on("turbolinks:load",function(){
       dataType:"json"
     }).done(function(data){
       console.log(data)
-      debugger;
       location.pathname = "/"
     }).fail(function(){
       console.log("Failed");
-      debugger;
       location.reload();
     });
   });
@@ -127,6 +125,11 @@ $(document).on("turbolinks:load",function(){
     }
   });
 
+//This is the dropdown for the gear in mobile views
+  $('.left-footer').on('click', function(){
+    $('.dropdown-bottom').toggle()
+  });
+
 
 //  Insert Jquery function for my-resto. hide all restaurant content
 //  When you click on menu-item restaurant
@@ -138,6 +141,4 @@ $(document).on("turbolinks:load",function(){
       var text = name +'.my-restaurant';
       $(text).css('display', 'block');
     });
-
-
 });

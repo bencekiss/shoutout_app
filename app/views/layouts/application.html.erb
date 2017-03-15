@@ -52,7 +52,7 @@
           <%= render "users/my_resto_right_nav" %>
         <% end %>
         <div class="shell">
-          <% if params[:controller]== "restaurants" && params[:id] && params[:action] != "my_restaurants"  %>
+          <%# if params[:controller]== "restaurants" && params[:id] && params[:action] != "my_restaurants"  %>
             <% if params[:controller] == "restaurants" && params[:id] %>
               <div class="modal shout-modal">
                 <%= render '/shouts/resto_shout' %>
@@ -62,7 +62,7 @@
                 <%= render '/shouts/form' %>
               </div>
             <% end %>
-          <% end %>
+          <%# end %>
           <div id="shout-modal-call-button">
             <%= image_tag "shout1.png", id: "shout-call-static" %>
             <%= image_tag "shout3.png", id: "shout-call-hover" %>
@@ -70,10 +70,7 @@
           </div>
           <%= yield %>
         </div>
-
-
       </div>
-
 
     <% end %>
 
@@ -116,8 +113,18 @@
       </div>
 
     <% end %>
+    <!-- left footer only visible in mobile view -->
+    <ul class="dropdown-bottom">
+      <li class="dropdown-mobile"><%= link_to 'About PAIR', about_path %></li>
+      <li class="dropdown-mobile"><%= link_to ' Log Out ', :logout, method: :post %></li>
+    </ul>
     <footer class="footer">
-      <p>&copy 2017 PAIR</p>
+      <div class="left-footer">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+      </div>
+      <div class="right-footer">
+        <p>&copy 2017 PAIR</p>
+      </div>
     </footer>
   </body>
 
