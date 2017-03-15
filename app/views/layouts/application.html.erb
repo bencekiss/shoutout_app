@@ -72,20 +72,25 @@
    <!-- HEADER LOGO -->
    <% unless current_user %>
      <div class="shell">
-       <a href="/auth/twitter">
-         <div id="logo-button">
-           <%= image_tag "shout1.png", id: "shout-static" %>
-           <%= image_tag "shout2.png", id: "shout-hover" %>
+       <div id="logo-box">
+         <a href="/auth/twitter">
+           <div id="logo-button">
+             <%= image_tag "shout1.png", id: "shout-static" %>
+             <%= image_tag "shout2.png", id: "shout-hover" %>
+           </div>
+         </a>
+         <div class="blurb">
+           <h2 id="title">ShoutOut!</h2>
+           <p>Raise the volume on your tweets! <i class="fa fa-twitter"></i></p>
          </div>
-       </a>
-       <div class="blurb">
-         <h2 id="title">ShoutOut!</h2>
-         <p>Raise the volume on your tweets! <i class="fa fa-twitter"></i></p>
        </div>
      </div>
    <% end %>
    <footer class="footer">
      <p>&copy 2017 PAIR</p>
    </footer>
+   <!-- <footer class="footer f-desktop">
+     <p>&copy 2017 PAIR</p>
+   </footer> -->
  </body>
 </html>

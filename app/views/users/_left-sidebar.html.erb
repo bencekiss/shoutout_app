@@ -6,7 +6,7 @@
     <%= form_for [@user, @shout] do |f| %>
       <%= f.hidden_field :twitter_id, value: 7 %>
       <%= f.hidden_field :user_id, value: @user.id %>
-      <div class="heading-item">Make a Shoutout!</div>
+      <div class="heading-item">Make a ShoutOut!</div>
       <div class="menu-item">What restaurant are you at?
         <%= f.select :restaurant_id, options_for_select(@restaurants) %>
       </div>
