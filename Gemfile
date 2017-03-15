@@ -36,10 +36,12 @@ gem 'cancancan'
 gem 'cocoon'
 gem 'carrierwave', '~>1.0'
 gem 'mini_magick', '~> 4.3'
+
 gem 'twitter'
 gem 'omniauth-twitter'
 gem 'faker'
 gem 'font-awesome-sass'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
