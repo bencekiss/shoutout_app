@@ -20,8 +20,18 @@ body {
   background: $background-color;
 }
 
-.homepage-shell, .shell {
+
+//This is before you sign in (the homepage)
+.homepage-shell {
   width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 160px;
+  flex: 1;
+}
+
+//This is after you sign in
+.shell {
   height: 100%;
   display: inline-block;
   text-align: center;
