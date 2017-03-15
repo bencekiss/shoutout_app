@@ -1,12 +1,5 @@
 @import "variables";
 
-#logo-box {
-  position: absolute;
-  width: 100%;
-  margin-top: -172px;
-  top: 50%;
-}
-
 #logo-button {
   //Physical Structure
   width: 197px;
@@ -32,9 +25,6 @@
     left: 50%;
     position: absolute;
     transform: rotate(-20deg)
-  }
-  #shout-hover {
-    display: none;
   }
 }
 

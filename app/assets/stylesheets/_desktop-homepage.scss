@@ -5,49 +5,13 @@
   ////HOMEPAGE
   .homepage-shell {
     width: 100%;
-    height: 600px;
+    height: 700px;
     display: inline-block;
     text-align: center;
     margin-bottom: 0px;
     flex: 1;
     position: relative;
+    background: white;
   }
 
-  .homepage-shell-2 {
-    height: 600px;
-    width: 100%;
-    background: red;
-  }
-
-  #homepage-phone-box {
-    width: 900px;
-    height: 600px;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    margin-top: -300px;
-    left: 50%;
-    margin-left: -400px;
-    padding: 20px;
-  }
-
-  .desktop-homepage-right-div {
-    width: 35%;
-    display: inline-block;
-  }
-
-  .desktop-homepage-left-div {
-    width: 64%;
-    vertical-align: top;
-    display: inline-block;
-    margin-top: 12%;
-
-    .intro-box {
-      padding: 20px;
-      font-size: 1.1em;
-      p {
-        padding: 5px 5px;
-      }
-    }
-  }
 }
