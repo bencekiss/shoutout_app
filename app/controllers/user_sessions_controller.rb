@@ -12,6 +12,7 @@ class UserSessionsController < ApplicationController
     current_user = @user
     session[:user_id] = @user.id
     redirect_to root_url
+
   end
 
   def destroy

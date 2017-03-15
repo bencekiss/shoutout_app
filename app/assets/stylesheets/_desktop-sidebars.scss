@@ -1,0 +1,155 @@
+@import 'variables';
+
+@media only screen and (min-width: 1024px) {
+  .desktop-view {
+    width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  ////SIDEBAR
+  .left-sidebar, .shell, .right-sidebar {
+    margin: 0 10px;
+  }
+
+  .left-sidebar {
+    width: 24%;
+    background: $secondary;
+  }
+
+  .right-sidebar {
+    width: 24%;
+    vertical-align: top;
+    background: white;
+    font-family: $font-one;
+
+    #you-have-rewards-at-the-following {
+      padding: 0 20px;
+    }
+  }
+
+  .left-sidebar, .right-sidebar {
+    display: inline-block;
+    border: $thin-border;
+    border-radius: 10px;
+    height: 100%;
+    z-index: 3;
+    box-shadow: 2px 2px 2px darkgray;
+
+    .left-sidebar-logo-container, .right-sidebar-logo-container {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 200px;
+      width: 100%;
+      background: lime;
+      position: relative;
+      background: $primary;
+
+      #sidebar-logo-image {
+        width: 193.61px;
+        width: 199.27px;
+        position: absolute;
+        left: 50%;
+        margin-left: -99px;
+      }
+    }
+
+    .rewards-heading {
+      text-align: left;
+      padding-left: 27px;
+      padding-right: 27px;
+      font-family: $font-one;
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+    .rewards-heading-paragraph {
+      font-family: $font-one;
+      padding: 0 27px 20px;
+      font-size: 1em
+    }
+    .reward-box {
+      width: 100%;
+      padding: 10px 27px;
+      border-top: $thin-border;
+      p {
+        font-family: $font-one;
+      }
+      .reward-resto {
+        font-weight: 900;
+        font-size: 1.2em;
+      }
+    }
+    .submit-item {
+      text-align: center;
+      input {
+        padding: 10px 20px;
+        font-family: $font-one;
+        background: $primary;
+        border: none;
+        color: white;
+      }
+    }
+
+    ////MAKE A SHOUTOUT FORM
+    .menu-structure {
+      height: 100%;
+
+      .heading-item, .menu-item, .submit-item {
+        height: 10%;
+        padding: 10px 20px;
+        font-family: $font-one;
+      }
+
+      .heading-item {
+        font-size: 1.5em;
+      }
+
+      .menu-item {
+        font-size: 1em;
+        select {
+          width: 100%;
+          background: white;
+          font-size: 1em;
+          font-family: $font-one;
+        }
+
+        textarea {
+          width: 100%;
+          height: 70px;
+          font-family: $font-one;
+          font-size: 1em;
+        }
+        input {
+          width: 100%;
+          font-size: 1em;
+          font-family: $font-one;
+        }
+      }
+
+      .submit-item {
+        text-align: center;
+        input {
+          padding: 10px 20px;
+          font-family: $font-one;
+          background: $primary;
+          border: none;
+          color: white;
+        }
+        input:hover {
+          font-weight: 900;
+        }
+      }
+
+      .menu-item:hover, .submit-item:hover {
+        color: $primary;
+        background: $secondary-hover;
+      }
+
+      .submit-item:hover {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+}

@@ -9,7 +9,11 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-consumer_key: "lL23XKOu8HffHxPApcreRG3pw"
-consumer_secret: "sG7CTdjeZivCVbcdbT68n2Unavb4MAyxM8ZzumI8989iyQ2kmC"
-access_token: "836602813786517504-LyNXFXrHr8znTOmlad2cIWRM1txt6EC"
-access_token_secret:	"sXbC7TQ43vqEG0GZnvxoiaURiXD8gESc0Sk9lpLip8NGE"
+consumer_key: "IGCZTuqJIV06xWeoZ9dVRTzwx"
+consumer_secret: "Oqll8z0qIgmTZgL0HY3ZtUGrZhgR5R4CikXaXQ999nq9ViaAdg"
+access_token: "834852514394677250-PpRdwwDu8JTmbiodR7j4tc28uU1atxW"
+access_token_secret:	"gjrC8wGcF2dbC49XQFLOMM7h6BdLDtckdOTcbE8ala4nU"
+AWS_ACCESS_KEY: "AKIAI4I64ZBCZ26EYPWA"
+AWS_SECRET_KEY: "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"
+AWS_BUCKET: "bencekissfirst"
+AWS_REGION: "us-east-2"

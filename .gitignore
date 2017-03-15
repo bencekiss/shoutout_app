@@ -23,3 +23,6 @@
 
 # ignore the uploaded avatar pictures
 /public/uploads
+
+#ignore secrets
+/config/application.yml
