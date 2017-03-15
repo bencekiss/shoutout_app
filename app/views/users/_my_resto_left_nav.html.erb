@@ -1,11 +1,11 @@
-<div class="left-sidebar">
+<div class="left-sidebar animated flipInY">
   <div class="left-sidebar-logo-container">
     <%= image_tag "nav-logo-img.png", id: "sidebar-logo-image" %>
   </div>
   <div class="menu-structure">My Restaurants
     <ul>
       <% @owned_restaurants.each do |restaurant| %>
-        <div class="menu-item" id = '<%= restaurant.name.gsub(/\s+/, "") %>'>
+        <div class="menu-item animated fadeInUpBig" id = '<%= restaurant.name.gsub(/\s+/, "") %>'>
           <li><%= restaurant.name %></li>
         </div>
       <% end %>
