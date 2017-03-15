@@ -4,6 +4,7 @@
   <% @owned_restaurants.each do |restaurant| %>
   <div class="my-restaurant" id = '<%= restaurant.name.gsub(/\s+/, "") %>'  >
       <div id="redemptions-list-<%= restaurant.id %>">
+        <%= Redemption.redeemable(restaurant) %>
         <% redemptions = Redemption.redeemable(restaurant) %>
         <% redemptions.each do |redemption| %>
         <div class="redemption-container">
