@@ -1,0 +1,16 @@
+<div class="right-sidebar">
+  <h1 class="rewards-heading">Your Rewards</h1>
+  <% if @redemptions.empty? %>
+    <p class="rewards-heading-paragraph"></p>
+  <% else %>
+    <% @redemptions.each do |redemption| %>
+      <% if !(redemption.redemption_status) %>
+        <div class="reward-box">
+          <p class="reward-resto"><%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
+          <p class="reward-name"><%= Reward.find(redemption.reward_id).name %></p>
+          <p class="reward-date">Redeemed on: <%= redemption.created_at.strftime("%b %d, %Y") %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

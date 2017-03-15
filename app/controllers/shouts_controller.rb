@@ -22,7 +22,9 @@ class ShoutsController < ApplicationController
     end
   end
   def show
+    @user = current_user
     @shout = Shout.find(params[:id])
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
   end
   def edit
     @shout = Shout.find(params[:id])

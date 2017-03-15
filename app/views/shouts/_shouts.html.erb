@@ -11,7 +11,7 @@
         </div>
         <div class="resto-points">
           <p class="points-label">POINTS</p>
-          <p><strong><%= resto.points(@user) %></strong></p>
+          <p class="points-number"><strong><%= resto.points(@user) %></strong></p>
         </div>
       </div>
     </div>
@@ -24,9 +24,9 @@
           </div>
           <div class="shout-info">
             <% unless shout.active %>
-            <div class="passive">
-              <p><em>This shout is no longer gaining points because the tweet has been deleted.</em></p>
-            </div>
+              <div class="passive">
+                <p>This shout is no longer gaining points because the tweet has been deleted.</p>
+              </div>
             <% end %>
             <p class="tweet-text">
               <%= shout.twitter_text %>

@@ -1,13 +1,27 @@
 $(document).on("turbolinks:load",function(){
+// Capturing the value of the dropdown list for shoutout
+  var initial_selected = $('#shout_restaurant_id :selected').text();
+  var lengthToSubtract = initial_selected.length;
+  var toSubtract = lengthToSubtract +12;
+  $('select').change(function(){
+    var resto_selected = $(":selected").text().length;
+    var resto_value = $(":selected").val();
+    toSubtract = resto_selected + 12 - lengthToSubtract;
+    console.log(toSubtract);
+    text_max = 140 - toSubtract;
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+  });
+// Counting the twitter characters in shoutout form
+  var text_max = 140 - toSubtract;
 
-  var text_max = 140;
    $('#textarea_feedback').html(text_max + ' characters remaining');
-
-   $('#textarea').keyup(function() {
-       var text_length = $('#textarea').val().length;
-       var text_remaining = text_max - text_length;
-
-       $('#textarea_feedback').html(text_remaining + ' characters remaining');
+   var text_area = $('.field > #shout_twitter_text');
+   text_area.keydown(function(e) {
+     e.stopPropagation();
+     var text_length = text_area.val();
+     var len = text_length.length;
+     var text_remaining = text_max - len;
+     $('#textarea_feedback').text((text_max - len) + " characters remaining");
    });
 
   var userPoints = parseFloat($(".points-remaining p strong").text());
@@ -75,7 +89,7 @@ $(document).on("turbolinks:load",function(){
   }).mouseleave(function(){
     $('#shout-static').css('display', 'block');
     $('#shout-hover').css('display', 'none');
-  })
+  });
 
   $('#shout-modal-call-button-outline').on('click', function() {
     $('.shout-modal').fadeIn();
@@ -104,8 +118,11 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#avatar').on('click', function() {
-    $('.dropdown').slideToggle()
+    if ($(document).width() <= "1024") {
+      $('.dropdown').slideToggle()
+    }
   });
+
 
 //  Insert Jquery function for my-resto. hide all restaurant content
 //  When you click on menu-item restaurant
@@ -117,7 +134,6 @@ $(document).on("turbolinks:load",function(){
       var text = name +'.my-restaurant';
       $(text).css('display', 'block');
     });
-
 
 
 });

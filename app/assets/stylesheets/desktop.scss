@@ -1,5 +1,17 @@
 @import "variables";
 
+@media only screen and (max-width: 1023px) {
+  .desktop-view {
+    // height: 100vh;
+    height: 100%;
+    margin-bottom: -60px;
+  }
+
+  #homepage-phone-box {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .desktop-view {
     width: 1200px;
@@ -79,7 +91,16 @@
         font-size: 1.2em;
       }
     }
-
+    .submit-item {
+      text-align: center;
+      input {
+        padding: 10px 20px;
+        font-family: $font-one;
+        background: $primary;
+        border: none;
+        color: white;
+      }
+    }
     ////MAKE A SHOUTOUT FORM
     .menu-structure {
       height: 100%;
@@ -105,7 +126,7 @@
 
         textarea {
           width: 100%;
-          height: 80px;
+          height: 70px;
           font-family: $font-one;
           font-size: 1em;
         }
@@ -163,6 +184,20 @@
     box-shadow: $drop-shadow;
   }
 
+  .shout {
+    .shout-info {
+      padding: 5px;
+    }
+    .shout-image {
+      width: 150px;
+      height: 150px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
   ////YOUR SHOUTOUTS HEADING
   .shoutouts-heading {
     text-align: left;
@@ -191,4 +226,38 @@
     // position: absolute;
   }
 
+  .shell {
+    background: $secondary-hover;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .homepage-shell {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 160px;
+    flex: 1;
+  }
+
+  #logo-box {
+    display: none;
+    position: static;
+    #title {
+      display: inline-block;
+    }
+    .blurb {
+      margin: 0;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  #homepage-phone-box {
+    width: 49%;
+    display: inline-block;
+  }
 }

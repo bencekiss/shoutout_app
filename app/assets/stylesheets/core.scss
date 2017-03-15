@@ -8,38 +8,42 @@
 }
 
 html {
-  font-family: "Helvetica Neue", "Helvetica",  "sans-serif";
+  font-family: $font-one, "Helvetica",  "sans-serif";
   color: $font-color;
+  height: 100%;
 }
 
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   background: $background-color;
-  margin-bottom: 160px; //This is to clear the ShoutOut button so it doesn't cover the tweets.
 }
 
-.shell {
+.homepage-shell, .shell {
   width: 100%;
   height: 100%;
   display: inline-block;
   text-align: center;
-  margin-top: 66px;
+  margin-bottom: 160px;
+  flex: 1;
 }
 
 footer {
   vertical-align: middle;
   background-color: $primary;
   height: 60px;
-  position: fixed;
-  // top: 35%;
   width: 100%;
-  bottom: 0;
+  clear: both;
 
   p {
     text-align: right;
     color: white;
     padding: 20px;
+    font-family: $font-one;
   }
 }
+
 //This refers to the top bar.
 nav {
   display: inline-block;
@@ -65,9 +69,6 @@ nav {
       color: $font-color;
     }
 
-    a:hover {
-      text-decoration: overline;
-    }
   }
 }
 
@@ -76,12 +77,9 @@ a {
   color: $font-color;
 }
 
-a:hover {
-  text-decoration: overline;
-}
 
 h1 {
-  font-family: "Passion One";
+
   padding: 10px 0;
   font-size: 3em;
 }
