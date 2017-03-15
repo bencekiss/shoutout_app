@@ -86,6 +86,6 @@ Reward.destroy_all
       name: Faker::Commerce.product_name,
       description: Faker::Lorem.sentence,
       point_value: rand(100),
-      restaurant_id: rand(5)
+      restaurant_id: rand(1..5)
     )
   end

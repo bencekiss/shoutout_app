@@ -29,8 +29,9 @@
   color: white;
   background: lightgrey;
   position: relative;
-  z-index: -1;
+  z-index: 2;
   width: 80%;
+  height: 25px;
   display: inline-block;
   p {
     z-index: 3;
@@ -40,7 +41,7 @@
 .reward-button-box {
   // border: $normal-border;
   padding: 2px;
-  margin: 20px 0;
+  margin: 4px 0;
   width: 79%;
   display: inline-block;
 }
@@ -65,7 +66,7 @@
 
 .points-bar {
   background: $primary;
-  width: 50%;
+  // width: 50%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -81,10 +82,19 @@
   color: white;
   font-weight: 900;
   text-align: center;
+  position: absolute;
 }
 
 .positioning-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
+}
+.reward-header p {
+  display: inline-block;
+}
+
+.inactive-sign {
+  background: red;
+  color: black;
 }

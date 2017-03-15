@@ -1,16 +1,16 @@
 <div class="right-sidebar">
-  <h1 class="rewards-heading">Your Rewards</h1>
-  <% if @redemptions.empty? %>
-    <p class="rewards-heading-paragraph"></p>
-  <% else %>
-    <% @redemptions.each do |redemption| %>
-      <% if !(redemption.redemption_status) %>
-        <div class="reward-box">
-          <p class="reward-resto"><%= Restaurant.find(Reward.find(redemption.reward_id).restaurant_id).name %></p>
-          <p class="reward-name"><%= Reward.find(redemption.reward_id).name %></p>
-          <p class="reward-date">Redeemed on: <%= redemption.created_at.strftime("%b %d, %Y") %></p>
+  <% @owned_restaurants.each do |restaurant| %>
+    <div class="my-restaurant" id = '<%= restaurant.name.gsub(/\s+/, "") %>'>
+        <div class=" animated flipInX" id = '<%= restaurant.name.gsub(/\s+/, "") %>' >
+          <h3><%=  restaurant.name %></h3>
+          <div class="restaurant-img-container">
+            <%= image_tag(restaurant.rest_img.image_resize.url) %>
+          </div>
+          <div class="restaurant-info-container">
+            <h3>Website: <%= link_to "Click me!" , restaurant_path(restaurant) %></h3>
+            <h3><%= restaurant.address %></h3>
+          </div>
         </div>
-      <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
