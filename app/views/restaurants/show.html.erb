@@ -46,17 +46,21 @@
             <% end %>
           </div>
           <% if @restaurant.owner_id == current_user.id %>
-            <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
-            <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
-            <% if reward.active %>
-              <%= link_to "Hide Reward", toggle_reward_path(@restaurant, reward), method: :post %>
-            <% else %>
-              <%= link_to "Show Reward", toggle_reward_path(@restaurant, reward), method: :post %>
-            <% end %>
+            <div id="reward-drop-down">
+                 <%= image_tag("down-arrow.png") %>
+            </div>
+              <div id="reward-options">
+                <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
+                <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
+                <% if reward.active %>
+                <%= link_to "Hide Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+                <% else %>
+                <%= link_to "Show Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+                <% end %>
+              </div>
           <% end %>
         </div>
         <% end %>
     </div>
   </div>
 </div>
-<%= console %>
