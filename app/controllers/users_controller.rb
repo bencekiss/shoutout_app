@@ -67,11 +67,16 @@ class UsersController < ApplicationController
   end
 
   def change_redemption_status
+
     @redemption = Redemption.find(params[:redemption_id])
     @redemption.redemption_status = true
-    @redemption.save
-
-    redirect_to my_restaurants_path
+    # @redemption.save
+    respond_to do |format|
+      if @redemption.save
+        format.html {render redirect_to my_restaurants_path }
+        format.json { render json: @redemption }
+      end
+    end
   end
 
   def my_restaurants
