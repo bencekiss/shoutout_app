@@ -15,7 +15,7 @@
   #homepage-phone-box {
     width: 1150px;
     height: 800px;
-    margin-top: -415px;
+    margin-top: -400px;
     margin-left: -525px;
   }
   #shoutout-phone {
@@ -24,12 +24,13 @@
 
   #desktop-logo-shout {
     width: 450px;
-    right: 150px;
+    right: 105px;
     top: -50px;
   }
 
   .desktop-homepage-right-div {
     width: 34%;
+    margin-top: -60px;
   }
   .desktop-homepage-left-div {
     .intro-box {
@@ -42,9 +43,6 @@
   }
 
   #get-started {
-    p {
-      padding: 15px 25px;
-      margin-top: 30px;
-    }
+    p {padding: 15px 25px}
   }
 }
