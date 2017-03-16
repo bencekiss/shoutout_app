@@ -143,4 +143,8 @@ $(document).on("turbolinks:load",function(){
       var text = name +'.my-restaurant';
       $(text).css('display', 'block');
     });
+
+    $('#reward-drop-down ').click(function(){
+        $(this).next('#reward-options').slideToggle("fast");
+    });
 });

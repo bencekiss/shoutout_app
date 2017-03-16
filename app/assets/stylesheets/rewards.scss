@@ -81,7 +81,24 @@
   display: inline-block;
 }
 
-.inactive-sign {
-  background: red;
+.inactive-sign, .active-sign {
+  background: lightgray;
+  opacity: 0.8;
   color: black;
+  box-shadow: 3px 3px black;
+  margin: 2px auto;
+  width: 20%;
+}
+
+.active-sign {
+  background: white;
+}
+
+#reward-options {
+  display: none;
+}
+
+#reward-drop-down {
+  width: 18%;
+  margin: auto;
 }
