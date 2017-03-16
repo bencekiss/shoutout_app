@@ -19,9 +19,11 @@ class Restaurant < ApplicationRecord
     user.rewards.each do |reward|
       if reward.restaurant_id == self.id
         points -= reward.point_value
+        if points < 0
+          points += reward.point_value
+        end
       end
     end
-
     points
   end
 
@@ -40,7 +42,5 @@ class Restaurant < ApplicationRecord
     end
     points
   end
-
-
 
 end

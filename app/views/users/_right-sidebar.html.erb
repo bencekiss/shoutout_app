@@ -1,7 +1,7 @@
 <div class="right-sidebar">
   <h1 class="rewards-heading">Your Rewards</h1>
   <% if @redemptions.empty? %>
-    <p class="rewards-heading-paragraph"></p>
+    <p class="rewards-heading-paragraph">You currently have no rewards pending. Collect points at your favorite restaurants and redeem rewards!</p>
   <% else %>
     <% @redemptions.each do |redemption| %>
       <% if !(redemption.redemption_status) %>

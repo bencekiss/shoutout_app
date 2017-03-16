@@ -25,13 +25,13 @@ $(document).on("turbolinks:load",function(){
    });
 
   var userPoints = parseFloat($(".points-remaining p strong").text());
-  for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
-    var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
+  for (i=0; i < $("em.reward-point").length; i++){
+    var rewardPoints = parseFloat($("em.reward-point")[i].innerText);
     var rewardButton = $(".reward-button")[i];
-    // debugger;
+    var positionButton = $(".positioning-box")[i];
     if (userPoints < rewardPoints){
-      $(".positioning-box").children(".reward-button").addClass("nope");
-      $(".positioning-box").removeClass("on-button");
+      $('.on-button').children(rewardButton).addClass("nope");
+      $(positionButton).removeClass('on-button');
     }};
 
   $(".on-button").on('click',function(e){
@@ -67,11 +67,9 @@ $(document).on("turbolinks:load",function(){
       dataType:"json"
     }).done(function(data){
       console.log(data)
-      debugger;
       location.pathname = "/"
     }).fail(function(){
       console.log("Failed");
-      debugger;
       location.reload();
     });
   });
@@ -84,11 +82,15 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#logo-button').mouseenter(function() {
-    $('#shout-static').toggle();
-    $('#shout-hover').css('display', 'block');
+    if ($(document).width() <= "1024") {
+      $('#shout-static').toggle();
+      $('#shout-hover').css('display', 'block');
+    }
   }).mouseleave(function(){
-    $('#shout-static').css('display', 'block');
-    $('#shout-hover').css('display', 'none');
+    if ($(document).width() <= "1024") {
+      $('#shout-static').css('display', 'block');
+      $('#shout-hover').css('display', 'none');
+    }
   });
 
   $('#shout-modal-call-button-outline').on('click', function() {
@@ -139,6 +141,4 @@ $(document).on("turbolinks:load",function(){
       var text = name +'.my-restaurant';
       $(text).css('display', 'block');
     });
-
-
 });
