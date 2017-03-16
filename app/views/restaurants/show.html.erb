@@ -14,8 +14,8 @@
       <% resto_rewards.each do |reward| %>
         <% if (reward.active && current_user != @restaurant.owner_id) || (@restaurant.owner_id == current_user.id) %>
           <div class="reward-header">
-            <p> <strong><%= reward.name %></strong>  </p>
-            <p><em class="reward-point"> | <%= reward.point_value %> points  </em> </p>
+            <p> <strong><%= reward.name %></strong>  |</p>
+            <p><em class="reward-point">  <%= reward.point_value %> </em> points </p>
           </div>
           <div class="reward-button-box">
             <div class="positioning-box on-button">

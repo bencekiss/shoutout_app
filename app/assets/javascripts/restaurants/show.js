@@ -28,9 +28,9 @@ $(document).on("turbolinks:load",function(){
   for (i=0; i < $("em.reward-point").length; i++){
     var rewardPoints = parseFloat($("em.reward-point")[i].innerText);
     var rewardButton = $(".reward-button")[i];
-    var positionButton = $(".positioning-box")[i];
     if (userPoints < rewardPoints){
-      $('.on-button').children(rewardButton).addClass("nope");
+      var positionButton = $(".positioning-box")[i];
+      $(positionButton).children(rewardButton).addClass("nope");
       $(positionButton).removeClass('on-button');
     }};
 
