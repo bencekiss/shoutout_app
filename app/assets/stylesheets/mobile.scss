@@ -56,7 +56,7 @@
   .dropdown-bottom {
     display: none;
     width: 130px;
-    position: absolute;
+    position: fixed;
     bottom: 60px;
   }
 
@@ -64,5 +64,15 @@
     background: lightgray;
     padding: 2px;
   }
-
+  .shout-form{
+    h1{
+      font-size: 1.5em;
+    }
+  }
+  .shoutouts-heading {
+    font-size: 2em;
+  }
+  input#shout-shout-image {
+    font-size: .5em;
+  }
 }
