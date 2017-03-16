@@ -2,6 +2,34 @@
   .left-sidebar, .left-sidebar-logo-container, .right-sidebar {
     display: none
   }
+
+  .profile{
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  .restaurant-desktop{
+    display: none;
+  }
+  .navlist{
+    position: absolute;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+
+    .navelement{
+      padding: 20px;
+      a{
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 0.05em;
+      }
+    }
+    .navelement.logo {
+        padding: 0;
+    }
+  }
+
   .desktop-signin {
     display: none;
   }
@@ -17,12 +45,18 @@
   }
   .right-footer {
     float: right;
+    .footer-list{
+      list-style: none;
+      .about-desktop{
+        display: none;
+      }
+    }
   }
 
   .dropdown-bottom {
     display: none;
     width: 130px;
-    position: absolute;
+    position: fixed;
     bottom: 60px;
   }
 
@@ -30,5 +64,15 @@
     background: lightgray;
     padding: 2px;
   }
-
+  .shout-form{
+    h1{
+      font-size: 1.5em;
+    }
+  }
+  .shoutouts-heading {
+    font-size: 2em;
+  }
+  input#shout-shout-image {
+    font-size: .5em;
+  }
 }

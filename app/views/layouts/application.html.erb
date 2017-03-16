@@ -17,14 +17,24 @@
   <body>
     <% if current_user %>
       <nav>
-        <a href="/">
-          <div id="logo">
-            <%= image_tag "bullhorn.png" %>
-          </div>
-        </a>
-        <%= image_tag current_user.profile_image, id: "avatar" %>
-        <span class="desktop-signin">Signed in as <%= current_user.name %> |
-        <%= link_to ' Log Out ', :logout, method: :post %>
+        <div class="profile">
+          <%= image_tag current_user.profile_image, id: "avatar" %>
+        </div>
+        <ul class="navlist">
+          <li class="navelement logo">
+            <a href="/">
+              <div id="logo">
+                <%= image_tag "bullhorn.png" %>
+              </div>
+            </a>
+          </li>
+          <li class="navelement">
+            <%= link_to "Restaurants", restaurants_path %>
+          </li>
+          <li class="navelement desktop-signin">
+            <%= link_to ' Log Out ', :logout, method: :post %>
+          </li>
+        </ul>
       </nav>
       <!-- THIS IS THE DROPDOWN FOR MOBILE VIEW. -->
       <div class="dropdown">
@@ -129,6 +139,14 @@
         <i class="fa fa-cog" aria-hidden="true"></i>
       </div>
       <div class="right-footer">
+        <ul class="footer-list">
+          <li class="footer-element">
+            <p>&copy 2017 PAIR</p>
+          </li>
+          <li class="footer-element about-desktop">
+            <%= link_to 'About', about_path %>
+          </li>
+        </ul>
         <p>&copy 2017 PAIR</p>
       </div>
     </footer>
