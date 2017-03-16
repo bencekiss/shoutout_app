@@ -13,7 +13,7 @@
   }
   .navlist{
     position: absolute;
-    width: 90%;
+    width: 50%;
     list-style: none;
     text-align: left;
 
@@ -27,6 +27,9 @@
     }
     .navelement.logo {
         padding: 0;
+    }
+    .navelement.resto{
+      display: none;
     }
   }
 
