@@ -35,7 +35,7 @@
     border-radius: 10px;
     height: 100%;
     z-index: 3;
-    box-shadow: 2px 2px 2px darkgray;
+    box-shadow: $drop-shadow;
 
     .left-sidebar-logo-container, .right-sidebar-logo-container {
       border-top-left-radius: 10px;
@@ -61,7 +61,6 @@
       padding-right: 27px;
       font-family: $font-one;
       font-size: 1.5em;
-      font-weight: 500;
     }
     .rewards-heading-paragraph {
       font-family: $font-one;

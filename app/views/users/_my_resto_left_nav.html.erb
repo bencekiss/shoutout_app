@@ -5,7 +5,7 @@
   <div class="menu-structure">My Restaurants
     <ul>
       <% @owned_restaurants.each do |restaurant| %>
-        <div class="menu-item animated fadeInUpBig" id = '<%= restaurant.name.gsub(/\s+/, "") %>'>
+        <div class="menu-item animated infinte fadeInUpBig" id = '<%= restaurant.name.gsub(/\s+/, "") %>'>
           <li><%= restaurant.name %></li>
         </div>
       <% end %>

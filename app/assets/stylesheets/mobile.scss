@@ -2,6 +2,37 @@
   .left-sidebar, .left-sidebar-logo-container, .right-sidebar {
     display: none
   }
+
+  .profile{
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  .restaurant-desktop{
+    display: none;
+  }
+  .navlist{
+    position: absolute;
+    width: 50%;
+    list-style: none;
+    text-align: left;
+
+    .navelement{
+      padding: 20px;
+      a{
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 0.05em;
+      }
+    }
+    .navelement.logo {
+        padding: 0;
+    }
+    .navelement.resto{
+      display: none;
+    }
+  }
+
   .desktop-signin {
     display: none;
   }
@@ -17,6 +48,12 @@
   }
   .right-footer {
     float: right;
+    .footer-list{
+      list-style: none;
+      .about-desktop{
+        display: none;
+      }
+    }
   }
 
   .dropdown-bottom {
