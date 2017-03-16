@@ -41,6 +41,7 @@ $(document).on("turbolinks:load",function(){
   $(".close").on("click",function(e){
     e.stopPropagation();
     $(".modal").fadeOut("slow");
+    $(".desktop-view").fadeIn("slow");
   });
 
   $(".positioning-box").on("click", function(e){
@@ -94,6 +95,7 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#shout-modal-call-button-outline').on('click', function() {
+    $('.desktop-view').fadeOut();
     $('.shout-modal').fadeIn();
   });
 

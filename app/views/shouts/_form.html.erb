@@ -1,22 +1,17 @@
 <div class="form shout-form">
- <h1>ShoutOut Your Tweet</h1>
-
+ <!-- <h1>Make a ShoutOut!</h1> -->
   <%= form_for [@user, @shout] do |f| %>
     <%= f.hidden_field :twitter_id, value: 7 %>
     <%= f.hidden_field :user_id, value: @user.id %>
 
-  <div class="field">
-    <%= f.label "What Restaurant Are You At?" %><br>
+  <div class="field">What restaurant are you at?
       <%= f.select :restaurant_id, options_for_select(@restaurants) %>
   </div>
-  <div class="field">
-    <%= f.label :twitter_text, value: "What do you wanna say?" %><br>
+  <div class="field">Write your tweet! <i class="fa fa-twitter" aria-hidden="true"></i>
     <%= f.text_area :twitter_text, placeholder: "Share the good news", maxlength: "140" %></br>
     <div id="textarea_feedback"></div>
-
   </div>
-  <div class="field">
-    <%= f.label :shout_image, value: "Share a photo of your experience!" %><br>
+  <div class="field">Share a photo of the experience!
     <%= f.file_field :shout_image, placeholder: "https://your images address" %>
   </div>
   <div class="submit-item">
@@ -26,3 +21,20 @@
 <% end %>
 
 </div>
+<!-- <%= form_for [@user, @shout] do |f| %>
+  <%= f.hidden_field :twitter_id, value: 7 %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <div class="heading-item">Make a ShoutOut!</div>
+  <div class="menu-item">What restaurant are you at?
+    <%= f.select :restaurant_id, options_for_select(@restaurants) %>
+  </div>
+  <div class="menu-item">Write your tweet! <i class="fa fa-twitter" aria-hidden="true"></i>
+    <%= f.text_area :twitter_text, placeholder: "This restaurant is awesome!" %>
+  </div>
+  <div class="menu-item">Share a photo of the experience!
+    <%= f.file_field :shout_image, placeholder: "https://your images address" %>
+  </div>
+  <div class="submit-item">
+    <%= f.submit "Shout it out!" %>
+  </div>
+<% end %> -->
