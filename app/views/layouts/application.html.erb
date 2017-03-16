@@ -111,7 +111,7 @@
           <div class="desktop-homepage-left-div">
             <div class="intro-box">
               <div id="desktop-logo-button">
-                <%= image_tag "shout2.png", id: "desktop-logo-shout" %>
+                <%= image_tag "pulsate.gif", id: "desktop-logo-shout" %>
               </div>
 
               <h2 id="title">ShoutOut!</h2>
@@ -143,9 +143,11 @@
           <li class="footer-element">
             <p>&copy 2017 PAIR</p>
           </li>
-          <li class="footer-element about-desktop">
-            <%= link_to 'About', about_path %>
-          </li>
+          <% if current_user %>
+            <li class="footer-element about-desktop">
+              <%= link_to 'About', about_path %>
+            </li>
+          <% end %>
         </ul>
         <p>&copy 2017 PAIR</p>
       </div>
