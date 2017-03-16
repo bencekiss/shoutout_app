@@ -53,15 +53,7 @@
         <% end %>
         <div class="shell">
           <%# if params[:controller]== "restaurants" && params[:id] && params[:action] != "my_restaurants"  %>
-            <% if params[:controller] == "restaurants" && params[:id] %>
-              <div class="modal shout-modal">
-                <%= render '/shouts/resto_shout' %>
-              </div>
-            <% else %>
-              <div class="modal shout-modal">
-                <%= render '/shouts/form' %>
-              </div>
-            <% end %>
+
           <%# end %>
           <div id="shout-modal-call-button">
             <%= image_tag "shout1.png", id: "shout-call-static" %>
@@ -71,6 +63,16 @@
           <%= yield %>
         </div>
       </div>
+
+      <% if params[:controller] == "restaurants" && params[:id] %>
+        <div class="modal shout-modal">
+          <%= render '/shouts/resto_shout' %>
+        </div>
+      <% else %>
+        <div class="modal shout-modal">
+          <%= render '/shouts/form' %>
+        </div>
+      <% end %>
 
     <% end %>
 
@@ -130,6 +132,7 @@
         <p>&copy 2017 PAIR</p>
       </div>
     </footer>
+
   </body>
 
 </html>

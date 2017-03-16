@@ -25,13 +25,13 @@ $(document).on("turbolinks:load",function(){
    });
 
   var userPoints = parseFloat($(".points-remaining p strong").text());
-  for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
-    var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
+  for (i=0; i < $("em.reward-point").length; i++){
+    var rewardPoints = parseFloat($("em.reward-point")[i].innerText);
     var rewardButton = $(".reward-button")[i];
-
     if (userPoints < rewardPoints){
-      $(".positioning-box").children(".reward-button").addClass("nope");
-      $(".positioning-box").removeClass("on-button");
+      var positionButton = $(".positioning-box")[i];
+      $(positionButton).children(rewardButton).addClass("nope");
+      $(positionButton).removeClass('on-button');
     }};
 
   $(".on-button").on('click',function(e){
@@ -41,6 +41,7 @@ $(document).on("turbolinks:load",function(){
   $(".close").on("click",function(e){
     e.stopPropagation();
     $(".modal").fadeOut("slow");
+    $(".desktop-view").fadeIn("slow");
   });
 
   $(".positioning-box").on("click", function(e){
@@ -94,6 +95,7 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#shout-modal-call-button-outline').on('click', function() {
+    $('.desktop-view').fadeOut();
     $('.shout-modal').fadeIn();
   });
 
