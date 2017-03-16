@@ -1,23 +1,37 @@
 @import 'variables';
 
 .modal {
-  border: $normal-border;
-  background: $modal-color;
-  padding: 20px;
+  // border: $normal-border;
+  background: $secondary;
+  padding: 20px 0;
   width: 500px;
   text-align: center;
   position: fixed;
-  margin-left: -250px;
-  margin-top: -250px;
+  margin-left: -300px;
+  margin-top: -206px;
   left: 50%;
   top: 50%;
   z-index: 2;
+  overflow: auto;
+  position: absolute;
+}
+
+.submit-item {
+  padding: 10px 0;
+  text-align: center;
+  input {
+    padding: 10px 20px;
+    font-family: $font-one;
+    background: $primary;
+    border: none;
+    color: white;
+  }
 }
 
 .shout-modal {
   display: none;
   width: 100%;
-  height: 78%;
+  height: 76%;
   left: 0;
   margin-left: 0;
   z-index: 6;
@@ -35,6 +49,16 @@
   }
 }
 
+.close{
+  background: $font-color;
+  color: white;
+  border-radius: 50px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 3px;
+  width:28px;
+}
 
 #avatar {
   border-radius: 50%;

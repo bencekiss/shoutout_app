@@ -28,9 +28,9 @@ $(document).on("turbolinks:load",function(){
   for (i=0; i < $("em.reward-point").length; i++){
     var rewardPoints = parseFloat($("em.reward-point")[i].innerText);
     var rewardButton = $(".reward-button")[i];
-    var positionButton = $(".positioning-box")[i];
     if (userPoints < rewardPoints){
-      $('.on-button').children(rewardButton).addClass("nope");
+      var positionButton = $(".positioning-box")[i];
+      $(positionButton).children(rewardButton).addClass("nope");
       $(positionButton).removeClass('on-button');
     }};
 
@@ -41,6 +41,7 @@ $(document).on("turbolinks:load",function(){
   $(".close").on("click",function(e){
     e.stopPropagation();
     $(".modal").fadeOut("slow");
+    $(".desktop-view").fadeIn("slow");
   });
 
   $(".positioning-box").on("click", function(e){
@@ -94,6 +95,7 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('#shout-modal-call-button-outline').on('click', function() {
+    $('.desktop-view').fadeOut();
     $('.shout-modal').fadeIn();
   });
 
