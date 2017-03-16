@@ -1,6 +1,5 @@
 <div class="form shout-form">
- <h1>Make a ShoutOut!</h1>
-
+ <!-- <h1>Make a ShoutOut!</h1> -->
   <%= form_for [@user, @shout] do |f| %>
     <%= f.hidden_field :twitter_id, value: 7 %>
     <%= f.hidden_field :user_id, value: @user.id %>
