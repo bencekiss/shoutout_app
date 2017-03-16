@@ -1,11 +1,25 @@
 <div class="restaurant-container">
   <% @all_restaurants.each do |resto| %>
     <div class="restaurant-description">
-      <h3><%= link_to resto.name, restaurant_path(resto) %></h3>
-      <%= link_to image_tag(resto.rest_img, class: "restaurant-image", size: "300x300"), restaurant_path(resto) %>
-      <div class="restaurant-details">
-        <p><%= resto.address %></p>
-        <p><%= resto.phone_number %></p>
+      <div class="restaurant-mobile">
+        <h3><%= link_to resto.name, restaurant_path(resto) %></h3>
+        <%= link_to image_tag(resto.rest_img, class: "restaurant-image", size: "300x300"), restaurant_path(resto) %>
+        <div class="restaurant-details">
+          <p><%= resto.address %></p>
+          <p><%= resto.phone_number %></p>
+        </div>
+      </div>
+      <div class="restaurant-desktop">
+        <div class="resto-left">
+          <%= link_to image_tag(resto.rest_img, class: "restaurant-image", size: "150x150"), restaurant_path(resto) %>
+        </div>
+        <div class="resto-mid">
+          <p><%= resto.name %></p>
+        </div>
+        <div class="resto-right">
+          <p><%= resto.address %></p>
+          <p><%= resto.phone_number %></p>
+        </div>
       </div>
     </div>
   <% end %>

@@ -38,6 +38,61 @@
 
 
 @media only screen and (min-width: 1024px) {
+  // Bence rules for desktop
+  .navlist {
+    position: relative;
+    list-style: none;
+    bottom: 0;
+    width: 100%;
+  }
+  .navelement{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    right: 50%;
+    text-align: center;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    a{
+      color: white;
+    }
+  }
+  .desktop-signin {
+    right: 0;
+    left: 50%;
+  }
+  .profile {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+
+  .right-footer{
+    .footer-list{
+      list-style: none;
+      overflow: hidden;
+
+      .footer-element{
+        text-align: center;
+        float: right;
+        width: 17%;
+        padding: 20px;
+        a, p{
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          padding: 0 20px;
+          text-align: center;
+          color: white;
+        }
+      }
+
+    }
+  }
+
+
   ////CORE CSS ROLES
 
   .desktop-view {
@@ -103,7 +158,6 @@
       padding-right: 27px;
       font-family: $font-one;
       font-size: 1.5em;
-      font-weight: 500;
     }
     .rewards-heading-paragraph {
       font-family: $font-one;

@@ -1,0 +1,71 @@
+@import "variables";
+
+@media only screen and (min-width: 1600px) {
+  .desktop-view {
+    width: 1600px;
+    vertical-align: top;
+    margin-top: 10px;
+  }
+
+  .left-sidebar {
+    width: 31%;
+
+    .left-sidebar-logo-container {
+      height: 350px;
+      #sidebar-logo-image {
+        text-align: center;
+        margin-left: -160px;
+        width: 350px;
+      }
+    }
+
+    .menu-structure {
+      .heading-item, .menu-item, .submit-item {
+        padding: 20px 35px;
+      }
+
+      .heading-item {
+        font-weight: 900;
+      }
+
+      .menu-item {
+        font-size: 1.2em;
+        select {
+          margin-top: 10px;
+          font-size: 1.1em;
+        }
+
+        textarea {
+          margin-top: 10px;
+          height: 180px;
+        }
+
+        input {
+          margin-top: 10px;
+        }
+      }
+
+      .submit-item {
+        font-size: 1.2em;
+      }
+
+    }
+  }
+
+  .shell {
+    width: 40%;
+    p {
+      padding: 0 27px;
+      text-align: left;
+    }
+  }
+
+  .rewards-heading, .shoutouts-heading {
+    font-weight: 900;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
