@@ -24,7 +24,7 @@ Reward.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/1/ShawarmaKing2.jpeg"
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/2/ShawarmaKing2.jpeg"
   rest.save!
 
   rest = Restaurant.new(
@@ -36,7 +36,7 @@ Reward.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/2/BurgersPriest.jpeg"
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/3/BurgersPriest.jpeg"
   rest.save!
 
   rest = Restaurant.new(
@@ -48,7 +48,7 @@ Reward.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/3/BurritoBoyz.png"
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/4/BurritoBoyz.png"
   rest.save!
 
   rest = Restaurant.new(
@@ -60,7 +60,7 @@ Reward.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/4/SmokesPoutine.jpeg"
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/5/SmokesPoutine.jpeg"
   rest.save!
 
   rest = Restaurant.new(
@@ -72,7 +72,7 @@ Reward.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/5/Tokaji.jpeg"
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/6/Tokaji.jpeg"
   rest.save!
 
 
