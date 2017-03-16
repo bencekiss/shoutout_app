@@ -1,71 +1,62 @@
 <div class="restaurant-show-container">
   <div class="restaurant-show">
     <h1><%= @restaurant.name %></h1>
-      <%= image_tag(@restaurant.rest_img.image_resize.url) %>
-
-
-     <% if @restaurant.owner_id == current_user.id %>
-
+     <%= image_tag(@restaurant.rest_img.image_resize.url) %>
+     <% if @restaurant.owner_id != current_user.id %>
       <div class="field points-remaining">
         <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
       </div>
     <% else %>
       <h2>These are your restaurant's rewards.</h2>
     <% end %>
-
     <div class="rewards">
       <% resto_rewards = @restaurant.rewards.sort_by{|x| x.point_value} %>
-        <% resto_rewards.each do |reward| %>
-
+      <% resto_rewards.each do |reward| %>
+        <% if (reward.active && current_user != @restaurant.owner_id) || (@restaurant.owner_id == current_user.id) %>
           <div class="reward-header">
             <p> <strong><%= reward.name %></strong>  </p>
-              <p><em class="reward-point"> | <%= reward.point_value %> points  </em> </p>
+            <p><em class="reward-point"> | <%= reward.point_value %> points  </em> </p>
           </div>
           <div class="reward-button-box">
-              <!-- <% if @restaurant.owner_id == current_user.id || reward.active %> -->
             <div class="positioning-box on-button">
-                  <div class="reward-button">
-                    <% points_remaining = ((@points.to_f/reward.point_value.to_f)*100).to_f >= 100 ? 100 : ((@points.to_f/reward.point_value.to_f)*100).to_f %>
-                      <div class="points-bar" style="width:<%= points_remaining %>%">
-                        <%= points_remaining.to_i %>%
-                      </div>
-                    <% if @restaurant.owner_id == current_user.id %>
-                    <% end %>
-                  </div>
-
-                  <div class="reward-modal modal">
-                      <p>Point Value: <em class = "reward-point"> <strong><%= reward.point_value %></strong></em> </p>
-                        <p>Your Points: <strong><%= @points %></strong></p>
-                            <button class= "redeem-button" type="button" name="button">Redeem It!
-                              <p>Description: <%= reward.description %></p>
-                              <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
-                                <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
-                                  <%= hidden_field_tag :authenticity_token, form_authenticity_token, {class: "hidden-authenticity"} %>
-                            </button>
-                    <div class="close">X</div>
-                  </div>
-                    <% if @restaurant.owner_id == current_user.id && reward.active %>
-                        <p class = "active-sign"><strong> Active </strong></p>
-                    <% else %>
-                        <p class = "inactive-sign">Inactive</p>
-                    <% end %>
-                      <!-- <% end %> -->
-                    </div>
-                <% if @restaurant.owner_id == current_user.id %>
-                  <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
-                    <%= link_to "Eat Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
-                  <% if reward.active %>
-                    <%= link_to "Chocolate Reward", toggle_reward_path(@restaurant, reward), method: :post %>
-                  <% else %>
-                    <%= link_to "Bence is a Reward", toggle_reward_path(@restaurant, reward), method: :post %>
-                  <% end %>
-
-                <% end %>
+              <div class="reward-button">
+                <% points_remaining = ((@points.to_f/reward.point_value.to_f)*100).to_f >= 100 ? 100 : ((@points.to_f/reward.point_value.to_f)*100).to_f %>
+                <div class="points-bar" style="width:<%= points_remaining %>%">
+                  <%= points_remaining.to_i %>%
+                </div>
+              </div>
+              <div class="reward-modal modal">
+                <p>Point Value: <em class = "reward-point"> <strong><%= reward.point_value %></strong></em> </p>
+                <p>Your Points: <strong><%= @points %></strong></p>
+                <button class= "redeem-button" type="button" name="button">Redeem It!
+                  <p>Description: <%= reward.description %></p>
+                  <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
+                  <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token, {class: "hidden-authenticity"} %>
+                </button>
+                <div class="close">X</div>
               </div>
         <% end %>
-      </div>
-      </div>
-      </div>
+            <% if  @restaurant.owner_id == current_user.id %>
+              <% if reward.active %>
+                <p class = "active-sign"><strong> Active </strong></p>
+              <% else %>
+                <p class = "inactive-sign">Inactive</p>
+              <% end %>
+            <% end %>
+          </div>
+          <% if @restaurant.owner_id == current_user.id %>
+            <%= link_to "Edit Reward", edit_restaurant_reward_path(@restaurant, reward) %> |
+            <%= link_to "Delete Reward", delete_reward_path(@restaurant, reward), method: :delete, data: {confirm: "are you sure?"} %> |
+            <% if reward.active %>
+              <%= link_to "Hide Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+            <% else %>
+              <%= link_to "Show Reward", toggle_reward_path(@restaurant, reward), method: :post %>
+            <% end %>
+          <% end %>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
+<%= console %>
