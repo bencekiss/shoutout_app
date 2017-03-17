@@ -78,12 +78,19 @@
 
   .desktop-view {
     text-align: center;
-}
+  }
 
-div#shoutout-boxset {
-    /* display: block; */
-    width: 500px;
-}
+  .resto-name {
+    width: 75%;
+    text-align: left;
+    h3 {
+      font-weight: 500;
+    }
+  }
+  div#shoutout-boxset {
+      /* display: block; */
+      width: 500px;
+  }
   input#shout-shout-image {
     font-size: .5em;
   }
@@ -92,7 +99,55 @@ div#shoutout-boxset {
 @media only screen and (max-width: 500px){
   div#shoutout-boxset {
       /* display: block; */
-      width: 320px;
+      width: 98%;
+  }
+
+  div.shoutout-box {
+  }
+
+  .resto-name > h3 {
+    font-size: 1em;
+    font-weight: 500;
+    text-align: left;
+    line-height: 2;
+  }
+
+  .resto-name {
+    width: 75%;
+  }
+
+  .resto-info {
+    padding-right: 5px;
+    position: relative;
+  }
+
+  .resto-points {
+    display: inline-block;
+    float: right;
+  }
+
+  .resto-shouts {
+    position: absolute;
+    top: 25px;
+    right: 7px;
+  }
+  .resto-points, .resto-shouts {
+    display: inline-block;
+    padding-right: 5px;
+    width: 21%;
+    strong {
+      font-size: 0.9em;
+    }
+  }
+
+  .points-label, .points-number, .shouts-number, .shouts-label {
+    display: inline-block;
+  }
+
+  div#mobile-trophy {
+    float: left;
+    margin: 0 8px;
+    display: none;
   }
 }
 
@@ -104,5 +159,4 @@ div#shoutout-boxset {
   .modal.shout-modal {
     height: 130%;
   }
-
 }

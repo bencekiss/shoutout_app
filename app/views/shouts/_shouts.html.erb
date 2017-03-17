@@ -3,15 +3,19 @@
   <div class="shoutout-box">
     <div class="resto-shoutout-box">
       <div class="resto-info">
-        <div class="resto-rewards">
+        <!-- <div class="resto-rewards" id="mobile-trophy">
           <i class="fa fa-trophy" aria-hidden="true"></i>
-        </div>
+        </div> -->
         <div class="resto-name">
           <h3><%= resto.name %></h3>
         </div>
         <div class="resto-points">
           <p class="points-label">POINTS</p>
           <p class="points-number"><strong><%= resto.points(@user) %></strong></p>
+        </div>
+        <div class="resto-shouts">
+          <p class="shouts-label">SHOUTS</p>
+          <p class="shouts-number"><strong><%= Shout.where(restaurant_id: resto.id, user_id: @user.id).length %></p>
         </div>
       </div>
     </div>
