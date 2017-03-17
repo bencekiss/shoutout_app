@@ -1,0 +1,8 @@
+<%= form_tag, method: 'post', action: 'users#contact' %>
+
+<%= label_tag :email %>
+<%= text_field_tag :email, params[:email] %></br>
+<%= label_tag :comment %>
+<%= text_area_tag(:message) %></br>
+
+<%= submit_tag "Submit" %>
