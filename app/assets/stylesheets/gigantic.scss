@@ -12,6 +12,37 @@
     font-size: 22px;
   }
 
+  div.desktop-view {
+    width: 1800px;
+  }
+  div.shell{
+    width: 51%;
+    height: 100%;
+    .resto-mid p {
+      font-size: 0.8em;
+      text-align: center;
+    }
+    .resto-right p {
+      text-align: right;
+      padding-right: 5px;
+      font-size: 0.7em;
+      margin: 0;
+    }
+    .resto-right p:nth-child(2) {
+      bottom-margin: 2px;
+    }
+  }
+  div.right-sidebar {
+    width: 25%;
+    display: inline-block;
+    float: right;
+  }
+  div.left-sidebar{
+    width: 20%;
+    float: right;
+    display: inline-block;
+    float: left;
+  }
   #homepage-phone-box {
     width: 1150px;
     height: 800px;
@@ -44,5 +75,124 @@
 
   #get-started {
     p {padding: 15px 25px}
+  }
+  div.restaurant-description {
+    width: 32%;
+    margin: 0;
+    display: inline-block;  // margin: 10px;
+    padding: 15px, 5px 0px;
+    height: 191px;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+
+    h3{
+      display: none;
+    }
+    div.restaurant-details{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: rgba(11, 63, 95, 0.75);
+      color: white;
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding-left: 15px;
+      font-family: $font-one;
+      }
+  }
+
+  .restaurant-description:hover {
+    background: $secondary;
+    box-shadow: 2px 2px 2px 2px #c1d1df;
+  }
+
+
+  .restaurant-image {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .restaurant-container {
+    overflow: hidden;
+    padding: 13px 0;
+  }
+
+  .restaurant {
+    padding: 20px;
+    border-bottom: $normal-border;
+    width: 40%;
+    margin: 20px auto;
+  }
+
+  .field.rewards {
+      margin: auto;
+  }
+
+  input#restaurant_rest_img {
+      margin-left: 35%;
+  }
+
+
+  .restaurant-show-container {
+    .restaurant-show img {
+      width: 50%;
+    }
+    .restaurant-show h1, h2 {
+        display: none;
+    }
+  }
+
+  div.restaurant-desktop {
+      margin: 0px;
+      text-align: left;
+      overflow: hidden;
+      border: 1px solid lightgray;
+      border-radius: 6px;
+      width: 100%;
+      height: 191px;
+      display: inline-block;
+      float: left;
+      .resto-left, .resto-mid, .resto-right {
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin-top: 0px;
+        margin-left: 0px;
+      }
+
+      div.resto-mid, .resto-right {
+        background: white;
+        opacity: 0.85;
+
+      }
+      div.resto-left {
+        padding-top: 3px;
+        text-align: center;
+        height: 66%;
+      }
+
+      div.resto-left{
+        img {
+          border-radius: 5px;
+          box-shadow: 2px 2px  $secondary;
+          padding: 0px;
+          width: 95%;
+          height: 183px;
+          text-align: center;
+        }
+      }
+
+      div.resto-mid{
+        font-size: 1.1em;
+      }
+      div.resto-right{
+        text-align: right;
+        font-size: 0.8em;
+        // margin-left: 60px;
+      }
   }
 }

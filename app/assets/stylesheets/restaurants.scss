@@ -5,61 +5,61 @@
 
 
 .restaurant-description {
-  width: 100%;
-  display: block;
-  // margin: 10px;
-  // padding: 10px;
-  // height: 200px;
-  overflow: hidden;
-  // border: 1px solid $font-color;
-  position: relative;
+ width: 100%;
+ display: block;
+ // margin: 10px;
+ // padding: 10px;
+ // height: 200px;
+ overflow: hidden;
+ // border: 1px solid $font-color;
+ position: relative;
 
-  h3{
-    display: none;
-  }
-  .restaurant-details{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: rgba(11, 63, 95, 0.75);
-    color: white;
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding-left: 15px;
-    // border-radius: 10px 10px 20px 20px;
-    font-family: $font-one;
-    }
+ h3{
+   display: none;
+ }
+ .restaurant-details{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   background: rgba(11, 63, 95, 0.75);
+   color: white;
+   display: block;
+   width: 100%;
+   text-align: left;
+   padding-left: 15px;
+   // border-radius: 10px 10px 20px 20px;
+   font-family: $font-one;
+   }
 }
 
 
 
 .restaurant-image {
-  width: 100%;
-  height: 100%;
-  // border-radius: 20px;
-  max-width: 100%;
-  // border: 2px solid $font-color;
-  overflow: hidden;
+ width: 100%;
+ height: 100%;
+ // border-radius: 20px;
+ max-width: 100%;
+ // border: 2px solid $font-color;
+ overflow: hidden;
 }
 
 .restaurant-container {
-  overflow: hidden;
+ overflow: hidden;
 }
 
 .restaurant {
-  padding: 20px;
-  border-bottom: $normal-border;
-  width: 40%;
-  margin: 20px auto;
+ padding: 20px;
+ border-bottom: $normal-border;
+ width: 40%;
+ margin: 20px auto;
 }
 
 .field.rewards {
-    margin: auto;
+   margin: auto;
 }
 
 input#restaurant_rest_img {
-    margin-left: 35%;
+   margin-left: 35%;
 }
 
 
@@ -85,35 +85,35 @@ input#restaurant_rest_img {
 }
 
 .restaurant-desktop {
-    margin: 5px;
-    text-align: left;
-    overflow: hidden;
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    .resto-left, .resto-mid, .resto-right {
-      width: 29%;
-      float: left;
-      margin-left: 20px;
-    }
+   margin: 5px;
+   text-align: left;
+   overflow: hidden;
+   border: 1px solid lightgray;
+   border-radius: 6px;
+   .resto-left, .resto-mid, .resto-right {
+     width: 29%;
+     float: left;
+     margin-left: 20px;
+   }
 
-    .resto-mid, .resto-right {
-      margin: 40px 0 0 20px;
-    }
+   .resto-mid, .resto-right {
+     margin: 40px 0 0 20px;
+   }
 
-    .resto-left{
-      img {
-        border-radius: 5px;
-        padding: 10px 0px;
-        width: 100px;
-        height: 100px;
-      }
-    }
+   .resto-left{
+     img {
+       border-radius: 5px;
+       padding: 10px 0px;
+       width: 100px;
+       height: 100px;
+     }
+   }
 
-    .resto-mid{
-      font-size: 1.1em;
-    }
-    .resto-right{
-      text-align: right;
-      font-size: 0.8em;
-    }
+   .resto-mid{
+     font-size: 1.1em;
+   }
+   .resto-right{
+     text-align: right;
+     font-size: 0.8em;
+   }
 }

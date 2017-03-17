@@ -118,7 +118,7 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('.shoutout-box').on('click', function() {
-    $(this).children('.tweet-shoutout-box').slideToggle();
+    $(this).find('.tweet-shoutout-box').slideToggle();
   });
 
   $('#avatar').on('click', function() {
@@ -149,5 +149,11 @@ $(document).on("turbolinks:load",function(){
 
     $('#reward-drop-down ').click(function(){
         $(this).next('#reward-options').slideToggle("fast");
+    });
+    $('.camera > i').on('click', function(e){
+      e.stopPropagation();
+      console.log("it works");
+      $('input#shout_shout_image').click();
+      
     });
 });
