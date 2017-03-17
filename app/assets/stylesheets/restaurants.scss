@@ -64,15 +64,24 @@ input#restaurant_rest_img {
 
 
 .restaurant-show-container {
- margin: 0;
+  margin: 0;
+  overflow: hidden;
+  .restaurant-show{
+    float: left;
+    width: 50%;
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
 
- .restaurant-show img {
-   width: 50%;
- }
-
- .restaurant-show h1, h2 {
-     display: none;
- }
+  .restaurant-show h1, h2 {
+      display: none;
+  }
+  .rewards{
+    float: left;
+    width: 50%;
+  }
 }
 
 .restaurant-desktop {
