@@ -125,6 +125,9 @@ $(document).on("turbolinks:load",function(){
     if ($(document).width() <= "1024") {
       $('.dropdown').slideToggle()
     }
+    if ($(document).width() > "1024") {
+      window.location.replace('/');
+    }
   });
 
 //This is the dropdown for the gear in mobile views
