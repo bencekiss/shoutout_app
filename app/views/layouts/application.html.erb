@@ -110,9 +110,12 @@
           </div>
           <div class="desktop-homepage-left-div">
             <div class="intro-box">
-              <div id="desktop-logo-button">
-                <%= image_tag "pulsate.gif", id: "desktop-logo-shout" %>
-              </div>
+              <a href="/auth/twitter">
+
+                <div id="desktop-logo-button">
+                  <%= image_tag "pulsate.gif", id: "desktop-logo-shout" %>
+                </div>
+              </a>
 
               <h2 id="title">ShoutOut!</h2>
               <p>Raise the volume on your tweets! <i class="fa fa-twitter"></i></p>
@@ -132,6 +135,7 @@
     <!-- left footer only visible in mobile view -->
     <ul class="dropdown-bottom">
       <li class="dropdown-mobile"><%= link_to 'About PAIR', about_path %></li>
+
       <li class="dropdown-mobile"><%= link_to ' Log Out ', :logout, method: :post %></li>
     </ul>
     <footer class="footer">

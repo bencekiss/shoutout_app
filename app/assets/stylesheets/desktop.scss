@@ -388,12 +388,17 @@
 
   .homepage-shell-2 {
     opacity: 0.5;
-    height: 43%;
+    height: 315px;
     width: 100%;
     background: asset-url("restaurant-img.jpg");
     background-position: center;
     position: absolute;
     z-index: -2;
+  }
+
+  .navelement a:hover, .about-desktop > a:hover {
+    font-weight: 900;
+    border-bottom: 2px solid white;
   }
 
 }
