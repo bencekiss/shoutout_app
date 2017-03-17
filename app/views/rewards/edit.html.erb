@@ -1,18 +1,19 @@
 <%= form_for [@restaurant, @reward] do |f| %>
   <div class="field rewards">
-    <%= f.label :name %>
+    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field rewards">
-    <%= f.label :description %>
+    <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
 
   <div class="field rewards">
-    <%= f.label :point_value %>
+    <%= f.label :point_value %><br />
     <%= f.number_field :point_value %>
   </div>
-
-  <%= f.submit %>
+  <div class="submit-item">
+    <%= f.submit %>
+  </div>
 <% end %>

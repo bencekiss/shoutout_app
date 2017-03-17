@@ -95,3 +95,14 @@ div#shoutout-boxset {
       width: 320px;
   }
 }
+
+@media only screen and (max-height: 300px){
+  .footer {
+    display: none;
+  }
+
+  .modal.shout-modal {
+    height: 130%;
+  }
+
+}
