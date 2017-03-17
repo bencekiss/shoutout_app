@@ -25,13 +25,13 @@ $(document).on("turbolinks:load",function(){
    });
 
   var userPoints = parseFloat($(".points-remaining p strong").text());
-  for (i=0; i < $("em.reward-point").length; i++){
-    var rewardPoints = parseFloat($("em.reward-point")[i].innerText);
+  for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
+    var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
     var rewardButton = $(".reward-button")[i];
+
     if (userPoints < rewardPoints){
-      var positionButton = $(".positioning-box")[i];
-      $(positionButton).children(rewardButton).addClass("nope");
-      $(positionButton).removeClass('on-button');
+      $(".positioning-box").children(".reward-button").addClass("nope");
+      $(".positioning-box").removeClass("on-button");
     }};
 
   $(".on-button").on('click',function(e){
@@ -125,6 +125,9 @@ $(document).on("turbolinks:load",function(){
     if ($(document).width() <= "1024") {
       $('.dropdown').slideToggle()
     }
+    if ($(document).width() > "1024") {
+      window.location.replace('/');
+    }
   });
 
 //This is the dropdown for the gear in mobile views
@@ -142,5 +145,9 @@ $(document).on("turbolinks:load",function(){
       var name = "#" + id;
       var text = name +'.my-restaurant';
       $(text).css('display', 'block');
+    });
+
+    $('#reward-drop-down ').click(function(){
+        $(this).next('#reward-options').slideToggle("fast");
     });
 });

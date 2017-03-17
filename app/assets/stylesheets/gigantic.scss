@@ -1,0 +1,48 @@
+@import "variables";
+@import "gigantic-profile";
+
+@media only screen and (max-width: 1920px) {
+  .rewards-heading {
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 1921px) {
+  html {
+    font-size: 22px;
+  }
+
+  #homepage-phone-box {
+    width: 1150px;
+    height: 800px;
+    margin-top: -400px;
+    margin-left: -525px;
+  }
+  #shoutout-phone {
+    width: 350px;
+  }
+
+  #desktop-logo-shout {
+    width: 450px;
+    right: 105px;
+    top: -50px;
+  }
+
+  .desktop-homepage-right-div {
+    width: 34%;
+    margin-top: -60px;
+  }
+  .desktop-homepage-left-div {
+    .intro-box {
+      margin-top: 325px;
+    }
+  }
+
+  .homepage-shell-2 {
+    height: 45%;
+  }
+
+  #get-started {
+    p {padding: 15px 25px}
+  }
+}
