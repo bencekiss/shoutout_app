@@ -154,5 +154,6 @@ $(document).on("turbolinks:load",function(){
       e.stopPropagation();
       console.log("it works");
       $('input#shout_shout_image').click();
+      
     });
 });
