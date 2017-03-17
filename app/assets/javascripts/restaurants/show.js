@@ -118,7 +118,7 @@ $(document).on("turbolinks:load",function(){
   });
 
   $('.shoutout-box').on('click', function() {
-    $(this).children('.tweet-shoutout-box').slideToggle();
+    $(this).find('.tweet-shoutout-box').slideToggle();
   });
 
   $('#avatar').on('click', function() {
