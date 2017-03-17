@@ -98,10 +98,8 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/1.JCleaners.jpg')) do |f|
-     rest.rest_img = f
 
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/7/1.JCleaners.jpg"
   rest.save!
 
   rest = Restaurant.new(
@@ -113,10 +111,8 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/2.Aroma.jpg')) do |f|
-     rest.rest_img = f
 
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/8/2.Aroma.jpg"
   rest.save!
 
 
@@ -129,10 +125,7 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/3.LeeChen.jpg')) do |f|
-     rest.rest_img = f
-
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/9/3.LeeChen.jpg"
   rest.save!
 
   rest = Restaurant.new(
@@ -144,12 +137,9 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/4.Camita.jpg')) do |f|
-     rest.rest_img = f
 
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/10/4.Camita.jpg"
   rest.save!
-
 
 
   rest = Restaurant.new(
@@ -161,12 +151,9 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/5.Soi.jpg')) do |f|
-     rest.rest_img = f
 
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/11/5.Soi.jpg"
   rest.save!
-
 
   rest = Restaurant.new(
     name: "B'saha Restaurant",
@@ -177,12 +164,9 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/6.Bsaha.png')) do |f|
-     rest.rest_img = f
 
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/12/6.Bsaha.jpg"
   rest.save!
-
 
   rest = Restaurant.new(
     name: "Freshii",
@@ -193,12 +177,9 @@ User.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/7.Freshii.jpg')) do |f|
-     rest.rest_img = f
 
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/13/7.Freshii.jpg"
   rest.save!
-
 
   rest = Restaurant.new(
      name: "Maki My Way",
@@ -210,10 +191,7 @@ User.destroy_all
      owner: User.first
    )
 
-
-   File.open(File.join(Rails.root, '/public/images/makimyway.png')) do |f|
-     rest.rest_img = f
-   end
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/14/makimyway.png"
    rest.save!
 
    rest = Restaurant.new(
@@ -226,10 +204,7 @@ User.destroy_all
      owner: User.first
    )
 
-
-   File.open(File.join(Rails.root, '/public/images/pearlking.png')) do |f|
-     rest.rest_img = f
-   end
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/15/pearlking.png"
    rest.save!
 
    rest = Restaurant.new(
@@ -242,10 +217,7 @@ User.destroy_all
      owner: User.first
    )
 
-
-   File.open(File.join(Rails.root, '/public/images/asahi.png')) do |f|
-     rest.rest_img = f
-   end
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/16/asahi.png"
    rest.save!
 
    rest = Restaurant.new(
@@ -259,9 +231,7 @@ User.destroy_all
    )
 
 
-   File.open(File.join(Rails.root, '/public/images/portuguesechickenguys.jpg')) do |f|
-     rest.rest_img = f
-   end
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/17/portuguesechickenguys.jpg"
    rest.save!
 
    rest = Restaurant.new(
@@ -275,10 +245,9 @@ User.destroy_all
      )
 
 
-   File.open(File.join(Rails.root, '/public/images/littleindia.png')) do |f|
-     rest.rest_img = f
-   end
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/18/littleindia.jpg"
    rest.save!
+
 
    rest = Restaurant.new(
      name: "Miss Korea",
@@ -290,9 +259,8 @@ User.destroy_all
      owner: User.first
      )
 
-   File.open(File.join(Rails.root, '/public/images/misskorea.jpg')) do |f|
-     rest.rest_img = f
-   end
+
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/19/misskorea.jpg"
    rest.save!
 
 
@@ -305,9 +273,8 @@ User.destroy_all
      # rest_img: open(""),
      owner: User.first
    )
-   File.open(File.join(Rails.root, '/public/images/vivoli.jpg')) do |f|
-     rest.rest_img = f
-   end
+   
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/20/vivoli.jpg"
    rest.save!
 
 
