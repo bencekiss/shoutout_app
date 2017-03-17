@@ -43,6 +43,15 @@
     font-weight: 500;
   }
 
+  .resto-points, .resto-shouts {
+    width: 12%;
+    position: static;
+  }
+
+  .resto-name {
+    width: 54%;
+  }
+
   .resto-name h3 {
     font-size: 1em;
     font-family: $font-one;
@@ -51,6 +60,10 @@
 
   .resto-shoutout-box {
     border: none;
+  }
+
+  div.resto-rewards#mobile-trophy {
+    display: none;
   }
 
 }

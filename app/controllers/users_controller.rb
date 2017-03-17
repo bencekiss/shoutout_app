@@ -110,11 +110,16 @@ class UsersController < ApplicationController
     @redemptions = @user.redemptions
   end
 
-  def contact
+  def redemptions
     @user = current_user
     @shout = Shout.new
-    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
     @redemptions = @user.redemptions
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+    @avail_redemptions = []
+    @redemptions.each do |redemption|
+      @avail_redemptions << Reward.find(redemption.reward_id)
+      
+    end
   end
 
   private
