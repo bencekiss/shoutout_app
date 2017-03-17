@@ -165,7 +165,7 @@ User.destroy_all
     owner: User.first
   )
 
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/12/6.Bsaha.jpg"
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/12/6.Bsaha.png"
   rest.save!
 
   rest = Restaurant.new(
@@ -173,8 +173,6 @@ User.destroy_all
     address: "154 University Ave, Toronto, ON M5H 3Y9",
     phone_number: "647-692-5173",
     rest_img: nil,
-    # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/ShawarmaKing2.jpeg'))),
-    # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
 
