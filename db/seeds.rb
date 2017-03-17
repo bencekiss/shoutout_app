@@ -86,7 +86,11 @@ User.destroy_all
     owner: User.first
   )
 
-  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/6/captains_boil.png"
+  # rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/6/captains_boil.png"
+  File.open(File.join(Rails.root, '/public/images/captains_boil.png')) do |f|
+     rest.rest_img = f
+
+  end
   rest.save!
 
   rest = Restaurant.new(
