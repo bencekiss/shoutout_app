@@ -20,6 +20,12 @@
 .rewards {
   display: inline-block;
   text-align: center;
+  .reward-container{
+    width: 90%;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+    background-color: $secondary;
+  }
 }
 
 .reward-button{
@@ -27,12 +33,13 @@
   text-align: center;
   padding: 5px;
   color: white;
-  background: lightgrey;
+  background: $pointsbar;
   position: relative;
   z-index: 2;
   width: 80%;
   height: 25px;
   display: inline-block;
+  border-radius: 3px;
   p {
     z-index: 3;
   }
@@ -47,8 +54,9 @@
 }
 
 .nope{
-  background-color: lightgray;
+  background-color: $pointsbar;
   text-align: center;
+  border-radius: 3px;
 }
 
 .points-bar {
@@ -77,8 +85,9 @@
   // align-items: center;
   // justify-content: space-around;
 }
+
 .reward-header p {
-  display: inline-block;
+  // display: inline-block;
 }
 
 .inactive-sign, .active-sign {
@@ -92,6 +101,8 @@
 
 .active-sign {
   background: white;
+  width: 50%;
+  display: inline-block;
 }
 
 #reward-options {
@@ -101,4 +112,8 @@
 #reward-drop-down {
   width: 18%;
   margin: auto;
+  display: inline-block;
+  img{
+    width: 50%;
+  }
 }

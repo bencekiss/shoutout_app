@@ -2,19 +2,24 @@
   <div class="restaurant-show">
     <h1><%= @restaurant.name %></h1>
      <%= image_tag(@restaurant.rest_img.image_resize.url) %>
-     <% if @restaurant.owner_id != current_user.id %>
-      <div class="field points-remaining">
-        <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
-      </div>
+     <p><%= @restaurant.address %></p>
+     <p><%= @restaurant.phone_number %></p>
+  </div>
+
+  <div class="rewards">
+    <% if @restaurant.owner_id != current_user.id %>
+    <div class="field points-remaining">
+      <p> Remaining ShoutOut points: <strong><%= @points %></strong>. </p>
+    </div>
     <% else %>
-      <h2>These are your restaurant's rewards.</h2>
+    <h2>These are your restaurant's rewards.</h2>
     <% end %>
-    <div class="rewards">
-      <% resto_rewards = @restaurant.rewards.sort_by{|x| x.point_value} %>
-      <% resto_rewards.each do |reward| %>
-        <% if (reward.active && current_user != @restaurant.owner_id) || (@restaurant.owner_id == current_user.id) %>
+    <% resto_rewards = @restaurant.rewards.sort_by{|x| x.point_value} %>
+    <% resto_rewards.each do |reward| %>
+      <% if (reward.active && current_user != @restaurant.owner_id) || (@restaurant.owner_id == current_user.id) %>
+        <div class="reward-container">
           <div class="reward-header">
-            <p> <strong><%= reward.name %></strong>  | </p>
+            <p> <strong><%= reward.name %></strong></p>
             <p><em class="reward-point"><%= reward.point_value %></em> points </p>
           </div>
           <div class="reward-button-box">
@@ -39,7 +44,7 @@
         <% end %>
             <% if  @restaurant.owner_id == current_user.id %>
               <% if reward.active %>
-                <p class = "active-sign"><strong> Active </strong></p>
+                <p class = "active-sign"> Active </p>
               <% else %>
                 <p class = "inactive-sign">Inactive</p>
               <% end %>
@@ -60,7 +65,7 @@
               </div>
           <% end %>
         </div>
-        <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
