@@ -1,8 +1,20 @@
+@import 'variables';
+
 @media only screen and (max-width: 1023px) {
   .left-sidebar, .left-sidebar-logo-container, .right-sidebar {
     display: none
   }
+  .right-sidebar-mobile {
+    margin-top: 20px;
+    background: white;
+    box-shadow: $drop-shadow;
+    border-radius: 10px;
+    padding: 10px;
 
+    .reward-resto{
+      font-size: 1.2em;
+    }
+  }
   .profile{
     position: absolute;
     right: 0;
@@ -78,14 +90,20 @@
 
   .desktop-view {
     text-align: center;
-}
+  }
 
-div#shoutout-boxset {
-    /* display: block; */
-    width: 500px;
-}
-  input#shout-shout-image {
-    font-size: .5em;
+  .camera {
+    font-size: 2em;
+    border: 1px solid black;
+    
+  }
+
+  div#shoutout-boxset {
+      /* display: block; */
+      width: 500px;
+  }
+  input#shout_shout_image {
+    display: none;
   }
 }
 

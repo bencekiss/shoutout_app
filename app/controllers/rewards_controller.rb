@@ -27,6 +27,8 @@ class RewardsController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @@redemptions = @user.redemptions
   end
 
   def destroy
