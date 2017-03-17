@@ -223,8 +223,6 @@ User.destroy_all
      address: "898 College St, Toronto, ON M6H 1A4",
      phone_number: "416-537-7133",
      rest_img: nil,
-     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/portuguesechickenguys.png'))),
-     # rest_img: open(""),
      owner: User.first
    )
 
@@ -237,8 +235,6 @@ User.destroy_all
      address: "255 Queen St W, Toronto, ON M5V 1Z4",
      phone_number: "416-537-7133",
      rest_img: nil,
-     # RestImgUploader.new.store!(File.open(File.join(Rails.root, '/public/images/portuguesechickenguys.png'))),
-     # rest_img: open(""),
      owner: User.first
      )
 
