@@ -7,6 +7,11 @@ class RewardsController < ApplicationController
   def edit
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reward = Reward.find(params[:id])
+    @user = current_user
+    @shout = Shout.new
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+    @redemptions = @user.redemptions
+
   end
 
   def update
