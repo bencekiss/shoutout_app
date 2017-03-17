@@ -24,15 +24,15 @@ $(document).on("turbolinks:load",function(){
      $('#textarea_feedback').text((text_max - len) + " characters remaining");
    });
 
-  var userPoints = parseFloat($(".points-remaining p strong").text());
-  for (i=0; i < $(".reward-button > p em.reward-point").length; i++){
-    var rewardPoints = parseFloat($(".reward-button > p em.reward-point")[i].innerText);
-    var rewardButton = $(".reward-button")[i];
-
-    if (userPoints < rewardPoints){
-      $(".positioning-box").children(".reward-button").addClass("nope");
-      $(".positioning-box").removeClass("on-button");
-    }};
+   var userPoints = parseFloat($(".points-remaining p strong").text());
+   for (i=0; i < $("em.reward-point").length; i++){
+     var rewardPoints = parseFloat($("em.reward-point")[i].innerText);
+     var rewardButton = $(".reward-button")[i];
+     if (userPoints < rewardPoints){
+       var positionButton = $(".positioning-box")[i];
+       $(positionButton).children(rewardButton).addClass("nope");
+       $(positionButton).removeClass('on-button');
+     }};
 
   $(".on-button").on('click',function(e){
     $(this).find(".reward-modal").fadeIn("slow");
