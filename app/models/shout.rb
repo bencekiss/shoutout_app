@@ -9,10 +9,16 @@ class Shout < ApplicationRecord
 
   def post_to_twitter
     restaurant_hashtag = Restaurant.find(self.restaurant_id).name
-    restaurant_hash = restaurant_hashtag.split(" ").join("_")
+    restaurant_hash = Shout.refine_hash(restaurant_hashtag)
     body = twitter_text + " #ShoutOut ##{restaurant_hash}"
     t = user.twitter.update_with_media(body, File.new(self.shout_image.image_resize.file.file))
     t.id
+  end
+
+  def self.refine_hash(restaurant_hashtag)
+    refined_hash = []
+    restaurant_hashtag.chars.each { |x| refined_hash << x if /\w/.match(x) }
+    refined_hash.join("")
   end
 
   def self.points(shout, user)
