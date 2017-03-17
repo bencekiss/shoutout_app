@@ -44,8 +44,8 @@ $(document).on("turbolinks:load",function(){
     $(".desktop-view").fadeIn("slow");
   });
 
-  $(".positioning-box").on("click", function(e){
-    if ($(this).children(".nope")){
+  $(".reward-button").on("click", function(e){
+    if ($(this).hasClass("nope")){
       e.stopPropagation();
       alert("You don't have enough points to redeem this reward.");
     }
