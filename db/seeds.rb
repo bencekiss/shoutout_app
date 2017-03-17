@@ -239,7 +239,7 @@ User.destroy_all
      )
 
 
-   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/18/littleindia.jpg"
+   rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/18/littleindia.png"
    rest.save!
 
 
