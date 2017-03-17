@@ -110,6 +110,13 @@ class UsersController < ApplicationController
     @redemptions = @user.redemptions
   end
 
+  def contact
+    @user = current_user
+    @shout = Shout.new
+    @restaurants = Restaurant.all.map {|resto| [resto.name, resto.id]}
+    @redemptions = @user.redemptions
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :avatar)
