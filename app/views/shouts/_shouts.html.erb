@@ -20,7 +20,7 @@
         <% if shout.restaurant_id == resto.id %>
         <div class="shout">
           <div class="shout-image">
-            <%= link_to image_tag(shout.shout_image.image_resize.url), user_shout_path(current_user, shout) %>
+            <%= image_tag(shout.shout_image.image_resize.url) %>
           </div>
           <div class="shout-info">
             <% unless shout.active %>
