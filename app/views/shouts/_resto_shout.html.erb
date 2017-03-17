@@ -11,7 +11,10 @@
  </div>
  <div class="field">
    <%= f.label :shout_image, value: "Upload your picture!" %><br>
-   <%= f.file_field :shout_image, placeholder: "https://your images address" %>
+   <div class="camera2">
+     <i class="fa fa-camera" aria-hidden="true"></i>
+   </div>
+   <%= f.file_field :shout_image, placeholder: "https://your images address", id: "resto_shout_upload" %>
  </div>
  <div class="submit-item">
    <%= f.submit "Shout it out!" %>

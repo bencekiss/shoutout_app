@@ -150,10 +150,15 @@ $(document).on("turbolinks:load",function(){
     $('#reward-drop-down ').click(function(){
         $(this).next('#reward-options').slideToggle("fast");
     });
+
     $('.camera > i').on('click', function(e){
       e.stopPropagation();
-      console.log("it works");
-      $('input#shout_shout_image').click();
-      
+      $('input#shout_upload').click();
     });
+
+    $('.camera2 > i').on('click', function(e){
+      e.stopPropagation();
+      $('input#resto_shout_upload').click();
+    });
+
 });
