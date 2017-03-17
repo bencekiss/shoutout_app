@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Restaurant.destroy_all
 Reward.destroy_all
-# User.destroy_all
+User.destroy_all
 # Shout.destroy_all
 
   User.create(
@@ -85,10 +85,7 @@ Reward.destroy_all
     # rest_img: open("http://www.shawarmasking.ca/wp-content/uploads/2016/08/Shawarma-King-Logo2.png"),
     owner: User.first
   )
-  File.open(File.join(Rails.root, '/public/images/captains_boil.png')) do |f|
-    rest.rest_img = f
-
-  end
+  rest.remote_rest_img_url = "https://s3.us-east-2.amazonaws.com/bencekissfirst/uploads/restaurant/rest_img/6/captains_boil.png"
   rest.save!
   #
   # 20.times do
