@@ -101,10 +101,13 @@
     }
   }
 
-  .camera {
+  .camera, .camera2 {
+    display: inline-block;
+    padding: 5px 15px;
     font-size: 2em;
-    border: 1px solid black;
-
+    border: 2px solid black;
+    border-radius: 15px;
+    background: white;
   }
 
 
@@ -112,9 +115,8 @@
       /* display: block; */
       width: 500px;
   }
-  input#shout_shout_image {
+  input#shout_upload, input#resto_shout_upload {
     display: none;
-
   }
 }
 
@@ -122,6 +124,10 @@
   div#shoutout-boxset {
       /* display: block; */
       width: 98%;
+  }
+
+  .shell {
+    width: 98%;
   }
 
   div.shoutout-box {
@@ -181,4 +187,16 @@
   .modal.shout-modal {
     height: 130%;
   }
+}
+
+@media only screen and (min-width: 769px){
+  .camera, .camera2 {
+    display: none;
+  }
+
+  input#shout_upload, input#resto_shout_upload {
+    display: block;
+    margin: auto;
+  }
+
 }

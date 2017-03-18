@@ -11,11 +11,11 @@
     <%= f.text_area :twitter_text, placeholder: "Share the good news", maxlength: "140" %></br>
     <div id="textarea_feedback"></div>
   </div>
-  <div class="field">Share a photo of the experience!
+  <div class="field">Share a photo of the experience!</br>
     <div class="camera">
       <i class="fa fa-camera" aria-hidden="true"></i>
     </div>
-    <%= f.file_field :shout_image, placeholder: "https://your images address" %>
+    <%= f.file_field :shout_image, placeholder: "https://your images address", id: "shout_upload"%>
   </div>
   <div class="submit-item">
     <%= f.submit "Shout it out!"%>
