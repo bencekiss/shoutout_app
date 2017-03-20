@@ -25,12 +25,16 @@
     .resto-right p {
       text-align: right;
       padding-right: 5px;
+      padding: 0px 5px 0px 0px;
       font-size: 0.7em;
       margin: 0;
     }
     .resto-right p:nth-child(2) {
       bottom-margin: 2px;
     }
+  }
+  .resto-mid p:first-child{
+    font-weight: bolder;
   }
   div.right-sidebar {
     width: 25%;
@@ -172,7 +176,7 @@
       div.resto-left {
         padding-top: 3px;
         text-align: center;
-        height: 66%;
+        height: 67%;
       }
 
       div.resto-left{
