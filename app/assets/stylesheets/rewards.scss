@@ -14,7 +14,9 @@
   // padding: 10px;
   //
   display: none;
-
+  z-index: 5;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px darkgray;
 }
 
 .rewards {
@@ -57,6 +59,7 @@
   background-color: $pointsbar;
   text-align: center;
   border-radius: 3px;
+  z-index: 0;
 }
 
 .points-bar {
