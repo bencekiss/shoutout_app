@@ -141,17 +141,23 @@
   }
 
   .resto-name {
+    display: block;
     width: 75%;
   }
 
   .resto-info {
     padding-right: 5px;
+    min-height: 100px;
     position: relative;
   }
 
   .resto-points {
-    display: inline-block;
+    // display: inline-block;
     float: right;
+    position: absolute;
+    top: 45px;
+    right: 0px;
+    min-width: 100px;
   }
 
   .resto-shouts {
@@ -177,6 +183,7 @@
     margin: 0 8px;
     display: none;
   }
+
 }
 
 @media only screen and (max-height: 300px){
