@@ -110,6 +110,7 @@
   .restaurant-description:hover {
     background: $secondary;
     box-shadow: 2px 2px 2px 2px #c1d1df;
+    z-index: 1001;
   }
 
 

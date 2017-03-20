@@ -9,16 +9,20 @@ class ShoutsController < ApplicationController
   def create
 
     @shout = Shout.new(shout_params)
-    @shout.twitter_id = @shout.post_to_twitter
+    if !(@shout.shout_image.file == nil)
+      @shout.twitter_id = @shout.post_to_twitter
+    else
+      flash.now[:alert] = "Something went wrong! Did you upload an image?"
+    end
     @shout.retweets = 0
     @shout.favourites = 0
 
-    if @shout.save
+    if @shout.save && !(@shout.shout_image == nil)
       flash[:notice] = "Successfully created SHOUT"
-      redirect_to root_url
+      redirect_to root_path
     else
-      flash[:alert] = "You know nothing. No, just didnt manage to shout out right now."
-      render root_path
+      flash[:alert] = "Sorry, something wen't wrong, did you include an image?"
+      redirect_to root_path
     end
   end
   def show

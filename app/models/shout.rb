@@ -6,7 +6,7 @@ class Shout < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
   # before_create :post_to_twitter
-
+  validates :shout_image, presence: true
   def post_to_twitter
     restaurant_hashtag = Restaurant.find(self.restaurant_id).name
     restaurant_hash = Shout.refine_hash(restaurant_hashtag)
