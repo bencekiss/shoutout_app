@@ -33,8 +33,8 @@
               <div class="reward-modal modal">
                 <p>Point Value: <em class = "reward-point-modal"> <strong><%= reward.point_value %></strong></em> </p>
                 <p>Your Points: <strong><%= @points %></strong></p>
+                <p>Description: <%= reward.description %></p>
                 <button class= "redeem-button" type="button" name="button">Redeem It!
-                  <p>Description: <%= reward.description %></p>
                   <%= hidden_field_tag :user_id, current_user.id, {class: "hidden-user"} %>
                   <%= hidden_field_tag :reward_id, reward.id, {class: "hidden-reward"} %> <!--adding class to hidden field tag.-->
                   <%= hidden_field_tag :authenticity_token, form_authenticity_token, {class: "hidden-authenticity"} %>
