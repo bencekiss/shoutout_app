@@ -1,6 +1,6 @@
 <div class="left-sidebar">
   <div class="left-sidebar-logo-container">
-    <%= image_tag "nav-logo-img.png", id: "sidebar-logo-image" %>
+    <%= link_to image_tag("nav-logo-img.png", id: "sidebar-logo-image"), root_url %>
   </div>
   <div class="menu-structure">
     <%= form_for [@user, @shout] do |f| %>
