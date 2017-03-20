@@ -83,11 +83,11 @@
       </div>
 
       <% if params[:controller] == "restaurants" && params[:id] %>
-        <div class="modal shout-modal">
+        <div class="modal" id="shout-modal">
           <%= render '/shouts/resto_shout' %>
         </div>
       <% else %>
-        <div class="modal shout-modal">
+        <div class="modal" id="shout-modal">
           <%= render '/shouts/form' %>
         </div>
       <% end %>

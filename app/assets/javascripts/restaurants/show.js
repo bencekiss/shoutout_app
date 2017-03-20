@@ -96,7 +96,7 @@ $(document).on("turbolinks:load",function(){
 
   $('#shout-modal-call-button-outline').on('click', function() {
     $('.desktop-view').fadeOut();
-    $('.shout-modal').fadeIn();
+    $('#shout-modal').fadeIn();
   });
 
   $('#shout-modal-call-button-outline').mousedown(function(){
